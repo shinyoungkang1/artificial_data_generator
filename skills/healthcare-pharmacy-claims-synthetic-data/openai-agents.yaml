@@ -1,0 +1,4 @@
+interface:
+  display_name: "Healthcare Pharmacy Claims Synthetic Data"
+  short_description: "Generate realistic noisy pharmacy claims with NDC codes, drug names, and PBM billing relationships."
+  default_prompt: "Use healthcare-pharmacy-claims-synthetic-data to generate realistic noisy pharmacy claims with configurable mess patterns."

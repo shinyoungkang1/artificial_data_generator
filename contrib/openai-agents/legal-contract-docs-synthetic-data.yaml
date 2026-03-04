@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legal Contract Docs"
+  short_description: "Generate messy synthetic legal contract documents."
+  default_prompt: "Use $legal-contract-docs-synthetic-data to generate synthetic legal contract OCR artifacts with noisy scan variants."

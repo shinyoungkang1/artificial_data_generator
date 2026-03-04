@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Inspection Cert Docs Synthetic Data"
+  short_description: "Generate realistic noisy manufacturing inspection certificate documents with configurable OCR degradation."
+  default_prompt: "Use manufacturing-inspection-cert-docs-synthetic-data to generate realistic noisy manufacturing inspection certificate documents."

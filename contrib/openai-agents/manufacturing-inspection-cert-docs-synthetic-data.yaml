@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Inspection Certificate Docs"
+  short_description: "Generate messy synthetic inspection certificate documents."
+  default_prompt: "Use $manufacturing-inspection-cert-docs-synthetic-data to generate synthetic inspection certificate OCR artifacts with noisy scan variants."

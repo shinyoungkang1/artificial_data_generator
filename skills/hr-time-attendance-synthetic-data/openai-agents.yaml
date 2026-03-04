@@ -1,0 +1,4 @@
+interface:
+  display_name: "HR Time and Attendance Synthetic Data"
+  short_description: "Generate realistic noisy time and attendance records with clock times, overtime calculations, and approval encoding variants."
+  default_prompt: "Use hr-time-attendance-synthetic-data to generate realistic noisy time and attendance records with configurable mess patterns."

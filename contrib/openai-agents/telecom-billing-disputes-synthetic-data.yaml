@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telecom Billing Disputes"
+  short_description: "Generate messy synthetic billing dispute data."
+  default_prompt: "Use $telecom-billing-disputes-synthetic-data to generate realistic noisy billing dispute datasets."

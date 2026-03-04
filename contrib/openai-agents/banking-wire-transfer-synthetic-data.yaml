@@ -1,0 +1,4 @@
+interface:
+  display_name: "Banking Wire Transfers"
+  short_description: "Generate messy synthetic wire transfer data."
+  default_prompt: "Use $banking-wire-transfer-synthetic-data to generate realistic noisy wire transfer datasets."

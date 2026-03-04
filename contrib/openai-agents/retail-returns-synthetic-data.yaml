@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retail Returns"
+  short_description: "Generate messy synthetic retail returns data."
+  default_prompt: "Use $retail-returns-synthetic-data to generate realistic noisy retail returns datasets."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Healthcare Pharmacy Claims"
+  short_description: "Generate messy synthetic pharmacy claims data."
+  default_prompt: "Use $healthcare-pharmacy-claims-synthetic-data to generate realistic noisy pharmacy claims datasets."

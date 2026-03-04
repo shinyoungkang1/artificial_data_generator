@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Claims Intake"
+  short_description: "Generate messy synthetic insurance claims intake data."
+  default_prompt: "Use $insurance-claims-intake-synthetic-data to generate realistic noisy insurance claims intake datasets."

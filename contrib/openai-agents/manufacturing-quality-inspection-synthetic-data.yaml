@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Quality Inspection"
+  short_description: "Generate messy synthetic quality inspection data."
+  default_prompt: "Use $manufacturing-quality-inspection-synthetic-data to generate realistic noisy quality inspection datasets."

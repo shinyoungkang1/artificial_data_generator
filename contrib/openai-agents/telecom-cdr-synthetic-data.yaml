@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telecom CDR"
+  short_description: "Generate messy synthetic call detail record data."
+  default_prompt: "Use $telecom-cdr-synthetic-data to generate realistic noisy call detail record datasets."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retail Returns Synthetic Data"
+  short_description: "Generate realistic noisy retail return records with refund calculations, restocking fees, and return reason variants."
+  default_prompt: "Use retail-returns-synthetic-data to generate realistic noisy retail return records with configurable mess patterns."

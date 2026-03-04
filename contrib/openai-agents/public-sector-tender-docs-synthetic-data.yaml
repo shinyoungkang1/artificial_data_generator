@@ -1,0 +1,4 @@
+interface:
+  display_name: "Public Sector Tender Documents"
+  short_description: "Generate messy synthetic federal tender document scans."
+  default_prompt: "Use $public-sector-tender-docs-synthetic-data to generate realistic noisy tender document images for OCR tests."

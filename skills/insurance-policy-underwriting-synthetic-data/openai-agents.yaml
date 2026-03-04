@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Policy Underwriting Synthetic Data"
+  short_description: "Generate realistic noisy insurance underwriting records with configurable mess patterns."
+  default_prompt: "Use insurance-policy-underwriting-synthetic-data to generate realistic noisy insurance policy underwriting records."

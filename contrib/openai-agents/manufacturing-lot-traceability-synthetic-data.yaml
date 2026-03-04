@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Lot Traceability"
+  short_description: "Generate messy synthetic lot traceability data."
+  default_prompt: "Use $manufacturing-lot-traceability-synthetic-data to generate realistic noisy lot traceability datasets."

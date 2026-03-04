@@ -1,0 +1,4 @@
+interface:
+  display_name: "Public Sector Procurement Data"
+  short_description: "Generate messy synthetic federal procurement data."
+  default_prompt: "Use $public-sector-procurement-synthetic-data to generate realistic noisy procurement datasets for extraction tests."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Claims Intake Synthetic Data"
+  short_description: "Generate realistic noisy insurance claims intake records with configurable mess patterns."
+  default_prompt: "Use insurance-claims-intake-synthetic-data to generate realistic noisy insurance claims intake records."

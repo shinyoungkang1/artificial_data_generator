@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Declaration Docs"
+  short_description: "Generate messy synthetic insurance declaration page documents."
+  default_prompt: "Use $insurance-declaration-docs-synthetic-data to generate synthetic insurance declaration page OCR artifacts with noisy scan variants."

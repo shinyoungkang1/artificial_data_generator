@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legal Contract Metadata"
+  short_description: "Generate messy synthetic legal contract metadata."
+  default_prompt: "Use $legal-contract-metadata-synthetic-data to generate realistic noisy legal contract metadata datasets."

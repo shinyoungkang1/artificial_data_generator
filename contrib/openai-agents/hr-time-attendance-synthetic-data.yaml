@@ -1,0 +1,4 @@
+interface:
+  display_name: "HR Time & Attendance"
+  short_description: "Generate messy synthetic time and attendance data."
+  default_prompt: "Use $hr-time-attendance-synthetic-data to generate realistic noisy time and attendance datasets."

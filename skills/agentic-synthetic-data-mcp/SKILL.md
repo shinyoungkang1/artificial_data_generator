@@ -10,7 +10,8 @@ description: >-
   expand_from_seed_samples. Handles noise recipe selection, manifest tracking,
   and multi-format writer orchestration automatically.
   Do NOT use when you only need a single domain's data -- use the
-  domain-specific skills instead (healthcare, logistics, retail, HR, banking).
+  domain-specific skills instead (healthcare, logistics, retail, HR, banking,
+  insurance, manufacturing, legal, telecom, public sector).
 ---
 
 # Agentic Synthetic Data MCP
@@ -33,7 +34,7 @@ Supported output formats:
 - **PNG** -- base scan image plus noise-recipe variants (requires `Pillow`).
 
 **When to use this skill vs domain skills:** Use domain-specific skills
-(healthcare, logistics, retail, HR, banking) for quick, targeted generation of
+(healthcare, logistics, retail, HR, banking, insurance, manufacturing, legal, telecom, public sector) for quick, targeted generation of
 a single data type. Use this MCP skill when you need campaign-level
 orchestration, multi-format output in a single run, seed-based expansion
 across formats, or OCR corruption recipe pipelines.
@@ -259,18 +260,22 @@ injected as part of the messiness layer.
 
 ## Relationship to Domain Skills
 
-This is the **platform/orchestration skill**. The 15 domain-specific skills
-(3 per domain) use standalone scripts for focused generation. This MCP skill
-provides the higher-level campaign workflow that coordinates across formats
-and domains.
+This is the **platform/orchestration skill**. The 35 domain-specific skills
+use standalone scripts for focused generation. This MCP skill provides the
+higher-level campaign workflow that coordinates across formats and domains.
 
-| Domain | Tabular Data Skill | Specialized Data Skill | OCR/Document Skill |
-|--------|-------------------|----------------------|-------------------|
-| Healthcare | `healthcare-claims-synthetic-data` | `healthcare-provider-roster-synthetic-data` | `healthcare-eob-docs-synthetic-data` |
-| Logistics | `logistics-shipping-synthetic-data` | `logistics-customs-docs-synthetic-data` | `logistics-bol-docs-synthetic-data` |
-| Retail | `retail-pos-synthetic-data` | `retail-inventory-synthetic-data` | `retail-receipt-ocr-synthetic-data` |
-| HR | `hr-payroll-synthetic-data` | `hr-recruiting-synthetic-data` | `hr-employee-file-docs-synthetic-data` |
-| Banking | `banking-kyc-synthetic-data` | `banking-aml-transactions-synthetic-data` | `banking-statement-ocr-synthetic-data` |
+| Domain | Tabular Data Skill(s) | Specialized Data Skill | OCR/Document Skill |
+|--------|----------------------|----------------------|-------------------|
+| Healthcare | `healthcare-claims-synthetic-data`, `healthcare-pharmacy-claims-synthetic-data` | `healthcare-provider-roster-synthetic-data` | `healthcare-eob-docs-synthetic-data` |
+| Logistics | `logistics-shipping-synthetic-data`, `logistics-warehouse-inventory-synthetic-data` | `logistics-customs-docs-synthetic-data` | `logistics-bol-docs-synthetic-data` |
+| Retail | `retail-pos-synthetic-data`, `retail-returns-synthetic-data` | `retail-inventory-synthetic-data` | `retail-receipt-ocr-synthetic-data` |
+| HR | `hr-payroll-synthetic-data`, `hr-time-attendance-synthetic-data` | `hr-recruiting-synthetic-data` | `hr-employee-file-docs-synthetic-data` |
+| Banking | `banking-kyc-synthetic-data`, `banking-wire-transfer-synthetic-data` | `banking-aml-transactions-synthetic-data` | `banking-statement-ocr-synthetic-data` |
+| Insurance | `insurance-policy-underwriting-synthetic-data` | `insurance-claims-intake-synthetic-data` | `insurance-declaration-docs-synthetic-data` |
+| Manufacturing | `manufacturing-quality-inspection-synthetic-data` | `manufacturing-lot-traceability-synthetic-data` | `manufacturing-inspection-cert-docs-synthetic-data` |
+| Legal | `legal-contract-metadata-synthetic-data` | `legal-amendment-chain-synthetic-data` | `legal-contract-docs-synthetic-data` |
+| Telecom | `telecom-cdr-synthetic-data` | `telecom-billing-disputes-synthetic-data` | `telecom-billing-statement-docs-synthetic-data` |
+| Public Sector | `public-sector-procurement-synthetic-data` | `public-sector-vendor-scoring-synthetic-data` | `public-sector-tender-docs-synthetic-data` |
 
 **Decision guide:**
 

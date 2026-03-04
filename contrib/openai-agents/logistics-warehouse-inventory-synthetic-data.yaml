@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logistics Warehouse Inventory"
+  short_description: "Generate messy synthetic warehouse inventory data."
+  default_prompt: "Use $logistics-warehouse-inventory-synthetic-data to generate realistic noisy warehouse inventory datasets."

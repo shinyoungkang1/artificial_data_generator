@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legal Amendment Chain"
+  short_description: "Generate messy synthetic legal amendment chain data."
+  default_prompt: "Use $legal-amendment-chain-synthetic-data to generate realistic noisy legal amendment chain datasets."

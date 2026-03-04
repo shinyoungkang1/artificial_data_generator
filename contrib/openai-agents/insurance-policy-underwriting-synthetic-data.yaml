@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Policy Underwriting"
+  short_description: "Generate messy synthetic insurance underwriting data."
+  default_prompt: "Use $insurance-policy-underwriting-synthetic-data to generate realistic noisy insurance underwriting datasets."

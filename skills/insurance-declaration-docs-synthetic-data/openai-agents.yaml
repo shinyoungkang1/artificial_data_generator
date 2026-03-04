@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Declaration Docs Synthetic Data"
+  short_description: "Generate realistic noisy insurance declaration page documents with configurable OCR degradation."
+  default_prompt: "Use insurance-declaration-docs-synthetic-data to generate realistic noisy insurance declaration page documents."

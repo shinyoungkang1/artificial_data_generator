@@ -1,0 +1,4 @@
+interface:
+  display_name: "Public Sector Vendor Scoring Data"
+  short_description: "Generate messy synthetic federal vendor scoring data."
+  default_prompt: "Use $public-sector-vendor-scoring-synthetic-data to generate realistic noisy vendor evaluation datasets for extraction tests."

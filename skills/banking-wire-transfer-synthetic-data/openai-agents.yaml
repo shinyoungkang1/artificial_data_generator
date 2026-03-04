@@ -1,0 +1,4 @@
+interface:
+  display_name: "Banking Wire Transfer Synthetic Data"
+  short_description: "Generate realistic noisy wire transfer records with SWIFT codes, OFAC screening, and compliance relationships."
+  default_prompt: "Use banking-wire-transfer-synthetic-data to generate realistic noisy wire transfer records with configurable mess patterns."

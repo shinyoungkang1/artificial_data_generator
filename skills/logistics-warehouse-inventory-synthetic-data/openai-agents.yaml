@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logistics Warehouse Inventory Synthetic Data"
+  short_description: "Generate realistic noisy warehouse inventory records with bin locations, lot tracking, and quantity relationships."
+  default_prompt: "Use logistics-warehouse-inventory-synthetic-data to generate realistic noisy warehouse inventory records with configurable mess patterns."

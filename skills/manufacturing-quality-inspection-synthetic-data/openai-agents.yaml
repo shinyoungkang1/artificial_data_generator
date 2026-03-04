@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Quality Inspection Synthetic Data"
+  short_description: "Generate realistic noisy manufacturing quality inspection records with configurable mess patterns."
+  default_prompt: "Use manufacturing-quality-inspection-synthetic-data to generate realistic noisy manufacturing quality inspection records."

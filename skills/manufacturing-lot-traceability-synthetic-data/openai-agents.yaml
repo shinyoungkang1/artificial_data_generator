@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manufacturing Lot Traceability Synthetic Data"
+  short_description: "Generate realistic noisy manufacturing lot traceability records with configurable mess patterns."
+  default_prompt: "Use manufacturing-lot-traceability-synthetic-data to generate realistic noisy manufacturing lot traceability records."

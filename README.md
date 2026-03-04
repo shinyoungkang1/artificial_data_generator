@@ -21,40 +21,65 @@ Real-world business data is never clean. Scanned documents come out blurry and c
                                      +---------------------------+
 ```
 
-**In plain language:** you tell the system what kind of data you want (healthcare claims, bank statements, shipping records, etc.), how much of it, and how messy it should be. It generates thousands of realistic-looking fake records — complete with the kinds of errors, typos, and formatting problems you'd find in real business data.
+**In plain language:** you tell the system what kind of data you want (healthcare claims, bank statements, shipping records, procurement contracts, insurance policies, etc.), how much of it, and how messy it should be. It generates thousands of realistic-looking fake records — complete with the kinds of errors, typos, and formatting problems you'd find in real business data.
 
 ---
 
-## The Five Domains
+## The Ten Domains
 
-This project covers five industries. Each domain includes three complementary data types that mirror how real organizations handle information:
+This project covers ten industries. Each domain includes complementary data types that mirror how real organizations handle information:
 
 ```
- Domain        Structured Tables          Reference Data            Scanned Documents
- ~~~~~~        ~~~~~~~~~~~~~~~~~          ~~~~~~~~~~~~~~            ~~~~~~~~~~~~~~~~~
+ Domain        Structured Tables          Reference/Specialized Data    Scanned Documents
+ ~~~~~~        ~~~~~~~~~~~~~~~~~          ~~~~~~~~~~~~~~~~~~~~~~~~~~    ~~~~~~~~~~~~~~~~~
 
- Healthcare    Claims transactions        Provider directories      EOB (Explanation
-               (who billed what,          (doctor NPIs, addresses,  of Benefits) scans
-               how much, status)          specialties)              with OCR noise
+ Healthcare    Claims transactions        Provider directories          EOB (Explanation
+               (who billed what,          (doctor NPIs, addresses,      of Benefits) scans
+               how much, status)          specialties)                  with OCR noise
+               + Pharmacy claims
 
- Banking       AML transaction            KYC onboarding            Bank statement
-               monitoring (alerts,        (risk scores, sanctions   scans with blurry
-               risk flags)               screening)                 balances
+ Banking       AML transaction            KYC onboarding                Bank statement
+               monitoring (alerts,        (risk scores, sanctions       scans with blurry
+               risk flags)                screening)                    balances
+               + Wire transfers
 
- Logistics     Shipment tracking          Customs declarations      Bill of Lading
-               (carriers, ETAs,           (HS codes, duties,        scans with skewed
-               delivery status)           inspections)              text and stamps
+ Logistics     Shipment tracking          Customs declarations          Bill of Lading
+               (carriers, ETAs,           (HS codes, duties,            scans with skewed
+               delivery status)           inspections)                  text and stamps
+               + Warehouse inventory
 
- Retail        POS transactions           Inventory snapshots       Receipt scans
-               (items, totals,            (stock levels, SKUs,      with faded thermal
-               payment types)             suppliers)                print
+ Retail        POS transactions           Inventory snapshots           Receipt scans
+               (items, totals,            (stock levels, SKUs,          with faded thermal
+               payment types)             suppliers)                    print
+               + Returns/refunds
 
- HR            Payroll records            Recruiting pipeline       Employee file
-               (hours, pay,               (candidates, stages,      scans with
-               deductions)                interview scores)         handwriting noise
+ HR            Payroll records            Recruiting pipeline           Employee file
+               (hours, pay,               (candidates, stages,          scans with
+               deductions)                interview scores)             handwriting noise
+               + Time & attendance
+
+ Insurance     Policy underwriting        Claims intake                 Declaration page
+               (risk assessment,          (loss reports, adjuster       scans with OCR
+               premium calculation)       assignments)                  noise
+
+ Manufacturing Quality inspections        Lot traceability              Inspection cert
+               (defect rates,             (batch tracking,              scans with stamps
+               pass/fail)                 materials)                    and signatures
+
+ Legal         Contract lifecycle         Clause extraction             Signature page
+               (terms, amendments,        (obligation tracking,         scans with
+               renewals)                  compliance)                   handwriting
+
+ Telecom       CDR summaries              Billing disputes              Invoice scans
+               (call records,             (dispute tracking,            with mixed
+               usage data)                resolution)                   formatting
+
+ Public Sector Procurement records        Vendor scoring                Tender/solicitation
+               (contracts, awards,        (evaluation scores,           scans with
+               agencies)                  SAM status)                   government seals
 ```
 
-**Why three types per domain?** Because real pipelines don't just process one kind of data. A healthcare system ingests claims tables, cross-references them against provider directories, and parses scanned EOB documents. Testing with only one format misses the failures that happen when formats interact.
+**Why multiple types per domain?** Because real pipelines don't just process one kind of data. A healthcare system ingests claims tables, cross-references them against provider directories, and parses scanned EOB documents. Testing with only one format misses the failures that happen when formats interact.
 
 ---
 
@@ -92,22 +117,38 @@ The "messiness" parameter (0.0 to 1.0) controls how much real-world noise is inj
 
 ```
  +---------------------------------------------------------------------+
- |                    16 Skills Across 5 Domains                       |
+ |                    36 Skills Across 10 Domains                      |
  +---------------------------------------------------------------------+
  |                                                                     |
- |   Healthcare (3)     Banking (3)       Logistics (3)                |
+ |   Healthcare (4)     Banking (4)       Logistics (4)                |
  |   +--------------+   +--------------+  +--------------+             |
  |   | Claims       |   | AML Txns     |  | Shipping     |             |
  |   | Provider     |   | KYC          |  | Customs      |             |
  |   | EOB Docs     |   | Statements   |  | BOL Docs     |             |
+ |   | Pharmacy     |   | Wire Xfer    |  | Warehouse    |             |
  |   +--------------+   +--------------+  +--------------+             |
  |                                                                     |
- |   Retail (3)          HR (3)           Platform (1)                 |
+ |   Retail (4)         HR (4)           Insurance (3)                 |
  |   +--------------+   +--------------+  +--------------+             |
- |   | POS Txns     |   | Payroll      |  | MCP Campaign |             |
- |   | Inventory    |   | Recruiting   |  | Orchestrator |             |
- |   | Receipts     |   | Employee Docs|  |              |             |
+ |   | POS Txns     |   | Payroll      |  | Underwriting |             |
+ |   | Inventory    |   | Recruiting   |  | Claims Intake|             |
+ |   | Receipts     |   | Employee Docs|  | Declarations |             |
+ |   | Returns      |   | Time & Att.  |  +--------------+             |
+ |   +--------------+   +--------------+                               |
+ |                                                                     |
+ |   Manufacturing (3)  Legal (3)        Telecom (3)                   |
  |   +--------------+   +--------------+  +--------------+             |
+ |   | Quality Insp.|   | Contracts    |  | CDR Summary  |             |
+ |   | Lot Trace    |   | Clauses      |  | Billing Disp.|             |
+ |   | Inspect Cert |   | Signatures   |  | Invoices     |             |
+ |   +--------------+   +--------------+  +--------------+             |
+ |                                                                     |
+ |   Public Sector (3)  Platform (1)                                   |
+ |   +--------------+   +--------------+                               |
+ |   | Procurement  |   | MCP Campaign |                               |
+ |   | Vendor Score |   | Orchestrator |                               |
+ |   | Tender Docs  |   |              |                               |
+ |   +--------------+   +--------------+                               |
  |                                                                     |
  +---------------------------------------------------------------------+
 ```
@@ -128,6 +169,10 @@ python skills/healthcare-claims-synthetic-data/scripts/generate_healthcare_claim
 # Generate 120 scanned EOB documents with realistic blur and rotation
 python skills/healthcare-eob-docs-synthetic-data/scripts/generate_eob_docs.py \
   --docs 120 --messiness 0.55
+
+# Generate 1,200 federal procurement records
+python skills/public-sector-procurement-synthetic-data/scripts/generate_procurement.py \
+  --rows 1200 --messiness 0.35
 ```
 
 **What you get:**
@@ -167,8 +212,8 @@ Every generator script accepts the same three knobs:
 
 | Skill Type | Outputs | Description |
 |-----------|---------|-------------|
-| **Tabular** (10 skills) | `.csv` + `.json` | Structured rows with field-level mess |
-| **Document** (5 skills) | `.pdf` + `.png` (clean) + `.png` (noisy) | Rendered pages with scan degradation |
+| **Tabular** (25 skills) | `.csv` + `.json` | Structured rows with field-level mess |
+| **Document** (10 skills) | `.pdf` + `.png` (clean) + `.png` (noisy) | Rendered pages with scan degradation |
 | **Campaign** (1 skill) | All of the above + `.xlsx` + `.pptx` | Multi-format batch from a single plan |
 
 ---
@@ -212,7 +257,7 @@ For scanned documents, five degradation recipes simulate different real-world sc
 ```
 aritificial_data/
   src/agentic_data_mcp/       Core library (MCP server, generators, writers)
-  skills/                     16 self-contained skill packs
+  skills/                     36 self-contained skill packs
     healthcare-claims-.../      Each skill contains:
       SKILL.md                    Detailed usage guide (280-480 lines)
       LICENSE.txt                 MIT license

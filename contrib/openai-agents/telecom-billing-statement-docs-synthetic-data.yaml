@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telecom Billing Statement Docs"
+  short_description: "Generate messy synthetic telecom billing statement documents."
+  default_prompt: "Use $telecom-billing-statement-docs-synthetic-data to generate synthetic telecom billing statement OCR artifacts with noisy scan variants."
