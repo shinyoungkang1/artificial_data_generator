@@ -1,0 +1,4 @@
+interface:
+  display_name: "Healthcare EOB OCR Docs"
+  short_description: "Generate messy synthetic healthcare EOB documents."
+  default_prompt: "Use $healthcare-eob-docs-synthetic-data to generate synthetic EOB OCR artifacts with noisy scan variants."

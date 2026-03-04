@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Data MCP"
+  short_description: "Generate messy synthetic business data via MCP."
+  default_prompt: "Use $agentic-synthetic-data-mcp to plan and run a realistic messy-data generation campaign."

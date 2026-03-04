@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logistics BOL OCR Docs"
+  short_description: "Generate messy synthetic bill-of-lading documents."
+  default_prompt: "Use $logistics-bol-docs-synthetic-data to generate synthetic BOL OCR artifacts with scan degradation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retail Receipt OCR Docs"
+  short_description: "Generate messy synthetic receipt OCR documents."
+  default_prompt: "Use $retail-receipt-ocr-synthetic-data to generate receipt OCR artifacts with realistic capture noise."

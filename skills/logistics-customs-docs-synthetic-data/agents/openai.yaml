@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logistics Customs Docs"
+  short_description: "Generate messy synthetic customs document data."
+  default_prompt: "Use $logistics-customs-docs-synthetic-data to generate realistic customs declaration datasets."

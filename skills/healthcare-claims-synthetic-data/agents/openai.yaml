@@ -1,0 +1,4 @@
+interface:
+  display_name: "Healthcare Claims Data"
+  short_description: "Generate messy synthetic healthcare claims data."
+  default_prompt: "Use $healthcare-claims-synthetic-data to generate realistic noisy claim datasets for extraction tests."

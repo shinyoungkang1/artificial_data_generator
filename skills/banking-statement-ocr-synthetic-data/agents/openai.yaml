@@ -1,0 +1,4 @@
+interface:
+  display_name: "Banking Statement OCR Docs"
+  short_description: "Generate messy synthetic bank statement docs."
+  default_prompt: "Use $banking-statement-ocr-synthetic-data to generate bank statement OCR artifacts with noisy scan variants."

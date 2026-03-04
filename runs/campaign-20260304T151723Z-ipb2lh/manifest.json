@@ -1,0 +1,142 @@
+{
+  "campaign_id": "campaign-20260304T151723Z-ipb2lh",
+  "plan": {
+    "domain": "company-ops",
+    "objectives": [
+      "ocr",
+      "table-extraction",
+      "classification"
+    ],
+    "formats": [
+      "csv",
+      "json",
+      "xlsx",
+      "pdf",
+      "pptx",
+      "png"
+    ],
+    "volume": 650,
+    "messiness": 0.55,
+    "recipes": [
+      "scanner_skew_light",
+      "scanner_dark_edges",
+      "compression_heavy",
+      "ocr_nightmare_mix"
+    ],
+    "include_seed_expansion": true,
+    "notes": "Stress-test OCR + table parsing under messy enterprise artifacts.",
+    "seed": 22
+  },
+  "artifact_count": 10,
+  "artifacts": [
+    {
+      "type": "json",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/company_data.json",
+      "rows": 679
+    },
+    {
+      "type": "csv",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/company_data.csv",
+      "rows": 679
+    },
+    {
+      "type": "pdf",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/company_docs.pdf",
+      "rows": 679
+    },
+    {
+      "type": "xlsx",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/company_tables.xlsx",
+      "rows": 679
+    },
+    {
+      "type": "pptx",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/company_briefing.pptx",
+      "rows": 12
+    },
+    {
+      "type": "png",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/base_scan.png",
+      "rows": 220,
+      "note": "base-clean"
+    },
+    {
+      "type": "png",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/scan_noisy_01_scanner_skew_light.png",
+      "rows": 220,
+      "note": "scanner_skew_light"
+    },
+    {
+      "type": "png",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/scan_noisy_02_scanner_dark_edges.png",
+      "rows": 220,
+      "note": "scanner_dark_edges"
+    },
+    {
+      "type": "png",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/scan_noisy_03_compression_heavy.png",
+      "rows": 220,
+      "note": "compression_heavy"
+    },
+    {
+      "type": "png",
+      "path": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh/artifacts/scan_noisy_04_ocr_nightmare_mix.png",
+      "rows": 220,
+      "note": "ocr_nightmare_mix"
+    }
+  ],
+  "warnings": [
+    "pdf_to_image_failed:Unable to get page count. Is poppler installed and in PATH?"
+  ],
+  "metadata": {
+    "noise_recipe_catalog": {
+      "scanner_skew_light": {
+        "description": "Small scan-angle rotation + mild blur + corner shadows.",
+        "ops": [
+          "rotate",
+          "blur",
+          "shadow",
+          "contrast"
+        ]
+      },
+      "scanner_dark_edges": {
+        "description": "Heavy side shadows and slight contrast loss, like bad flatbed scans.",
+        "ops": [
+          "shadow",
+          "shadow",
+          "contrast",
+          "speckles"
+        ]
+      },
+      "compression_heavy": {
+        "description": "Repeated lossy JPEG compression and minor blur artifacts.",
+        "ops": [
+          "compression",
+          "compression",
+          "blur"
+        ]
+      },
+      "photocopy_fade": {
+        "description": "Low-ink photocopy style with noise and random faded spots.",
+        "ops": [
+          "contrast",
+          "speckles",
+          "brightness"
+        ]
+      },
+      "ocr_nightmare_mix": {
+        "description": "Combined rotation, blur, shadow, speckles, and compression.",
+        "ops": [
+          "rotate",
+          "blur",
+          "shadow",
+          "speckles",
+          "compression",
+          "contrast"
+        ]
+      }
+    },
+    "row_count_generated": 679,
+    "output_dir": "/home/shin/aritificial_data/runs/campaign-20260304T151723Z-ipb2lh"
+  }
+}

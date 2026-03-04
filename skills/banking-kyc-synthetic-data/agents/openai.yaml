@@ -1,0 +1,4 @@
+interface:
+  display_name: "Banking KYC Data"
+  short_description: "Generate messy synthetic KYC compliance data."
+  default_prompt: "Use $banking-kyc-synthetic-data to generate realistic noisy KYC onboarding datasets."

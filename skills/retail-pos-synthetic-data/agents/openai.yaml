@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retail POS Data"
+  short_description: "Generate messy synthetic retail transaction data."
+  default_prompt: "Use $retail-pos-synthetic-data to generate noisy POS transaction datasets for parser testing."

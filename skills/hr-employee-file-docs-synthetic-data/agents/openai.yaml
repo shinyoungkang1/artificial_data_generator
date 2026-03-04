@@ -1,0 +1,4 @@
+interface:
+  display_name: "HR Employee OCR Docs"
+  short_description: "Generate messy synthetic HR employee file docs."
+  default_prompt: "Use $hr-employee-file-docs-synthetic-data to generate HR document OCR artifacts with scan-like defects."

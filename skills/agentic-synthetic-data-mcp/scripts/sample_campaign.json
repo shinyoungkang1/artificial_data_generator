@@ -1,0 +1,30 @@
+{
+  "plan": {
+    "domain": "company-ops",
+    "objectives": [
+      "ocr",
+      "table-extraction",
+      "classification"
+    ],
+    "formats": [
+      "csv",
+      "json",
+      "xlsx",
+      "pdf",
+      "pptx",
+      "png"
+    ],
+    "volume": 650,
+    "messiness": 0.55,
+    "recipes": [
+      "scanner_skew_light",
+      "scanner_dark_edges",
+      "compression_heavy",
+      "ocr_nightmare_mix"
+    ],
+    "include_seed_expansion": true,
+    "notes": "Stress-test OCR + table parsing under messy enterprise artifacts.",
+    "seed": 22
+  }
+}
+

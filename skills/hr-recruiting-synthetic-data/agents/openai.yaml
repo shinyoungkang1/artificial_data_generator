@@ -1,0 +1,4 @@
+interface:
+  display_name: "HR Recruiting Data"
+  short_description: "Generate messy synthetic recruiting pipeline data."
+  default_prompt: "Use $hr-recruiting-synthetic-data to generate recruiting datasets with workflow inconsistencies."

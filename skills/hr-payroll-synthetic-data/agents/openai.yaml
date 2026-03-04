@@ -1,0 +1,4 @@
+interface:
+  display_name: "HR Payroll Data"
+  short_description: "Generate messy synthetic payroll and HR data."
+  default_prompt: "Use $hr-payroll-synthetic-data to generate payroll datasets with realistic formatting inconsistencies."

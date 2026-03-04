@@ -1,0 +1,680 @@
+row_id,company_id,company_name,industry,country,employee_count,annual_revenue_usd,invoice_id,invoice_date,due_date,invoice_amount_usd,status,contact_name,contact_email,address,notes
+1,CMP-100000,Global Dynamics LLC,Manufacturing,JP,7329,122533.69302682937,INV-387837,2025/08/11,2025-09-10,3126.85,refunded,L. Kim,ops0000@example.org,3896 Sunset St,PO attached
+2,CMP-100001,Prime Works LLC,Logistics,FR,10036,2407418.553528207,INV-394016,2025/11/28,2025-12-16,83896.72,overdue,K. Garcia,ops0001@example.org,5219 Maple St,PO attached
+3,CMP-100002,Union Energy LLC,Healthcare,IN,9433,60013.841795902306,INV-652732,2025/10/16,2025-12-07,"3,316.82",pending,M. Nguyen,ops0002@example.org,7101 Main St,check signature ???
+4,CMP-100003,Global Dynamics LLC,Retail,IN,10605,480986.2524929378,INV-325897,2025/07/16,08/04/2025,64393.66,refunded,J. Patel,ops0003@example.org,6829 Main St,urgent follow-up
+5,CMP-100004,Global Energy LLC,Retail,KR,302,3371488.4846830345,INV-385932,2025-12-09,2026-01-09,113144.52,Paid,L. Kim,ops0004@example.org,5679 Main St,acct moved to new owner
+6,CMP-100005,Global Dynamics LLC,FinTech,IN,8601,1144816.805998827,INV-251522,2025/08/29,2025/10/08,41492.53,overdue,K. Garcia,ops0005@example.org,640 Maple St,check signature ???
+6-dup,CMP-100005,Global Dynamics LLC,FinTech,IN,8601,1144816.805998827,INV-251522,2025/08/29,2025/10/08,41492.53,overdue,K. Garcia,ops0005@example.org,640 Maple St,check signature ??? / duplicate from email chain
+7,CMP-100006,North Works LLC,Construction,BR,11479,2096306.723993032,INV-572431,16-Sep-2025,03-Oct-2025, 101697.38 ,paid,J. Patel,ops0006@example.org,7521 Maple St,manual override
+8,CMP-100007,Delta Foods LLC,Energy,JP,8357,3597110.049114226,INV-998685,2025-08-16,N/A,100695,refunded,K. Nguyen,ops0007@example.org,3221 Pine St,check signature ???
+8-dup,CMP-100007,Delta Foods LLC,Energy,JP,8357,3597110.049114226,INV-998685,2025-08-16,N/A,100695,refunded,K. Nguyen,ops0007@example.org,3221 Pine St,check signature ??? / duplicate from email chain
+9,CMP-100008,North Dynamics LLC,Logistics,BR,8306,226260.4589978995,INV-527793,2026/01/19,04-Feb-2026,13875.3,overdue,J. Nguyen / J. Nguyen,ops0008@example.org,1191 Maple St,PO attached
+10,CMP-100009,North Foods LLC,Logistics,KR,N/A,2181118.145520794,INV-346560,2025/09/21,07-Oct-2025,112433.38,PAID,L. Patel,ops0009@example.org,2718 Pine St,check signature ???
+11,CMP-100010,Union Foods LLC,Healthcare,JP,1860,1281011.1528191785,INV-338642,2025/09/10,2025/10/10,98484.44,refunded,L. Patel,ops0010@example.org,8365 Pine St,PO attached
+12,CMP-100011,Global Energy LLC,Retail,FR,1308,2197716.401609584,INV-814800,02/07/2026,23-Mar-2026,90516,void,M. Brown,ops0011@example.org,2150 Main St,received via fax
+13,CMP-100012,Prime Energy LLC,Software,IN,4435, 2561562.34 ,INV-590815,2025-09-07,10/06/2025,77317.19,overdue,J. Nguyen,ops0012@example.org,4033 Maple St,manual override
+14,CMP-100013,Prime Energy LLC,Construction,JP,1677,542242.6440771294,INV-371515,01/05/2026,2026-02-03,47709.25,overdue,L. Kim,ops0013@example.org,244 Maple St,acct moved to new owner !!!
+15,CMP-100014,North Energy LLC,Telecom,BR,10449,3946506.6911251927,INV-632852,27-Sep-2025,2025/10/26,101718.02,paid,J. Brown,ops0014@example.org,1245 Main St,check signature ???
+16,CMP-100015,Prime Energy LLC,Construction,KR,,242379.2753699614,INV-578055,2025-10-17,2025/12/03,11864.79,PAID,J. Patel,ops0015@example.org,7363 Main St,check signature ???
+17,CMP-100016,Global Works LLC,unknown,FR,1860,48478.432212293046,INV-285514,2025/08/18,09/06/2025,"USD 2,621.82",pending,M. Garcia,ops0016@example.org,4690 Sunset St,check signature ???
+18,CMP-100017,Global Dynamics LLC,Retail,FR,5736,408877.2718710813,INV-453893,2025/07/14,2025/08/29,"$14,418.01",paid,K. Brown,ops0017@example.org,6890 Maple St,acct moved to new owner !!!
+19,CMP-100018,Global Systems LLC,Retail,CA,3662,2516565.1769968993,INV-438630,2025-12-27,2026/02/05,66781.5,refunded,K. Patel,ops0018@example.org,5332 Sunset St,unknown
+20,CMP-100019,North Works LLC,FinTech,BR,4331,492406.45500101644,INV-582805,01/18/2026,02/17/2026,21220.44,pending ,K. Kim,ops0019@example.org,1005 Pine St,acct moved to new owner
+21,CMP-100020,North Works LLC,FinTech,DE,,1638602.1737177449,INV-345267,2025-10-05,15-Nov-2025,61993.52,paid,J. Garcia,ops0020@example.org,5948 Pine St,manual override
+22,CMP-100021,Delta Energy LLC,FinTech,MX,4718,1622366.178386868,INV-651651,2026-01-12,18-Feb-2026,115948.15,void,K. Kim,ops0021@example.org,8174 Maple St,received via fax
+23,CMP-100022,Union Works LLC,Energy,KR,7219,1043533.4030533182,INV-699204,12-Aug-2025,2025/09/30,73239.01,pending ,M. Nguyen,ops0022@example.org,9832 Pine St,received via fax
+24,CMP-100023,Delta Dynamics LLC,FinTech,US,4588,1560031.504535488,INV-420401,16-Jul-2025,08/30/2025,8.22e+04,paid,K. Garcia,ops0023@example.org,5791 Pine St,urgent follow-up
+25,CMP-100024,Union Works LLC,Healthcare,US,1986,2487380.966029107,INV-946021,11/14/2025,12/03/2025,70250.91,refunded,J. Garcia,ops0024@example.org,5542 Maple St,check signature ??? !!!
+26,CMP-100025,Glbal Works LLC,Healthcare,MX,4455, 1312219.26 ,INV-819116,10/06/2025,2025/11/29,48060,overdue,K. Kim,ops0025@example.org,4918 Sunset St,urgent follow-up
+27,CMP-100026,North Dynamics LLC,Healthcare,MX,4192,2398665.244372484,INV-812237,12-Jan-2026,2026/03/03,"$70,482.58",void?,M. Brown,ops0026@example.org,4515 Pine St,see thread #A12
+28,CMP-100027,Prime Energy LLC,Construction,US,10436,2057496,INV-635055,2025-07-30,2025/09/04,91279.46,refunded,K. Patel,ops0027@example.org,3325 Maple St,manual override
+29,CMP-100028,Delta Dynamics LLC,Construction,US,2709,4372031.7056941455,INV-465317,2025/11/19,2025-12-18,116044.77,void?,M. Garcia,ops0028@example.org,3919 Pine St,see thread #A12
+30,CMP-100029,Union Systems LLC,Retail,MX,11418,57198.674942982914,INV-595856,2025-10-02,2025-11-14,7643.26,void,M. Patel,ops0029@example.org,5478 Main St,urgent follow-up (unclear)
+31,CMP-100030,Prime Energy LLC,Manufacturing,CA,8248,"454,883.00",INV-875229,2026/02/07,N/A,21474.65,void,L. Brown,ops0030@example.org,2280 Pine St,see thread #A12 (unclear)
+32,CMP-100031,North Systems LLC,Healthcare,MX,10296,486811.69179628283,INV-469052,2025-10-10,07-Dec-2025,14362.82,refunded,M. Patel,ops0031@example.org,9837 Pine St,PO attached
+33,CMP-100032,Prime Foods LLC,Manufacturing,US,2559,1701200.5942740135,INV-355528,2025-12-21,01/16/2026,74013.84,overdue,J. Nguyen,ops0032@example.org,1622 Main St,PO attached
+34,CMP-100033,Delta Energy LLC,Manufacturing,MX,11593,93928.52594764926,INV-992059,15-Jul-2025,2025-08-11,2866.53,overdue,L. Brown,ops0033@example.org,4085 Pine St,invoice scan low quality
+35,CMP-100034,North Works LLC,FinTech,US,374,380482.9659245537,INV-512007,2025-08-31,2025-09-29,"19,567.99",void,L. Patel,ops0034@example.org,2361 Main St,check signature ???
+36,CMP-100035,North Dynamics LLC,FinTech,MX,1555,800747.4432103204,INV-956408,01/15/2026,,25973.08,Paid,L. Garcia,ops0035@example.org,4578 Maple St,acct moved to new owner
+37,CMP-100036,North Systes LLC,Retail,BR,8720,22587.982382778107,INV-699600,01/03/2026,03/03/2026,1400.59,void,J. Nguyen,ops0036@example.org,8177 Pine St,invoice scan low quality
+38,CMP-100037,Global Foods LLC,Software,US,5124,3943574.2758565005,INV-200132,11/27/2025,2025/12/21,117132.19,over-due,K. Garcia / K. Garcia,ops0037@example.org,1351 Pine St,acct moved to new owner
+38-dup,CMP-100037,Global Foods LLC,Software,US,5124,3943574.2758565005,INV-200132,11/27/2025,2025/12/21,117132.19,over-due,K. Garcia / K. Garcia,ops0037@example.org,1351 Pine St,acct moved to new owner
+39,CMP-100038,North Systems LLC,FinTech,JP,1042,2007938.9767426378,INV-282897,13-Oct-2025,unknown,66771.73,void,M. Nguyen / M. Nguyen,ops0038@example.org,7685 Pine St,PO attached
+40,CMP-100039,Global Energy LLC,Energy,BR,10567,674563.0449357205,INV-539226,02-Feb-2026,2026-03-16,23484.18,refunded,J. Brown,ops0039@example.org,3954 Sunset St,received via fax
+41,CMP-100040,Delta Foods LLC,Logistics,JP,4498,2171591.94,INV-329623,10/25/2025,10-Nov-2025,114252.93,void,K. Nguyen,ops0040@example.org,3347 Main St,check signature ???
+42,CMP-100041,Union Dynamics LLC,Manufacturing,DE,1507,539918.3315358929,INV-653253,29-Sep-2025,10/31/2025,21010,paid,L. Kim,ops0041@example.org,571 Sunset St,invoice scan low quality (unclear)
+43,CMP-100042,Delta Energy LLC,Retail,CA,4226,816737.4691695147,INV-599096,22-Nov-2025,2025-12-15,79601.44,paid,J. Garcia,ops0042@example.org,5930 Maple St,manual override
+44,CMP-100043,Union Foods LLC,Energy,JP,5996,3966411.6477601374,INV-819788,10/24/2025,2025/11/18,109880.55,overdue,M. Patel,ops0043@example.org,9048 Pine St,see thread #A12
+45,CMP-100044,Delta Foods LLC,Manufacturing,FR,9026,1761414.6953081875,INV-220358,10-Sep-2025,2025-10-04,76372.47,overdue,J. Nguyen,ops0044@example.org,5878 Maple St,see thread #A12
+46,CMP-100045,North Foods LLC,Software,CA,11226,2313047.396250614,INV-741068,22-Oct-2025,11/22/2025,111450.6,pending,M. Brown,ops0045@example.org,550 Main St,received via fax
+47,CMP-100046,Prime Foods LLC,Software,JP,6343, 778634.80 ,INV-599732,2025-09-30,25-Oct-2025, 22060.10 ,refunded,J. Nguyen,ops0046@example.org,7933 Sunset St,acct moved to new owner
+48,CMP-100047,Prime Dynamics LLC,Software,US,6159,1244120.180997223,INV-403165,01/01/2026,17-Feb-2026,41711.99,overdue,M. Patel,ops0047@example.org,2289 Pine St,see thread #A12
+49,CMP-100048,Delta Energy LLC,Construction,US,8749,95974.4065489228,INV-682542,14-Jul-2025,07/29/2025,"6,917.79",paid,M. Kim / M. Kim,ops0048@example.org,844 Main St,PO attached
+50,CMP-100049,Union Dynamics LLC,Telecom,JP,N/A,42074.68991740686,INV-319123,2025-08-23,2025-09-11,2022.29,refunded,K. Brown,ops0049@example.org,2915 Pine St,urgent follow-up
+51,CMP-100050,Prime Systems LLC,Healthcare,IN,10236,424992.7392567209,INV-702506,2025/11/20,03-Jan-2026,10685.59,overdue,M. Brown / M. Brown,ops0050@example.org,7676 Pine St,manual override (unclear)
+52,CMP-100051,North Dynamics LLC,Healthcare,CA,10931,784531.5524019602,INV-460148,09/17/2025,2025-10-09,93117.99,paid,M. Garcia,ops0051@example.org,2372 Sunset St,invoice scan low quality
+53,CMP-100052,Union Works LLC,Software,IN,9176,3087263.6401407346,INV-403134,2025/12/28,01/29/2026, 102544.09 ,pending,L. Kim,ops0052@example.org,6551 Pine St,manual override (unclear)
+54,CMP-100053,Prime Sysstems LLC,FinTech,IN,5796,694531.7408770067,INV-717495,10/28/2025,2025-12-06,34883.35,paid,L. Kim,ops0053@example.org,5066 Pine St,check signature ???
+54-dup,CMP-100053,Prime Sysstems LLC,FinTech,IN,5796,694531.7408770067,INV-717495,10/28/2025,2025-12-06,34883.35,paid,L. Kim,ops0053@example.org,5066 Pine St,check signature ???
+55,CMP-100054,Union Foods LLC,Telecom,US,4749,2032030.2475879705,INV-990417,2026-02-11,2026-03-17,65326.39,paid,M. Garcia,ops0054@example.org,6372 Sunset St,PO attached
+56,CMP-100055,Union Energy LLC,Construction,JP,847,"USD 160,619.99",INV-372921,08/25/2025,2025/10/04,"USD 5,622.51",paid,J. Kim,ops0055@example.org,1916 Pine St,check signature ???
+57,CMP-100056,Prime Energy LLC,Healthcare,CA,3068,914866,INV-340206,10/25/2025,12/05/2025,45755.26,void,J. Nguyen,ops0056@example.org,5337 Pine St,urgent follow-up
+58,CMP-100057,Delta Energy LLC,Retail,CA,11194,2332075.658733739,INV-724636,2026-02-07,2026-03-02,"100,374.85",overdue,M. Nguyen / M. Nguyen,ops0057@example.org,9327 Main St,manual override
+59,CMP-100058,Union Energy LLC,Retail,MX,6041,194572,INV-956899,10-Aug-2025,2025/09/28, 14230.91 ,refunded,L. Patel,ops0058@example.org,6394 Maple St,see thread #A12
+60,CMP-100059,Union Systems LLC,Energy,FR,94,969118.6918740108,INV-709369,2025-10-14,2025-11-12,55603.72,paid,L. Kim,ops0059@example.org,1014 Sunset St,PO attached
+61,CMP-100060,Global Energy LLC,Manufacturing,IN,10635, 1193062.86 ,INV-428808,12/07/2025,2025-12-27,70999.61,pending,K. Kim,,2527 Maple St,check signature ???
+62,CMP-100061,Global FooDs LLC,FinTech,KR,1731,3912894.552549541,INV-758644,12/26/2025,2026/02/16,116790.79,void,J. Patel,ops0061@example.org,6932 Main St,received via fax ...
+63,CMP-100062,North Foods LLC,FinTech,CA,8053,416225.17396146053,INV-419342,02/05/2026,27-Feb-2026,19432.47,paid,L. Brown,ops0062@example.org,8565 Maple St,received via fax
+64,CMP-100063,Union Works LLC,Software,MX,4687,165761.7637302368,INV-218535,2026/01/10,unknown,15604.99,refunded,K. Garcia,ops0063@example.org,8803 Pine St,check signature ???
+65,CMP-100064,Global Energy LLC,N/A,US,2134,9.40e+05,INV-945206,08/18/2025,2025-09-05,9.99e+04,pending,L. Patel,ops0064@example.org,8809 Sunset St,acct moved to new owner !!!
+66,CMP-100065,Global Foods LLC,Manufacturing,IN,10521,237842.20531217442,INV-807508,11-Oct-2025,11/26/2025,9233.39,over-due,K. Patel,ops0065@example.org,,see thread #A12
+67,CMP-100066,Union Works LLC,Energy,KR,11167,1.74e+06,INV-298349,2025-07-22,2025-08-20,5.29e+04,refunded,J. Nguyen,ops0066@example.org,7192 Sunset St,received via fax
+68,CMP-100067,North Works LLC,Logistics,BR,4600,3574934.736640443,INV-695629,2026-01-07,2026-01-24,91429.53,refunded,M. Garcia,ops0067@example.org,4239 Maple St,PO attached
+69,CMP-100068,Prime Energy LLC,Healthcare,BR,10908,"$1,038,429.60",INV-933783,2025/12/21,01/28/2026,31077.95,overdue,J. Patel,ops0068@example.org,3328 Main St,see thread #A12 !!!
+70,CMP-100069,Delta Energy LLC,Software,BR,1308,553820.4726706006,INV-375644,2025/08/28,2025-09-29,38530.74,overdue,K. Patel,ops0069@example.org,9650 Maple St,urgent follow-up
+71,CMP-100070,Global Dynamics LLC,FinTech,BR,1010,1948862.91,INV-838683,08/14/2025,2025-09-14,110618.54,pending,K. Garcia / K. Garcia,ops0070@example.org,1851 Pine St,manual override
+72,CMP-100071,Global Systems LLC,Construction,FR,8476,2890977.521639703,INV-323180,07/07/2025,,89925.25,pending ,K. Nguyen,ops0071@example.org,4852 Pine St,urgent follow-up
+73,CMP-100072,Delta Foods LLC,Software,DE,2777,2137657.093519202,INV-403406,01-Feb-2026,27-Feb-2026,61234.33,void?,M. Kim / M. Kim,ops0072@example.org,6474 Main St,see thread #A12
+74,CMP-100073,Prime Foods LLC,FinTech,KR,11406,334316.4086117154,INV-238221,2025/08/10,2025-09-24,28178.39,refunded,M. Patel,ops0073@example.org,2592 Sunset St,check signature ???
+75,CMP-100074,Prime Foods LLC,Energy,CA,6101,3773733.3733757176,INV-659114,12/01/2025,2026/01/03,115945.36,pending,L. Nguyen,ops0074@example.org,986 Pine St,PO attached
+76,CMP-100075,Global Energy LLC,Manufacturing,MX,736,1182338.4382127188,INV-459834,01/10/2026,unknown,59826.29,overdue,M. Patel,ops0075@example.org,1845 Maple St,manual override
+77,CMP-100076,Global Dynamics LLC,Construction,DE,2656,757113.802171346,INV-355474,2025/08/27,2025/09/27,103664.51,refunded,J. Garcia,ops0076@example.org,4995 Maple St,manual override
+78,CMP-100077,Union Energy LLC,Construction,KR,2940,1587425.1604676847,INV-710989,21-Aug-2025,2025/10/09,53022.33,pending,M. Patel,ops0077@example.org,5986 Sunset St,manual override
+79,CMP-100078,North Dynamics LLC,Manufacturing,MX,11386,1282569.852455818,INV-945942,30-Aug-2025,13-Oct-2025,72132.99,void,M. Garcia,ops0078@example.org,4189 Sunset St,invoice scan low quality ...
+80,CMP-100079,Union Energy LLC,Telecom,FR,6302,638802,INV-375039,2025-09-13,10/20/2025,50865.02,void?,L. Nguyen,ops0079@example.org,9012 Pine St,received via fax ...
+81,CMP-100080,Prime Dynamics LLC,Energy,CA,10481,"1,521,354.87",INV-552584,30-Jul-2025,19-Aug-2025,49572.45,refunded,M. Brown,ops0080@example.org,5553 Sunset St,see thread #A12 ...
+82,CMP-100081,North Systems LLC,Energy,BR,344,1941691.9084105478,INV-573146,09/28/2025,15-Oct-2025, 114108.07 ,pending,L. Garcia,ops0081@example.org,5824 Pine St,received via fax
+83,CMP-100082,Global Systems LLC,Healthcare,FR,6514,1857957.37531728,INV-346205,08/10/2025,18-Sep-2025,114018.54,pending,J. Garcia,ops0082@example.org,6160 Main St,manual override
+84,CMP-100083,North Foods LLC,Logistics,KR,6709,1503843.7677829633,INV-467509,2026-01-26,2026-02-12,68771,refunded,J. Brown,ops0083@example.org,6817 Pine St,urgent follow-up
+85,CMP-100084,Global Dynamics LLC,Retail,IN,7221,1750413.6016306735,INV-393168,2025-08-23,10/22/2025,81753.79,pending,K. Nguyen,ops0084@example.org,4552 Sunset St,invoice scan low quality
+86,CMP-100085,North Works LLC,Logistics,MX,1084,2104701.782450022,INV-338930,08/03/2025,2025/09/09,92858.12,paid,L. Garcia,ops0085@example.org,6212 Sunset St,check signature ???
+87,CMP-100086,Delta Works LLC,Manufacturing,IN,1438,2173087.860050756,INV-632368,2025-08-06,08/26/2025, 59270.45 ,void,M. Patel,,345 Main St,check signature ???
+88,CMP-100087,Delta orks LLC,Construction,IN,3798,"$2,124,927.20",INV-363991,2026-01-06,2026/02/17,"68,532.02",overdue,J. Garcia,ops0087@example.org,3936 Pine St,PO attached ...
+89,CMP-100088,North Foods LLC,Retail,CA,1285,893785.39,INV-231177,2025-09-04,2025-10-09,55868.83,PAID,M. Brown,ops0088@example.org,7018 Maple St,urgent follow-up
+90,CMP-100089,Prime Systems LLC,Telecom,JP,9240, 189932.27 ,INV-220701,2025-11-17,unknown,"12,936.45",PAID,M. Nguyen,ops0089@example.org,1828 Sunset St,acct moved to new owner
+91,CMP-100090,Prime oWrks LLC,Logistics,BR,9314,296261.4049972235,INV-596306,2025/07/12,10-Sep-2025,"USD 30,530.12",void,J. Garcia,ops0090@example.org,9196 Main St,acct moved to new owner
+92,CMP-100091,Prime Works LLC,Software,IN,7817,487940.8532983162,INV-656352,2025/07/30,2025-08-26,26541.33,void,L. Nguyen,ops0091@example.org,7367 Main St,received via fax
+93,CMP-100092,Prime Systems LLC,Healthcare,BR,3620,1228528.0832038275,INV-815595,10/28/2025,2025/11/19, 112192.54 ,overdue,K. Brown,ops0092@example.org,1385 Maple St,acct moved to new owner
+94,CMP-100093,Delta Energy LLC,Software,JP,5426,254686.2,INV-997372,2025/11/21,01/02/2026,29610.98,refunded,L. Kim,ops0093@example.org,6676 Main St,urgent follow-up
+95,CMP-100094,Union Foods LLC,Energy,IN,8680,1090157.755704799,INV-480801,2025-08-26,2025-10-13,39987.06,void,M. Kim,ops0094@example.org,4381 Main St,received via fax
+96,CMP-100095,Delta Dynamics LLC,unknown,CA,6042,2722872.9578582877,INV-928849,2025/09/26,2025/11/08,78482.99,refunded,L. Kim,ops0095@example.org,5291 Maple St,PO attached
+97,CMP-100096,Global Systems LLC,Retail,BR,1763,3235397.3491139626,INV-769423,01-Dec-2025,01/28/2026,104025.47,overdue,J. Brown,ops0096@example.org,349 Sunset St,urgent follow-up
+98,CMP-100097,Delta Dynamics LLC,Software,KR,9618,970170.4849454268,INV-502909,08/29/2025,11-Oct-2025,86592.99,paid,K. Patel,ops0097@example.org,1016 Maple St,urgent follow-up
+99,CMP-100098,Delta Systems LLC,Healthcare,IN,5373,1579751.863963176,INV-460350,25-Sep-2025,2025/10/23,66237.83,paid,M. Patel,ops0098@example.org,8339 Sunset St,urgent follow-up
+100,CMP-100099,Global Energy LLC,FinTech,FR,10843,1298193.3609891508,INV-218782,2025-07-23,2025/08/16,36501.05,Paid,J. Brown / J. Brown,N/A,583 Maple St,invoice scan low quality
+101,CMP-100100,Global Systems LLC,Logistics,KR,6146,1253594.2604628233,INV-861400,27-Jan-2026,2026/02/24,33321.61,void,L. Garcia,ops0100@example.org,8049 Maple St,acct moved to new owner
+102,CMP-100101,Delta Energy LLC,Software,CA,1792,3981148.927152968,INV-374279,2025-11-03,12/03/2025,113361.68,refunded,L. Kim,ops0101@example.org,6236 Sunset St,received via fax
+103,CMP-100102,Delta Energy LLC,Manufacturing,FR,3387,2628519.996644378,INV-374860,2025-10-09,2025-12-05,89042.35,Paid,K. Garcia,ops0102@example.org,528 Pine St,PO attached
+104,CMP-100103,Global Works LLC,FinTech,MX,2145,56348.312879702054,INV-770694,2025-09-13,2025/11/01,3407.16,pending ,L. Patel,ops0103@example.org,4086 Main St,manual override !!!
+105,CMP-100104,Union Systems LLC,,CA,11646,1023173.0891049869,INV-546164,2025/11/01,2025-11-20,100775.47,refunded,J. Kim,ops0104@example.org,9503 Sunset St,see thread #A12
+106,CMP-100105,Union Energy LLC,Logistics,KR,103,957509.5324463743,INV-927282,02-Nov-2025,29-Dec-2025,34479.29,paid,K. Patel,ops0105@example.org,2572 Main St,acct moved to new owner (unclear)
+107,CMP-100106,Delta Energy LLC,Retail,CA,6963,1839296.740185422,INV-857679,2025-08-31,2025/10/05,63039.82,void,K. Brown,ops0106@example.org,1681 Maple St,acct moved to new owner
+108,CMP-100107,Prime Foods LLC,Energy,BR,9462,2074393,INV-954672,07/27/2025,08/12/2025,97649.4,overdue,K. Kim,,6258 Main St,check signature ???
+109,CMP-100108,Delta Energy LLC,Manufacturing,BR,158,59961.12001001303,INV-548410,22-Nov-2025,2025-12-16,4445.82,overdue,M. Kim,ops0108@example.org,1391 Main St,
+110,CMP-100109,North  Energy LLC,Retail,KR,5807,2761759.0081754965,INV-582019,2026-01-28,2026-03-05,84191.16,paid,L. Garcia,ops0109@example.org,670 Maple St,PO attached
+111,CMP-100110,Union nEergy LLC,Telecom,BR,N/A,801591.9320775283,INV-983176,29-Dec-2025,02/13/2026,31335.66,void,M. Brown,ops0110@example.org,3321 Main St,acct moved to new owner
+112,CMP-100111,Delta Systems LLC,Telecom,JP,2389,2631242.6426098566,INV-944085,16-Oct-2025,2025/12/07,68183.06,pending,L. Garcia,ops0111@example.org,6861 Pine St,PO attached
+113,CMP-100112,North Energy LLC,Construction,JP,10260,816956.1802512156,INV-798463,14-Aug-2025,10-Sep-2025,69569.96,void?,M. Nguyen,ops0112@example.org,678 Sunset St,check signature ???
+114,CMP-100113,Delta Systems LLC,N/A,IN,9961,676996.3999523948,INV-675452,2025/09/17,24-Oct-2025,106242.77,refunded,K. Nguyen,ops0113@example.org,8658 Sunset St,check signature ???
+115,CMP-100114,Delta Dynamics LLC,Manufacturing,US,4148,2998561.6145289764,INV-315516,13-Oct-2025,2025/11/14,78193.98,overdue,J. Kim / J. Kim,ops0114@example.org,5014 Pine St,received via fax
+116,CMP-100115,Delta Dynamics LLC,Retail,FR,6307,2687416.468309381,INV-966495,07/22/2025,2025-08-28,81024.09,paid,K. Patel,ops0115@example.org,6905 Main St,PO attached
+117,CMP-100116,Union Foods LLC,Energy,DE,7201,160034.49116075563,INV-515880,01/29/2026,2026/03/05,22176.71,overdue,K. Kim,ops0116@example.org,4260 Pine St,urgent follow-up
+118,CMP-100117,Delta Foods LLC,Manufacturing,JP,3119,913619.1095662913,INV-390515,10/20/2025,2025/11/16, 22899.83 ,void,M. Garcia / M. Garcia,ops0117@example.org,4670 Maple St,urgent follow-up
+119,CMP-100118,North Works LLC,Construction,KR,8606,941475.5698919396,INV-901483,08/01/2025,08/23/2025,3.97e+04,void,J. Nguyen,ops0118@example.org,3917 Pine St,PO attached
+120,CMP-100119,Global Systems LLC,Retail,IN,241,352334.3617817942,INV-662133,2025/08/31,09/26/2025,41095.84,pending,K. Nguyen,ops0119@example.org,6294 Main St,received via fax
+121,CMP-100120,Global Energy LLC,Logistics,KR,1902,744949.3234467191,INV-314937,2025-11-07,unknown,101059.91,pending,K. Brown,ops0120@example.org,4741 Sunset St,urgent follow-up
+122,CMP-100121,Union Dynamics LLC,Construction,JP,7531,1562531.3895673074,INV-990551,18-Oct-2025,04-Dec-2025,70378,refunded,L. Brown,ops0121@example.org,926 Main St,invoice scan low quality
+123,CMP-100122,Union Systems LLC,Manufacturing,US,6368,860670.4240559954,INV-606135,2025-10-29,2025-11-21,53917.97,refunded,J. Nguyen,ops0122@example.org,7707 Main St,urgent follow-up
+124,CMP-100123,Union Dynamics LLC,FinTech,DE,1156,644917.008430942,INV-446904,2025-12-25,2026-02-06,98208.07,pending,M. Brown,ops0123@example.org,4792 Sunset St,received via fax
+125,CMP-100124,Prime Foods LLC,FinTech,CA,unknown,260424.21588081578,INV-319621,02-Feb-2026,02/20/2026,19820.17,refunded,J. Kim,ops0124@example.org,6029 Main St,received via fax
+126,CMP-100125,Union Dynamics LLC,Telecom,IN,10040,1393848.8774756643,INV-948979,25-Jan-2026,2026/03/01,42621,pending,M. Garcia,ops0125@example.org,5712 Main St,PO attached
+127,CMP-100126,Prime Dynamics LLC,Software,MX,9766,1180296.239266774,INV-965574,01-Feb-2026,N/A,33174.72,void,L. Garcia,ops0126@example.org,7899 Pine St,acct moved to new owner
+128,CMP-100127,Delta Energy LLC,Software,FR,260,623193.256714031,INV-451250,22-Jan-2026,20-Feb-2026,15972.19,void,J. Garcia,ops0127@example.org,4804 Maple St,PO attached
+129,CMP-100128,Prime Energy LLC,Healthcare,JP,5239,11242.41,INV-383598,13-Aug-2025,2025-09-17,671.41,refunded,K. Kim,ops0128@example.org,1559 Pine St,PO attached
+130,CMP-100129,Union Dynamics LLC,Retail,US,4937,283657.9082978716,INV-907796,10/30/2025,2025/12/25,28034.42,void,K. Nguyen,ops0129@example.org,7500 Sunset St,received via fax
+131,CMP-100130,Prime Works LLC,Construction,CA,3350,470248.8016297894,INV-300301,11-Jul-2025,08/07/2025,20480.02,pending ,K. Kim,ops0130@example.org,9044 Main St,urgent follow-up
+132,CMP-100131,Union Foods LLC,Energy,CA,3306,3384225.5716507174,INV-768532,07/16/2025,2025/08/05,103622.76,refunded,L. Nguyen,ops0131@example.org,800 Sunset St,invoice scan low quality ...
+133,CMP-100132,North Dynamics LLC,Manufacturing,DE,580,4289588.104456809,INV-580621,10/08/2025,14-Nov-2025,114452.56,paid,M. Nguyen,ops0132@example.org,5203 Pine St,received via fax
+134,CMP-100133,Global Foods LLC,Telecom,IN,11010,1722205.4884234376,INV-306964,2025/08/22,20-Oct-2025,48556.08,paid,M. Patel,ops0133@example.org,3374 Pine St,manual override !!!
+135,CMP-100134,Delta Foods LLC,unknown,MX,602,1431809.09,INV-688609,11/17/2025,16-Dec-2025, 71660.87 ,overdue,J. Brown,ops0134@example.org,8970 Sunset St,PO attached
+136,CMP-100135,North Energy LLC,FinTech,IN,167,2172769.548552443,INV-679237,29-Jul-2025,2025-08-13,110596.6,refunded,L. Kim / L. Kim,ops0135@example.org,2913 Pine St,manual override
+137,CMP-100136,North Foods LLC,Telecom,IN,2942,902239.5072231669,INV-381608,2025/12/17,2026-02-11,23436.13,pending,M. Brown / M. Brown,ops0136@example.org,3988 Sunset St,invoice scan low quality
+138,CMP-100137,Delta Foods LLC,Energy,CA,8850,1786681.1960586256,INV-894906,2025-10-27,2025/11/17,6.13e+04,paid,L. Garcia,ops0137@example.org,8488 Maple St,manual override
+139,CMP-100138,North Works LLC,FinTech,BR,10545,2809109.6910265554,INV-645673,2025-07-16,10-Sep-2025, 70372.32 ,PAID,M. Nguyen,ops0138@example.org,2573 Maple St,check signature ???
+140,CMP-100139,North Systems LLC,FinTech,CA,10097,1426565.3029292957,INV-369965,07/16/2025,02-Sep-2025, 66003.82 ,refunded,M. Brown,ops0139@example.org,9125 Main St,manual override
+141,CMP-100140,Delta Systems LLC,Healthcare,CA,6857,1234453.9271784958,INV-996790,2025/11/30,2025/12/23,31295.21,refunded,L. Patel,unknown,6631 Main St,see thread #A12
+141-dup,CMP-100140,Delta Systems LLC,Healthcare,CA,6857,1234453.9271784958,INV-996790,2025/11/30,2025/12/23,31295.21,refunded,L. Patel,unknown,6631 Main St,see thread #A12 / duplicate from email chain
+142,CMP-100141,Delta Energy LLC,Telecom,BR,2470,3966738.954374597,INV-974402,19-Nov-2025,12/29/2025,111741.27,pending,K. Kim / K. Kim,ops0141@example.org,8139 Pine St,acct moved to new owner
+143,CMP-100142,North Dynamics LLC,Manufacturing,BR,6886,848790.8281116341,INV-790336,2025/11/23,18-Dec-2025,34232.27,refunded,L. Patel,ops0142@example.org,9363 Pine St,received via fax ...
+144,CMP-100143,North Energy LLC,FinTech,JP,4650,3888604.1208347003,INV-806647,21-Nov-2025,12/31/2025,115993.27,refunded,L. Kim / L. Kim,ops0143@example.org,1497 Pine St,acct moved to new owner
+145,CMP-100144,Delta Foods LLC,Logistics,JP,7144,1951202.5229735519,INV-915978,2025-09-19,12-Oct-2025, 98407.41 ,pending,K. Patel,ops0144@example.org,6127 Maple St,received via fax
+145-dup,CMP-100144,Delta Foods LLC,Logistics,JP,7144,1951202.5229735519,INV-915978,2025-09-19,12-Oct-2025, 98407.41 ,pending,K. Patel,ops0144@example.org,6127 Maple St,received via fax / duplicate from email chain
+146,CMP-100145,Prime Dynamics LLC,Construction,DE,3104,2470949.710768097,INV-895083,22-Aug-2025,11-Sep-2025,9.27e+04,pending,K. Nguyen,ops0145@example.org,N/A,PO attached
+147,CMP-100146,Union Foods LLC,Software,IN,2697,1178853.8218062974,INV-796493,2026-01-29,03/09/2026,99144.61,refunded,K. Garcia,ops0146@example.org,7708 Maple St,received via fax
+148,CMP-100147,Global Foods LLC,Manufacturing,BR,7287,"899,835.19",INV-458817,2025-08-12,09/11/2025,5.29e+04,void,L. Kim,ops0147@example.org,1886 Main St,manual override
+149,CMP-100148,Union Works LLC,Retail,FR,3672,812950.6269243913,INV-522274,09/07/2025,2025-10-25,38117.57,refunded,K. Patel,ops0148@example.org,1497 Main St,check signature ???
+150,CMP-100149,Prime Works LLC,Construction,BR,741,1755822.8655679151,INV-496575,2026/01/18,03/05/2026,58774.05,pending ,J. Garcia,ops0149@example.org,9215 Main St,PO attached
+151,CMP-100150,Union Systems LLC,Retail,FR,7718,2673216.126087392,INV-677441,2025/09/18,2025/10/09,74996.99,refunded,J. Patel,ops0150@example.org,4831 Maple St,PO attached
+152,CMP-100151,Union Foods LLC,Energy,CA,2152,46056.559833239415,INV-782169,24-Sep-2025,10/26/2025,4535,pending,K. Nguyen,ops0151@example.org,7972 Main St,received via fax
+153,CMP-100152,Union Foods LLC,Construction,MX,11671,29041.07899058573,INV-382930,2025/11/14,01/12/2026,908.37,pending,J. Garcia,ops0152@example.org,3596 Pine St,PO attached
+154,CMP-100153,North Energy LLC,Construction,BR,3478,2346267.7907816735,INV-486094,2025-10-06,10/26/2025,67612.17,Paid,J. Garcia,ops0153@example.org,5046 Sunset St,acct moved to new owner
+155,CMP-100154,Union Dynamics LLC,Telecom,CA,1736,3821572.3479924514,INV-779742,17-Sep-2025,15-Nov-2025,113408.9,overdue,L. Patel,ops0154@example.org,5744 Maple St,acct moved to new owner
+156,CMP-100155,Prime yDnamics LLC,N/A,DE,4700,139252.12266593348,INV-760023,12/14/2025,01/08/2026,13509.8,Paid,K. Patel,ops0155@example.org,3037 Sunset St,check signature ???
+157,CMP-100156,Prime Systems LLC,FinTech,MX,3804,705383.4998867069,INV-220350,2025-07-29,08/28/2025,2.58e+04,overdue,M. Kim,ops0156@example.org,2716 Maple St,
+158,CMP-100157,North Works LLC,Energy,MX,10204,921889.2215092683,INV-486470,12-Jan-2026,26-Feb-2026,49060.21,Paid,J. Brown,ops0157@example.org,3921 Maple St,acct moved to new owner
+159,CMP-100158,Union Dynamics LLC,Telecom,DE,3849,2493515.626655787,INV-545603,2025-12-17,2026-01-05,100508.55,refunded,K. Nguyen,ops0158@example.org,6409 Maple St,check signature ??? (unclear)
+160,CMP-100159,Union Energy LLC,Construction,IN,7881,1587087.2738206377,INV-857901,29-Aug-2025,2025-10-09,102522.08,Paid,L. Kim,ops0159@example.org,7707 Main St,PO attached
+161,CMP-100160,Global Dynamics LLC,FinTech,JP,4547,823752.7786356008,INV-444448,08/22/2025,2025-09-11,69283,overdue,K. Brown,ops0160@example.org,5789 Pine St,invoice scan low quality
+162,CMP-100161,North Works LLC,Logistics,KR,7619,1021869.6576725886,INV-489182,2025-10-13,17-Nov-2025,53147.31,paid,L. Garcia,ops0161@example.org,990 Maple St,acct moved to new owner
+163,CMP-100162,North Foods LLC,FinTech,US,11287,2162694.7831733683,INV-442591,10/16/2025,11/08/2025,118725.48,pending,J. Patel,ops0162@example.org,,PO attached ...
+164,CMP-100163,Delta Dynamics LLC,Construction,IN,3428,998909.589036006,INV-261061,2025/12/11,10-Jan-2026,37080.5,void,M. Kim,ops0163@example.org,3030 Sunset St,received via fax
+165,CMP-100164,PrimeW orks LLC,Telecom,JP,1368,1252905.5189377898,INV-276416,2025-11-28,2026/01/08,67325.4,overdue,K. Kim,ops0164@example.org,6568 Main St,manual override
+166,CMP-100165,Delta Dynamics LLC,Software,BR,4601,2466855.4758571684,INV-576085,2026/01/31,2026-02-18, 112629.41 ,overdue,J. Kim,ops0165@example.org,8111 Sunset St,check signature ???
+167,CMP-100166,Global Systems LLC,Telecom,KR,1959,2981671.667138868,INV-286501,12/07/2025,2025/12/25,82867.81,paid,J. Kim,ops0166@example.org,7946 Maple St,received via fax (unclear)
+168,CMP-100167,Global Systems LLC,FinTech,DE,9474,2051280.591219052,INV-702285,15-Oct-2025,11/01/2025,53046.33,pending,M. Patel,ops0167@example.org,3497 Sunset St,manual override
+169,CMP-100168,Global Dynamics LLC,Telecom,MX,1528,1108132.5701908187,INV-669358,2025-11-17,2025/12/24,"35,499.87",paid,M. Patel,ops0168@example.org,3714 Main St,acct moved to new owner
+170,CMP-100169,Prime Systems LLC,Retail,BR,3271,2161753.918902563,INV-466894,18-Jan-2026,02/04/2026,57806.47,void,L. Kim / L. Kim,ops0169@example.org,6977 Sunset St,see thread #A12
+171,CMP-100170,North Systems LLC,Telecom,MX,5458,"$3,304,856.37",INV-775355,2026-02-03,03/15/2026,89488.35,void,L. Kim / L. Kim,ops0170@example.org,4808 Pine St,PO attached
+172,CMP-100171,Prime Energy LLC,Healthcare,JP,9046,2035969,INV-607904,2025-09-21,18-Oct-2025,106878.74,over-due,J. Garcia,ops0171@example.org,8106 Pine St,acct moved to new owner
+173,CMP-100172,North Systems LLC,Manufacturing,IN,11809,3823448.6357942866,INV-983223,2025/07/25,2025/08/19,1.01e+05,void?,J. Patel,ops0172@example.org,8494 Sunset St,see thread #A12
+174,CMP-100173,Union Systems LLC,Manufacturing,DE,10088,476129.88607514993,INV-478498,09/07/2025,10/03/2025,20927.33,pending,M. Brown / M. Brown,ops0173@example.org,6863 Pine St,invoice scan low quality
+175,CMP-100174,North Systems LLC,Energy,JP,11400,976178.3416007888,INV-684304,10/14/2025,2025-11-10,33151.02,void?,L. Garcia,ops0174@example.org,1164 Sunset St,invoice scan low quality
+176,CMP-100175,Prime WorKs LLC,Retail,BR,6882,153050.88163427962,INV-784271,07/29/2025,19-Aug-2025, 12515.30 ,Paid,J. Patel,ops0175@example.org,3454 Pine St,invoice scan low quality
+176-dup,CMP-100175,Prime WorKs LLC,Retail,BR,6882,153050.88163427962,INV-784271,07/29/2025,19-Aug-2025, 12515.30 ,Paid,J. Patel,ops0175@example.org,3454 Pine St,invoice scan low quality
+177,CMP-100176,Prime Systems LLC,Healthcare,US,557,330864.3079753439,INV-623439,2025/10/03,21-Oct-2025,47135.23,overdue,J. Garcia,ops0176@example.org,6467 Maple St,received via fax
+178,CMP-100177,Prime Systems LLC,Healthcare,MX,1176,1047122.4223046593,INV-628435,2025-07-21,2025-08-09,29312.01,refunded,K. Garcia,ops0177@example.org,6161 Sunset St,PO attached
+179,CMP-100178,North Foods LLC,Logistics,IN,7094,72074.6,INV-852320,2025/11/12,2025/12/20,11492.28,void,K. Patel,ops0178@example.org,1660 Main St,manual override
+180,CMP-100179,North Dynamics LLC,FinTech,US,1464,2097995.764393186,INV-635020,15-Aug-2025,10/06/2025,1.01e+05,refunded,K. Garcia,ops0179@example.org,5372 Maple St,manual override
+180-dup,CMP-100179,North Dynamics LLC,FinTech,US,1464,2097995.764393186,INV-635020,15-Aug-2025,10/06/2025,1.01e+05,refunded,K. Garcia,ops0179@example.org,5372 Maple St,manual override
+181,CMP-100180,Union Energy LLC,Healthcare,IN,unknown, 274564.34 ,INV-563533,2025/07/07,2025/07/22,45376.54,refunded,M. Brown,ops0180@example.org,6405 Maple St,manual override
+182,CMP-100181,Global ENergy LLC,Logistics,MX,10012,1991728,INV-747491,2025/12/11,06-Feb-2026,62642.74,over-due,J. Kim,unknown,7429 Pine St,acct moved to new owner
+183,CMP-100182,Prime Systems LLC,Manufacturing,KR,2771,162308.16920999286,INV-688988,01-Sep-2025,2025/09/29,12873.51,overdue,L. Brown,,8398 Maple St,PO attached
+184,CMP-100183,Union Dynamics LLC,Logistics,MX,10186,1588209.0664011969,INV-262658,10/02/2025,20-Oct-2025,118742.43,refunded,M. Nguyen,ops0183@example.org,412 Main St,see thread #A12
+185,CMP-100184,Prime Systems LLC,Energy,DE,2185,814501,INV-904852,2026/02/02,2026/04/03, 32181.25 ,refunded,L. Nguyen / L. Nguyen,ops0184@example.org,unknown,urgent follow-up
+186,CMP-100185,Prime Energy LLC,Construction,KR,4807,1497744.3747521343,INV-782480,27-Oct-2025,12/24/2025,"111,665.27",void,J. Brown,ops0185@example.org,8395 Pine St,urgent follow-up
+187,CMP-100186,Global Dynamics LLC,Energy,CA,5731,436253.0116019789,INV-433866,11-Feb-2026,2026/03/20,31120.18,Paid,L. Kim,ops0186@example.org,8028 Main St,manual override ...
+188,CMP-100187,Prime Dynamics LLC,Construction,KR,5993,395187.3432572872,INV-801437,30-Jan-2026,2026-03-19,10054.63,overdue,K. Kim,ops0187@example.org,7769 Main St,check signature ???
+189,CMP-100188,Union Foods LLC,Retail,KR,3385,971890.8691502269,INV-916054,2025-08-07,2025-09-17,6.77e+04,pending ,K. Patel,ops0188@example.org,1886 Pine St,manual override
+190,CMP-100189,Delta Systems LLC,Construction,US,15,2578899.8822245514,INV-805563,2025/11/14,24-Dec-2025,"$69,105.15",pending,L. Brown,ops0189@example.org,2252 Main St,acct moved to new owner
+191,CMP-100190,North Energy LLLC,Software,FR,8148,826370.9843883085,INV-979874,14-Jan-2026,02/14/2026,26024.62,PAID,J. Garcia,ops0190@example.org,9694 Maple St,urgent follow-up
+192,CMP-100191,North Dynamics LLC,Logistics,KR,unknown,1063031.4949088073,INV-606481,09/07/2025,10/04/2025,65751.43,overdue,K. Kim,ops0191@example.org,7616 Main St,invoice scan low quality
+193,CMP-100192,Global Foods LLC,Manufacturing,MX,11779,181055.23723915438,INV-798882,2025-10-26,18-Nov-2025,22955.77,paid,K. Garcia,ops0192@example.org,6276 Main St,check signature ???
+194,CMP-100193,Delta Foods LLC,Construction,IN,5148,2827338.7311777514,INV-573487,09/04/2025,2025-10-13,107808.5,overdue,J. Brown,ops0193@example.org,5091 Maple St,check signature ???
+195,CMP-100194,North Energy LLC,FinTech,BR,9989,2069530.2668733518,INV-305562,11-Feb-2026,2026-03-29,115378.42,overdue,K. Garcia,ops0194@example.org,3837 Main St,PO attached
+196,CMP-100195,Union Works LLC,Healthcare,CA,11545,1389014.874840789,INV-680041,2026-01-02,01/30/2026,101214.68,Paid,L. Nguyen,ops0195@example.org,5634 Maple St,PO attached
+197,CMP-100196,Delta Systems LLC,Healthcare,IN,2689,2220426.2609484987,INV-616562,02/04/2026,unknown,112971.98,pending,K. Brown,ops0196@example.org,8735 Pine St,manual override !!!
+198,CMP-100197,North Systems LLC,Telecom,FR,3483,"USD 2,273,673.67",INV-731208,2025/09/16,2025/11/07,104179.17,pending,K. Nguyen,ops0197@example.org,3991 Pine St,see thread #A12 (unclear)
+199,CMP-100198,Prime Energy LLC,FinTech,JP,3383,2510480.461482733,INV-283348,08-Jan-2026,2026/03/03, 107541.97 ,void,J. Garcia,ops0198@example.org,2356 Maple St,invoice scan low quality
+200,CMP-100199,Delta Foods LLC,Telecom,US,7375,1078292.4139221278,INV-517532,11/18/2025,2026-01-06,67738.43,pending ,J. Garcia,ops0199@example.org,9968 Pine St,see thread #A12
+201,CMP-100200,Prime Foods LLC,Logistics,JP,9904,3583091.3140148674,INV-433113,14-Nov-2025,2026-01-10,98163.35,pending,L. Garcia,ops0200@example.org,2580 Pine St,see thread #A12
+202,CMP-100201,Prime Energy LLC,Energy,BR,4124,833226.3346425062,INV-472210,30-Oct-2025,2025/11/14,29353.99,paid,K. Kim,ops0201@example.org,3198 Pine St,manual override
+203,CMP-100202,North Dynamics LLC,Construction,MX,9278,170913.65047468623,INV-254898,2025/11/13,2025-12-30,9822.76,void,K. Kim / K. Kim,ops0202@example.org,9768 Main St,urgent follow-up
+204,CMP-100203,North Dynamics LLC,FinTech,US,2693,3391826.9364704816,INV-545816,12/20/2025,31-Jan-2026, 104395.31 ,pending ,L. Patel,ops0203@example.org,1180 Pine St,urgent follow-up
+205,CMP-100204,Delta Systems LLC,Construction,US,10997,412755.02098481596,INV-525378,2026-02-12,04/05/2026,60657.35,void,L. Nguyen,ops0204@example.org,3772 Sunset St,invoice scan low quality
+206,CMP-100205,Union Energy LLC,Software,BR,10786,"2,538,683.29",INV-582519,10/19/2025,2025/12/16,79561.97,overdue,M. Kim,ops0205@example.org,2906 Pine St,acct moved to new owner
+207,CMP-100206,Prime Works LLC,unknown,MX,9105,794639,INV-319563,2025-09-02,2025-09-24,72019.66,void,K. Brown,ops0206@example.org,2283 Sunset St,see thread #A12
+208,CMP-100207,Prime Systems LLC,FinTech,JP,10098, 912480.12 ,INV-594431,2025/11/01,2025-12-19,"$51,759.98",pending ,J. Kim,ops0207@example.org,1414 Maple St,PO attached (unclear)
+208-dup,CMP-100207,Prime Systems LLC,FinTech,JP,10098, 912480.12 ,INV-594431,2025/11/01,2025-12-19,"$51,759.98",pending ,J. Kim,ops0207@example.org,1414 Maple St,PO attached (unclear) / duplicate from email chain
+209,CMP-100208,North Dynamics LLC,Logistics,IN,4903,259986.73133734587,INV-547034,2025/08/11,10/03/2025,27963.47,overdue,L. Patel,ops0208@example.org,6529 Main St,check signature ??? !!!
+210,CMP-100209,Union Foods LLC,Energy,MX,194,670507.4694441493,INV-329428,2025/08/28,2025/10/21,105372.16,refunded,L. Kim,ops0209@example.org,4323 Sunset St,see thread #A12 !!!
+211,CMP-100210,Delta Foods LLC,Telecom,MX,1163,954635.5772220222,INV-738578,28-Nov-2025,01/06/2026,87558.39,void,M. Kim,ops0210@example.org,6940 Sunset St,acct moved to new owner
+212,CMP-100211,Prime Systems LLC,Energy,KR,2594,"3,959,404.52",INV-572577,2025/11/27,2026/01/10,"$115,898.11",pending ,K. Brown,ops0211@example.org,8241 Main St,invoice scan low quality
+213,CMP-100212,Union Energy LLC,Manufacturing,KR,730,2872010.7641499387,INV-725160,01/11/2026,02/01/2026,83901.66,overdue,M. Patel,ops0212@example.org,6620 Pine St,see thread #A12
+214,CMP-100213,Deltaa Works LLC,Manufacturing,BR,8560,1179301.6135003632,INV-698871,2025-09-10,10/05/2025,57895.11,void,L. Garcia,ops0213@example.org,7160 Sunset St,PO attached
+215,CMP-100214,Prime Energy LLC,FinTech,FR,7942,1725788.3883003532,INV-616001,2025/10/11,12/07/2025,76788.46,PAID,L. Brown,ops0214@example.org,5593 Main St,acct moved to new owner
+216,CMP-100215,Union Sysems LLC,Software,KR,3421,1082908.4975966047,INV-966812,06-Sep-2025,2025/10/02,40371.14,paid,L. Brown,ops0215@example.org,8280 Sunset St,acct moved to new owner
+216-dup,CMP-100215,Union Sysems LLC,Software,KR,3421,1082908.4975966047,INV-966812,06-Sep-2025,2025/10/02,40371.14,paid,L. Brown,ops0215@example.org,8280 Sunset St,acct moved to new owner
+217,CMP-100216,Union Systems LLC,Logistics,JP,640,746296.0933161707,INV-535612,2025-09-18,2025-10-22,84732.74,overdue,L. Patel,ops0216@example.org,9303 Maple St,urgent follow-up
+218,CMP-100217,Delta Foods LLC,unknown,JP,10763,539994.238506876,INV-960649,2025-11-13,2025-12-12,27015.11,paid,K. Garcia,ops0217@example.org,1724 Pine St,see thread #A12 !!!
+219,CMP-100218,Delta Works LLC,Healthcare,MX,3243,1153081.51,INV-235141,2025-12-17,2026-02-03, 63718.04 ,Paid,J. Nguyen,ops0218@example.org,7302 Sunset St,see thread #A12 ...
+220,CMP-100219,North Systems LLC,Manufacturing,DE,170,942754.7237311455,INV-589340,2026/01/02,2026/02/01,89856.91,refunded,L. Nguyen,ops0219@example.org,5440 Pine St,received via fax
+221,CMP-100220,Delta Systems LLC,Logistics,IN,1430,646204.8015819466,INV-974014,2025/11/26,2025-12-28,20263.02,pending,L. Patel,ops0220@example.org,6701 Pine St,check signature ???
+222,CMP-100221,Delta Dynamics LLC,Software,FR,8966,2507585.0741961203,INV-731679,12/04/2025,2026/01/24, 109838.25 ,refunded,L. Kim,unknown,8467 Main St,acct moved to new owner
+223,CMP-100222,Union Dynamics LLC,Construction,MX,11634,2771693.2709363634,INV-663086,31-Jan-2026,2026/03/23,69734.85,overdue,L. Kim,ops0222@example.org,1716 Maple St,check signature ???
+224,CMP-100223,Global Dynamics LLC,Construction,IN,2888,1446677.4261250712,INV-905268,11-Aug-2025,2025-09-30,76487.58,pending,L. Kim,ops0223@example.org,659 Main St,received via fax
+225,CMP-100224,Union DynamicsL LC,FinTech,FR,5482,2519178.15,INV-425322,01/14/2026,2026-03-05,116404.73,refunded,K. Patel,ops0224@example.org,5144 Pine St,PO attached
+226,CMP-100225,Global SystemsLLC,Healthcare,CA,6783,2621146.7790231854,INV-705717,01/27/2026,03/24/2026,113319.18,refunded,K. Garcia,ops0225@example.org,5262 Main St,see thread #A12
+227,CMP-100226,Delta Systems LLC,Telecom,MX,133,371056.70074761944,INV-891090,2025/07/30,19-Sep-2025,23394.65,paid,M. Garcia / M. Garcia,ops0226@example.org,9270 Maple St,received via fax (unclear)
+228,CMP-100227,Global Energy LLC,Healthcare,CA,2598,"USD 2,223,735.29",INV-577862,2025-10-10,12/06/2025,114494.09,pending,L. Kim,ops0227@example.org,689 Maple St,see thread #A12 !!!
+229,CMP-100228,Union Dynamics LLC,Manufacturing,FR,3954,672241.7308187822,INV-488801,2025-10-02,11/30/2025,45600.62,refunded,J. Kim,ops0228@example.org,1521 Sunset St,invoice scan low quality
+230,CMP-100229,Delta Systems LLC,Construction,US,1825,14039.506342118766,INV-797452,2025-09-19,2025/11/14,482.82,void,M. Nguyen / M. Nguyen,ops0229@example.org,3532 Main St,check signature ???
+231,CMP-100230,Prime Foods LLC,Software,DE,3555,306802.3847892206,INV-825544,12/14/2025,04-Jan-2026,23831.25,paid,L. Garcia,ops0230@example.org,6283 Maple St,see thread #A12
+231-dup,CMP-100230,Prime Foods LLC,Software,DE,3555,306802.3847892206,INV-825544,12/14/2025,04-Jan-2026,23831.25,paid,L. Garcia,ops0230@example.org,6283 Maple St,see thread #A12 / duplicate from email chain
+232,CMP-100231,North Systems LLC,Healthcare,MX,11620,1796645.0741132628,INV-511924,2025-11-26,16-Dec-2025,93628.59,paid,M. Kim,ops0231@example.org,,PO attached
+233,CMP-100232,Global Foods LLC,Retail,DE,9632,783606.6068110114,INV-243800,2025-11-19,2026/01/08,"74,611.61",refunded,K. Garcia,ops0232@example.org,2854 Main St,manual override
+234,CMP-100233,Global Energy LLC,Retail,JP,4547,77127.86635002834,INV-824815,2025-11-27,12/16/2025,5923.7,pending,L. Garcia,ops0233@example.org,3869 Maple St,see thread #A12
+235,CMP-100234,Union Systems LLC,Manufacturing,BR,2039,"USD 938,453.26",INV-631491,2025/09/25,2025-11-10,39739.67,paid,L. Garcia,ops0234@example.org,2375 Pine St,check signature ???
+236,CMP-100235,Delta Energy LLC,Telecom,MX,1212,1094164.0450986829,INV-994024,09/22/2025,07-Nov-2025,3.53e+04,overdue,J. Brown,ops0235@example.org,5618 Sunset St,PO attached ...
+237,CMP-100236,Dela Systems LLC,Retail,KR,6049,2747795.212197819,INV-645945,07-Nov-2025,2025/12/17,89922.58,pending,K. Brown,ops0236@example.org,6276 Maple St,PO attached (unclear)
+238,CMP-100237,North Foods LC,Software,US,,86570.90921633907,INV-860132,21-Aug-2025,2025/10/03,4665.45,over-due,L. Patel,ops0237@example.org,9570 Pine St,received via fax
+239,CMP-100238,Delta Systems LLC,Retail,KR,457,1825453.7465880688,INV-866217,2026/02/11,2026-04-11,53169.2,void,J. Brown,ops0238@example.org,4638 Sunset St,PO attached !!!
+240,CMP-100239,Prime Dynamisc LLC,Logistics,JP,9538,1359608.51,INV-962310,2026/02/03,2026/03/13,94442.88,paid,M. Garcia,ops0239@example.org,5091 Main St,invoice scan low quality
+241,CMP-100240,Prime Systems LLC,FinTech,US,9456,484045.81699557503,INV-359515,2026/01/25,2026/03/18,"13,111.31",overdue,J. Nguyen,ops0240@example.org,2915 Pine St,check signature ???
+242,CMP-100241,Delta Foods LLC,Construction,IN,7933,1364568.6536825595,INV-908135,2025/09/28,20-Oct-2025,71719.9,pending,M. Brown,ops0241@example.org,9909 Pine St,PO attached
+243,CMP-100242,Prime Dynamics LLC,Retail,MX,7329,1013483.4164230268,INV-205774,05-Feb-2026,22-Mar-2026,54020,void,K. Brown,ops0242@example.org,9844 Main St,invoice scan low quality
+244,CMP-100243,Delta Dynamics LLC,Manufacturing,MX,4379,1362553.1846673938,INV-959498,10/12/2025,2025-12-05,37046.2,pending,J. Garcia,ops0243@example.org,4237 Main St,acct moved to new owner
+245,CMP-100244,Union Systems LLC,Manufacturing,US,6814,145724.41151666478,INV-546971,07/10/2025,2025/08/16,7373.0,overdue,M. Nguyen,ops0244@example.org,2090 Maple St,check signature ???
+246,CMP-100245,Delta Dynamics LLC,Healthcare,JP,10354,5.27e+05,INV-416758,07/29/2025,04-Sep-2025,49765,PAID,M. Patel,ops0245@example.org,3668 Sunset St,PO attached
+247,CMP-100246,Global Systems LLC,Telecom,US,7570,196945,INV-567560,2026-01-26,02/11/2026,5725.21,pending,J. Brown,ops0246@example.org,9855 Sunset St,manual override
+248,CMP-100247,North Works LLC,Energy,BR,3599,1177549.5634924069,INV-768456,2025/09/03,2025-10-21,"108,756.60",paid,J. Garcia,ops0247@example.org,5999 Sunset St,received via fax
+249,CMP-100248,Global Foods LLC,Energy,KR,24,1450467.6085969827,INV-437002,01-Jan-2026,02/10/2026,119430.66,pending,K. Nguyen,ops0248@example.org,2277 Main St,N/A
+250,CMP-100249,North Foods LLC,Logistics,BR,1181,424489.89750185533,INV-948703,2025-07-11,09/07/2025,45703.9,paid,J. Nguyen,ops0249@example.org,9299 Main St,received via fax
+251,CMP-100250,Prime Foods LLC,Software,MX,8449,458658.7457997367,INV-798438,12/21/2025,2026-01-24,22782.13,overdue,M. Kim,ops0250@example.org,5285 Sunset St,see thread #A12
+252,CMP-100251,Prime Energy LLC,N/A,FR,3356,686243.1384490451,INV-871616,03-Nov-2025,2025/12/31,21956.43,refunded,L. Patel,ops0251@example.org,2803 Sunset St,PO attached !!!
+253,CMP-100252,North Systems LLC,Healthcare,FR,5689,1287949.2496704622,INV-282969,2025/09/19,2025/10/20,1.08e+05,void?,L. Kim,ops0252@example.org,6262 Main St,PO attached ...
+254,CMP-100253,North Systems LLC,unknown,KR,8421,2644448.9888527705,INV-854386,2025-11-23,2026-01-18,69681.45,void,M. Patel,ops0253@example.org,6794 Main St,received via fax
+255,CMP-100254,Global Works LLC,Software,US,2812,2079247.773975109,INV-515075,2025/08/02,2025/09/10,89281.52,pending ,J. Patel,ops0254@example.org,2550 Sunset St,urgent follow-up
+256,CMP-100255,Union Energy LLC,Software,DE,4681,3045331.0508904313,INV-856129,20-Aug-2025,2025-09-16,97269.98,over-due,L. Garcia,ops0255@example.org,5519 Main St,invoice scan low quality
+257,CMP-100256,Union Dynamics LLC,Telecom,MX,3063,2829021.6399082225,INV-451409,2026-01-06,2026-02-09,108636.89,refunded,L. Nguyen,ops0256@example.org,2367 Sunset St,invoice scan low quality
+258,CMP-100257,Prime Works LLC,Software,MX,6387,2218218.039251591,INV-310279,01-Oct-2025,2025-11-09,117905.53,PAID,J. Brown,N/A,2837 Maple St,acct moved to new owner
+259,CMP-100258,North Dynamics LLC,Energy,IN,9844,774642.6705697784,INV-933112,2025/12/25,02/06/2026,61054.03,pending,J. Patel / J. Patel,ops0258@example.org,6373 Pine St,received via fax
+260,CMP-100259,Global Dynaimcs LLC,FinTech,CA,748,408745.421116893,INV-700310,2025-12-25,2026-01-24,58789.18,pending,M. Garcia,ops0259@example.org,9938 Sunset St,received via fax ...
+261,CMP-100260,Prime Systems LLC,Manufacturing,CA,743,674708.8724473628,INV-375267,2025-07-30,09/07/2025,42281.99,refunded,M. Brown,ops0260@example.org,9894 Sunset St,manual override
+262,CMP-100261,North Works LLC,Telecom,BR,2696,2727650.4209569925,INV-450309,2025/12/30,02/14/2026,72366.76,refunded,M. Patel,ops0261@example.org,8394 Sunset St,urgent follow-up
+263,CMP-100262,North Energy LLC,Manufacturing,BR,8986,1373934.7679907256,INV-585303,10/08/2025,2025/11/19,68852.93,void,L. Brown / L. Brown,ops0262@example.org,1559 Pine St,see thread #A12
+264,CMP-100263,North Foods LLC,Telecom,DE,3336,61597.47623745322,INV-305858,2025/08/05,2025/09/12,8644.59,refunded,M. Patel,ops0263@example.org,8127 Pine St,invoice scan low quality
+265,CMP-100264,Global Foods LLC,Healthcare,MX,5133,1628823.6980543847,INV-213998,2025/07/21,08/11/2025,77327.82,refunded,L. Patel,ops0264@example.org,8033 Sunset St,received via fax
+266,CMP-100265,Union Systems LLC,Manufacturing,KR,4514,1733280.4768742856,INV-854865,2025/11/08,05-Dec-2025,45088.1,void,K. Kim,ops0265@example.org,5432 Sunset St,invoice scan low quality
+267,CMP-100266,Union Dynamics LLC,Logistics,FR,10833,"1,940,610.08",INV-609024,09/03/2025,2025/10/09,72336,paid,J. Garcia,ops0266@example.org,2099 Maple St,PO attached (unclear)
+268,CMP-100267,Union Foods LLC,Construction,BR,7152,323067.98309335805,INV-432816,18-Nov-2025,12/03/2025,12560.99,refunded,M. Brown,ops0267@example.org,2692 Maple St,invoice scan low quality
+269,CMP-100268,Union Energy LLC,Retail,MX,9149,3860213.5929567027,INV-938301,2026/01/17,03/10/2026,98850.96,pending,K. Patel,ops0268@example.org,878 Sunset St,
+270,CMP-100269,Prime Dynamics LLC,Energy,US,2636,966742.1845495452,INV-597872,2025-10-07,24-Nov-2025,51172.58,pending,J. Nguyen,ops0269@example.org,3943 Sunset St,invoice scan low quality
+271,CMP-100270,Prime Systems LLC,FinTech,MX,5391,4680472.009426279,INV-799056,2026/01/05,16-Feb-2026,1.18e+05,refunded,J. Garcia,ops0270@example.org,8636 Main St,acct moved to new owner
+272,CMP-100271,Prime Energy LLC,Telecom,IN,8606,"USD 396,672.57",INV-703124,2025-09-12,23-Oct-2025,54579.99,refunded,M. Garcia,ops0271@example.org,4457 Maple St,invoice scan low quality
+273,CMP-100272,Delta Foods LLC,Manufacturing,FR,5808,1267001.4020104841,INV-951154,27-Dec-2025,2026-01-16,78003.4,refunded,K. Patel,ops0272@example.org,690 Main St,received via fax
+274,CMP-100273,Global Energy LLC,Logistics,JP,4452,1.38e+06,INV-848511,2026-02-12,03/02/2026,62579.74,void?,L. Brown,ops0273@example.org,530 Maple St,invoice scan low quality
+274-dup,CMP-100273,Global Energy LLC,Logistics,JP,4452,1.38e+06,INV-848511,2026-02-12,03/02/2026,62579.74,void?,L. Brown,ops0273@example.org,530 Maple St,invoice scan low quality / duplicate from email chain
+275,CMP-100274,Union Dynamics LLC,Software,KR,288,971215.346845645,INV-530146,09/25/2025,2025/10/10,68003.45,overdue,L. Garcia,ops0274@example.org,6731 Pine St,see thread #A12
+276,CMP-100275,Union Works LLC,Retail,BR,1138,659416.5317640968,INV-620415,01/22/2026,02/19/2026,"61,629.66",void,L. Garcia,ops0275@example.org,5205 Sunset St,manual override
+277,CMP-100276,Global Works LLC,,IN,8894,3092589.5492550125,INV-555063,2026/01/12,30-Jan-2026,80536.96,pending,M. Kim,ops0276@example.org,1980 Maple St,PO attached
+278,CMP-100277,Delta Dynamics LLC,Telecom,MX,11845,927382.5932989264,INV-960774,2026/01/21,2026/03/15,25718.5,refunded,L. Patel,ops0277@example.org,9041 Maple St,received via fax
+279,CMP-100278,North Dynamics LLC,Manufacturing,JP,4525,960992.7732385771,INV-326893,05-Dec-2025,2026/01/26,57521.26,pending,K. Kim,ops0278@example.org,6850 Sunset St,received via fax
+280,CMP-100279,Global Works LLC,Construction,MX,11921,1568443.6529256576,INV-343644,2025-09-03,10/16/2025,73705.94,pending,K. Patel,ops0279@example.org,8401 Pine St,invoice scan low quality
+281,CMP-100280,Prime Works LLC,Energy,BR,3201,1730008.4896699397,INV-656531,2025-11-23,2026/01/16,51792.04,overdue,L. Patel,ops0280@example.org,8397 Pine St,see thread #A12
+282,CMP-100281,Prime Dynamics LLC,Manufacturing,DE,2330,1316472.7823460642,INV-598725,11/12/2025,2025/12/15,62219.46,pending,M. Patel,ops0281@example.org,2008 Maple St,see thread #A12
+283,CMP-100282,Prime Energy LLC,Retail,KR,6621,163382.02781584804,INV-863225,2025/12/12,07-Jan-2026,21479.36,overdue,K. Brown,ops0282@example.org,6640 Main St,
+284,CMP-100283,Delta Dynamics LLC,Energy,FR,4638,607492.1917452251,INV-786419,2026-01-30,2026/03/29,79761.2,pending,K. Brown,ops0283@example.org,1521 Main St,received via fax
+285,CMP-100284,Union Dynamics LLC,Manufacturing,JP,8127,2332394.835170133,INV-202577,21-Aug-2025,09/11/2025,"$83,060.42",PAID,K. Kim,ops0284@example.org,2979 Maple St,manual override
+286,CMP-100285,Union Dynamics LLC,Retail,MX,3439,811019.8068032445,INV-646179,2025-12-11,01/10/2026, 38436.76 ,void,M. Brown,ops0285@example.org,2771 Main St,received via fax
+287,CMP-100286,Global Energy LLC,Retail,FR,1843,1017906.1592932846,INV-697783,10/19/2025,2025-11-08,57920.73,void?,K. Garcia,ops0286@example.org,5123 Pine St,see thread #A12
+288,CMP-100287,Delta Foods LCL,FinTech,MX,9962,804718.2615777188,INV-873526,09-Jul-2025,09-Aug-2025,72599.23,refunded,K. Garcia,ops0287@example.org,3509 Maple St,check signature ??? ...
+289,CMP-100288,Union Systems LLC,Logistics,MX,9967,1951510.25634499,INV-871959,2026/02/08,2026/04/08,49423.64,pending,L. Kim,ops0288@example.org,8889 Pine St,manual override
+290,CMP-100289,Delta Foods LLC,Logistics,MX,6644,2.05e+05,INV-541708,2025/11/07,2025/12/26,"28,634.37",overdue,K. Nguyen,ops0289@example.org,8353 Pine St,check signature ???
+291,CMP-100290,Global Works LLC,Telecom,FR,,1166730.2918392105,INV-471334,11-Oct-2025,30-Oct-2025,44725.22,overdue,M. Nguyen,ops0290@example.org,8556 Maple St,received via fax ...
+292,CMP-100291,Union Systems LLC,Retail,KR,5176, 194704.84 ,INV-622477,2025-12-11,2026-01-19,27218.3,pending,L. Brown,ops0291@example.org,8289 Main St,urgent follow-up
+293,CMP-100292,Union Foods LLC,Logistics,CA,6520,1696535.9900886551,INV-659271,10/20/2025,N/A,86987.03,void,L. Nguyen,ops0292@example.org,6071 Sunset St,received via fax
+294,CMP-100293,Delta Dynamics LLC,Software,IN,1129,2036142.08,INV-281461,2025/11/13,unknown,73006.27,refunded,K. Brown,ops0293@example.org,6511 Pine St,urgent follow-up (unclear)
+295,CMP-100294,Delta Dynamics LLC,Construction,JP,8670,1110627.062687763,INV-416757,23-Dec-2025,2026-02-19,33559.07,void,J. Patel,ops0294@example.org,8001 Maple St,received via fax
+296,CMP-100295,Prime Foods LLC,FinTech,MX,10112,"USD 1,368,896.87",INV-925878,2025/10/18,2025/11/11,6.05e+04,refunded,L. Garcia,ops0295@example.org,unknown,manual override
+297,CMP-100296,Prime Systems LLC,Manufacturing,DE,10072,1027408.7234225243,INV-910187,2026-01-03,02/07/2026,72220.58,pending,L. Kim / L. Kim,ops0296@example.org,8305 Main St,acct moved to new owner
+298,CMP-100297,North Foods LLC,Manufacturing,CA,5716,920607.4607536164,INV-948058,2025/08/30,10/25/2025,42950.49,paid,M. Patel,ops0297@example.org,4153 Sunset St,invoice scan low quality
+299,CMP-100298,Union Dynamics LLC,Software,KR,3548,105819.5710199842,INV-573465,19-Jan-2026,03/09/2026,"3,322.08",paid,M. Kim,ops0298@example.org,651 Maple St,urgent follow-up
+300,CMP-100299,Prime Foods LLC,Logistics,IN,2157,546484.2167511763,INV-859881,2025-08-30,09/26/2025,"66,933.49",pending,L. Nguyen,ops0299@example.org,6300 Pine St,invoice scan low quality
+301,CMP-100300,Global Energy LLC,Software,DE,52,1307742.9532521076,INV-464844,12/08/2025,01-Feb-2026,82585.02,pending,L. Patel / L. Patel,ops0300@example.org,1766 Maple St,see thread #A12
+302,CMP-100301,Delta Systems LLC,Software,MX,6574,1369624.4689300528,INV-490813,2026/01/10,01/28/2026,38933.73,refunded,M. Kim / M. Kim,ops0301@example.org,6753 Main St,invoice scan low quality
+303,CMP-100302,Prime Dynamics LLC,FinTech,US,1414,2366067.738701798,INV-948813,2025-08-11,09/15/2025, 98557.94 ,void,K. Garcia,ops0302@example.org,3876 Main St,acct moved to new owner (unclear)
+304,CMP-100303,Union Works LLC,Software,KR,10030,"327,734.28",INV-895977,2025-11-04,,51850.51,overdue,M. Nguyen / M. Nguyen,ops0303@example.org,1174 Maple St,PO attached
+305,CMP-100304,North Systems LLC,Manufacturing,JP,7425,370709.4049329514,INV-695095,11/02/2025,19-Dec-2025,45249.29,void,L. Brown,ops0304@example.org,6208 Main St,invoice scan low quality
+306,CMP-100305,Unoin Energy LLC,Construction,CA,10140,3.51e+05,INV-755083,2025-10-21,13-Nov-2025,19550,pending ,L. Garcia,ops0305@example.org,912 Maple St,received via fax
+307,CMP-100306,North Dynamic LLC,Retail,FR,8986,"1,483,273.12",INV-890961,10/21/2025,10-Nov-2025,96746.19,paid,L. Brown,ops0306@example.org,9572 Main St,received via fax
+308,CMP-100307,North Systems LLC,Manufacturing,US,1469,1402465.5934858758,INV-460213,2026-02-10,03/21/2026,45244.72,void,J. Garcia,ops0307@example.org,N/A,urgent follow-up (unclear)
+309,CMP-100308,Delta Works LLC,Construction,CA,2330,2875579.0507263215,INV-224499,10/05/2025,2025-10-31,1.17e+05,Paid,K. Patel,ops0308@example.org,2798 Pine St,invoice scan low quality
+310,CMP-100309,Delta Energy LLC,Software,US,10931,1638904.5050396943,INV-293937,2025/11/07,03-Jan-2026,42859.93,refunded,J. Nguyen,ops0309@example.org,1682 Pine St,check signature ???
+311,CMP-100310,Global Dynamics LLC,Retail,FR,11958,4030738.009849525,INV-532005,2025/08/04,09/16/2025,115104.55,paid,L. Garcia,ops0310@example.org,8384 Pine St,check signature ???
+312,CMP-100311,Global Energy LLC,Retail,JP,unknown,1708357.4283799299,INV-386820,2025-10-14,2025-12-13,75819.24,refunded,K. Garcia,ops0311@example.org,4711 Sunset St,PO attached
+313,CMP-100312,Prime Energy LLC,Retail,US,3201, 631616.93 ,INV-840297,2025/08/25,2025-09-17,"31,924.96",paid,L. Nguyen,ops0312@example.org,4009 Main St,urgent follow-up (unclear)
+314,CMP-100313,Global Dynamics LLC,Energy,JP,2867,604054.154116357,INV-851390,11-Sep-2025,2025-10-23,67557.03,void,L. Kim,ops0313@example.org,5884 Sunset St,see thread #A12
+315,CMP-100314,Prime Energy LLC,Software,DE,5927,1640873.6770005338,INV-797219,2025-09-12,09/27/2025,46253.46,PAID,L. Patel,ops0314@example.org,9610 Maple St,acct moved to new owner
+316,CMP-100315,Prime Works LLC,Manufacturing,IN,5459,664323.8350798215,INV-574008,10/11/2025,11/17/2025,83990.21,void,K. Garcia,ops0315@example.org,9053 Main St,urgent follow-up (unclear)
+317,CMP-100316,Delta Dynamics LLC,Software,BR,9039,1865743.1006439992,INV-489998,12/03/2025,01/21/2026,66140,void,K. Kim,ops0316@example.org,7900 Maple St,urgent follow-up !!!
+318,CMP-100317,Prime Works LLC,FinTech,DE,48,1668111.7508333197,INV-368107,2026/02/01,25-Feb-2026,87508.29,over-due,M. Garcia,ops0317@example.org,944 Maple St,check signature ???
+319,CMP-100318,North Energy LLC,Energy,BR,8327,885156.3947010485,INV-592236,20-Dec-2025,24-Jan-2026,35873.17,paid,L. Garcia,ops0318@example.org,7795 Pine St,check signature ???
+320,CMP-100319,Global Works LLC,Retail,JP,9757,4151.857375335664,INV-710001,01/03/2026,01/28/2026,492.78,overdue,M. Nguyen,ops0319@example.org,3831 Maple St,PO attached
+321,CMP-100320,Delta Systems LLC,Energy,BR,5011,2696814.467748967,INV-369423,2025-11-24,unknown,"$100,824.00",refunded,M. Patel,ops0320@example.org,5421 Maple St,acct moved to new owner
+322,CMP-100321,Global Systems LLC,Energy,JP,1948,2975415.6937571224,INV-517976,10/08/2025,11/19/2025,"84,194.12",paid,L. Nguyen,ops0321@example.org,6304 Pine St,urgent follow-up
+323,CMP-100322,Union Systems LLC,Software,KR,8506,1491700.8937452647,INV-901185,2025-10-20,11/08/2025,49435.07,paid,K. Garcia,ops0322@example.org,4644 Main St,N/A
+324,CMP-100323,Global Energy LLC,Retail,CA,6357,279599.4429920877,INV-998970,2025/11/17,01/04/2026,9391.31,refunded,K. Garcia,ops0323@example.org,1578 Main St,check signature ???
+325,CMP-100324,Prime Foods LLC,Software,CA,1054,3338827.4228851814,INV-806894,08/30/2025,10/07/2025,100768.49,paid,L. Kim,ops0324@example.org,3771 Maple St,received via fax (unclear)
+326,CMP-100325,Union Energy LLC,Logistics,CA,9333,1477941.936276724,INV-220918,12/30/2025,19-Feb-2026, 95822.64 ,paid,L. Brown,ops0325@example.org,108 Maple St,urgent follow-up
+327,CMP-100326,Delta Dynamics LLC,Software,DE,3080,3768110,INV-631510,2025/07/14,08/30/2025,106141.63,overdue,J. Kim,ops0326@example.org,7139 Pine St,
+328,CMP-100327,Union Dynamics LLC,Software,DE,6433,1128902.752725188,INV-935937,02-Jan-2026,2026-02-12,36577.07,pending,J. Patel,ops0327@example.org,5150 Main St,check signature ???
+329,CMP-100328,North Energy LLC,Healthcare,US,2824,1225039.2452878854,INV-869285,2025-11-12,2026/01/10,34154.35,refunded,K. Nguyen,ops0328@example.org,650 Main St,PO attached (unclear)
+330,CMP-100329,Delta Foods LLC,Logistics,CA,,2286329.3577853325,INV-710078,2026/01/10,02/16/2026,74674.6,void?,M. Brown,ops0329@example.org,2104 Main St,see thread #A12
+331,CMP-100330,Prime Works LLC,Healthcare,JP,167,2100676.175293083,INV-236871,2025/08/16,2025/09/06,103794.55,refunded,M. Kim / M. Kim,ops0330@example.org,3669 Sunset St,manual override
+332,CMP-100331,Prime Energy LLC,Telecom,FR,8160,707418.0275184275,INV-725946,12/06/2025,26-Jan-2026,48407.63,pending,M. Nguyen,ops0331@example.org,2842 Sunset St,PO attached
+333,CMP-100332,Delta Energy LLC,Construction,KR,9558,309267.76714609395,INV-858161,2025-08-16,2025/09/09,40567.84,overdue,L. Brown / L. Brown,ops0332@example.org,9734 Main St,see thread #A12
+334,CMP-100333,Union Systems LLC,Manufacturing,JP,9829,257130.28467376993,INV-500333,2026-01-09,03/06/2026,28645.11,pending ,J. Kim,ops0333@example.org,8806 Maple St,urgent follow-up ...
+334-dup,CMP-100333,Union Systems LLC,Manufacturing,JP,9829,257130.28467376993,INV-500333,2026-01-09,03/06/2026,28645.11,pending ,J. Kim,ops0333@example.org,8806 Maple St,urgent follow-up ... / duplicate from email chain
+335,CMP-100334,Delta Systems LLC,Retail,US,5810,191621.51402549085,INV-584371,02/12/2026,2026-04-05,10093.98,Paid,L. Brown,ops0334@example.org,5240 Maple St,see thread #A12
+336,CMP-100335,Union Dynamics LLC,FinTech,IN,2291,2740630.147038984,INV-696239,2025-11-19,2025-12-17,68632.11,refunded,L. Brown,ops0335@example.org,438 Main St,manual override
+337,CMP-100336,Delta Works LLC,Logistics,FR,7425,495470.3157089268,INV-424907,18-Nov-2025,01/02/2026,13675.51,refunded,K. Garcia / K. Garcia,ops0336@example.org,993 Maple St,PO attached
+338,CMP-100337,Global Works LLC,Manufacturing,CA,6218,854802.8554081215,INV-633713,11/30/2025,2025-12-23,80290.87,pending,K. Brown,ops0337@example.org,9348 Sunset St,urgent follow-up (unclear)
+339,CMP-100338,Delta  Energy LLC,Software,DE,6138,975396.2376424598,INV-660223,10/06/2025,11/11/2025,39519.94,paid,L. Patel,ops0338@example.org,9022 Main St,urgent follow-up
+340,CMP-100339,Delta Foods LLC,Software,BR,3516,1047190.1064362205,INV-881599,10-Feb-2026,03/27/2026,91627.55,PAID,J. Garcia,ops0339@example.org,4242 Sunset St,check signature ???
+341,CMP-100340,Union Energy LLC,Telecom,US,9728,1065918.2762239468,INV-634823,21-Sep-2025,10/14/2025,51963.22,refunded,J. Kim,ops0340@example.org,7428 Maple St,manual override !!!
+342,CMP-100341,Union Dynamics LLC,Retail,IN,,2474351.8076726436,INV-816021,2025-07-16,09/02/2025,115869.93,overdue,M. Brown,ops0341@example.org,6759 Main St,PO attached
+343,CMP-100342,Global Foods LLC,Healthcare,KR,1053,569392.579296454,INV-910637,09/21/2025,30-Oct-2025,35023.29,over-due,J. Garcia,ops0342@example.org,962 Maple St,manual override (unclear)
+344,CMP-100343,Global Works LLC,N/A,JP,621,1456904.1430595422,INV-844260,2025-12-27,2026-02-13,50799.79,PAID,K. Nguyen,ops0343@example.org,6013 Sunset St,manual override (unclear)
+345,CMP-100344,Delta Dynamics LLC,Manufacturing,FR,5394,1496238.5826764754,INV-349716,2025-09-23,2025/10/28,71996,pending,L. Patel,ops0344@example.org,2039 Sunset St,received via fax
+346,CMP-100345,Prime Foodds LLC,Manufacturing,MX,9019,2222136.9386707298,INV-557977,04-Feb-2026,02/27/2026,97487.97,pending,K. Nguyen,ops0345@example.org,3349 Maple St,
+347,CMP-100346,Prime Works LLC,Healthcare,IN,10176,2383694.656197017,INV-992866,12/17/2025,02/01/2026,91433.34,void,K. Garcia,ops0346@example.org,8398 Sunset St,manual override
+348,CMP-100347,Union Works LLC,Manufacturing,MX,690,"3,898,350.07",INV-721220,07/28/2025,2025-08-25,103582.65,refunded,K. Nguyen,ops0347@example.org,7014 Sunset St,urgent follow-up !!!
+349,CMP-100348,Prime Dynamics LLC,Construction,CA,3501,1139200.7510289326,INV-847222,2025-11-30,2025-12-28,38763,pending,K. Kim,ops0348@example.org,8184 Sunset St,check signature ???
+350,CMP-100349,Global Dynamics LLC,Telecom,KR,8507,151562.6500711849,INV-437415,2025/11/29,2026-01-01,7821.61,void,M. Patel,ops0349@example.org,948 Pine St,invoice scan low quality
+351,CMP-100350,Global Energy LLC,Manufacturing,MX,2382,359754.6726317839,INV-446112,2025/10/26,11/27/2025, 18451.69 ,void,K. Patel,ops0350@example.org,5793 Main St,acct moved to new owner (unclear)
+352,CMP-100351,Union Foods LLC,Software,MX,11251,1068652,INV-285342,06-Nov-2025,2025/12/23,114253.76,overdue,J. Kim,ops0351@example.org,195 Pine St,received via fax
+353,CMP-100352,Union Works LLC,Manufacturing,FR,1946,49506.78436238306,INV-553834,2025-07-16,31-Aug-2025,2018.58,void,L. Kim,ops0352@example.org,2812 Pine St,received via fax !!!
+354,CMP-100353,North Dynamics LLC,Software,DE,11642,685731.9712785666,INV-315786,2025/08/26,2025-10-18,"61,535.88",overdue,J. Garcia,ops0353@example.org,4337 Sunset St,urgent follow-up
+355,CMP-100354,Global Systems LLC,Healthcare,US,8677,1063561.9162064425,INV-526568,05-Sep-2025,23-Sep-2025,113082.94,refunded,K. Garcia,ops0354@example.org,432 Sunset St,invoice scan low quality
+356,CMP-100355,Delta Works LLC,Energy,MX,10503,2593295.1870275666,INV-268379,12/02/2025,20-Jan-2026,119657.59,refunded,K. Kim,ops0355@example.org,1605 Pine St,check signature ???
+357,CMP-100356,Prime Works LLC,Software,FR,10470,240975.50349489477,INV-783436,09/18/2025,2025-10-25,16084.31,paid,J. Nguyen,ops0356@example.org,8435 Sunset St,urgent follow-up
+358,CMP-100357,North Dynamics LLC,Manufacturing,JP,1397,2217388.577006617,INV-830326,2025-07-21,2025-08-09,73842,overdue,K. Garcia,ops0357@example.org,6466 Main St,received via fax
+359,CMP-100358,Delta Works LLC,Telecom,CA,3578,288890.45923579024,INV-505123,2025-08-04,29-Sep-2025,"$11,214.99",PAID,L. Garcia,ops0358@example.org,8184 Main St,invoice scan low quality
+360,CMP-100359,Union Works LLC,FinTech,JP,9272,4176006.025302072,INV-463311,02/11/2026,2026-03-11,118121.24,void,J. Kim,ops0359@example.org,2915 Main St,PO attached
+361,CMP-100360,North Systems LLC,Telecom,IN,8564,552667.7462275152,INV-815341,25-Aug-2025,21-Sep-2025,40797.63,paid,J. Nguyen,ops0360@example.org,9358 Main St,manual override
+362,CMP-100361,Prime Works LLC,Logistics,IN,8913,2282826.4291456384,INV-691595,2025-07-13,2025/08/03,63666.51,overdue,J. Nguyen,ops0361@example.org,9684 Pine St,see thread #A12
+363,CMP-100362,Prime Works LLC,Telecom,CA,7069,1415508.9756443417,INV-346130,03-Oct-2025,11/15/2025,8.87e+04,pending,K. Brown,ops0362@example.org,1560 Maple St,PO attached ...
+364,CMP-100363,Prime Energy LLC,Telecom,BR,2258,1151125.4797234116,INV-769594,27-Nov-2025,12/18/2025,83889.81,pending,L. Garcia,ops0363@example.org,,received via fax
+365,CMP-100364,Union Energy LLC,Energy,KR,,216638.8402005399,INV-417184,2025-12-10,2025-12-26,13019.43,PAID,J. Patel,ops0364@example.org,8250 Maple St,PO attached
+366,CMP-100365,Prime Dynamics LLC,Healthcare,CA,3882,3751247.1420393107,INV-658837,2026/01/22,23-Feb-2026,99551.29,over-due,M. Nguyen,ops0365@example.org,1044 Maple St,acct moved to new owner
+367,CMP-100366,North Works LLC,FinTech,DE,,915327.2756316663,INV-781197,01/15/2026,07-Mar-2026,29205.25,void?,K. Garcia,ops0366@example.org,1066 Main St,received via fax
+368,CMP-100367,Union Energy LLC,Energy,KR,5475,577001.794711621,INV-586790,2025/08/29,2025/10/06,24854.67,paid,L. Kim / L. Kim,ops0367@example.org,4522 Sunset St,see thread #A12
+369,CMP-100368,Prime Foods LLC,Logistics,KR,7578,2304438.4625359653,INV-850482,2025-08-12,30-Aug-2025,78548.03,overdue,K. Kim,ops0368@example.org,7239 Sunset St,see thread #A12
+370,CMP-100369,Global Dynamics LLC,Energy,IN,9695,706211.201095282,INV-847518,2026/02/08,04/07/2026, 105010.03 ,over-due,M. Kim,ops0369@example.org,5756 Main St,check signature ???
+371,CMP-100370,Delta Dynamics LLC,Manufacturing,US,11935,1782360.3140763547,INV-560902,20-Nov-2025,2025-12-12,86450,Paid,M. Patel,ops0370@example.org,6416 Maple St,PO attached
+372,CMP-100371,North DynamiCs LLC,unknown,IN,7059,1529936.9404711013,INV-994914,04-Nov-2025,2025/12/10,"$61,703.44",overdue,K. Nguyen,ops0371@example.org,3296 Sunset St,acct moved to new owner ...
+373,CMP-100372,Delta Works LLC,Manufacturing,CA,3744,3790552.8018474523,INV-802408,09/19/2025,29-Oct-2025,107125.22,refunded,M. Nguyen,ops0372@example.org,9926 Pine St,invoice scan low quality
+374,CMP-100373,North Energy LLC,Software,DE,10729,556996.1822104836,INV-397656,01-Sep-2025,30-Sep-2025,78555,void,K. Patel,ops0373@example.org,8508 Main St,received via fax
+375,CMP-100374,Prime Works LLC,Construction,US,3730,972967.0897822141,INV-484134,2025/11/22,22-Dec-2025,98427.55,paid,L. Brown,ops0374@example.org,4039 Main St,check signature ???
+376,CMP-100375,Global Systems LLC,Energy,KR,874,670013.6774645224,INV-848416,2025/11/14,12/07/2025,78016.45,PAID,M. Kim,ops0375@example.org,3283 Pine St,acct moved to new owner
+377,CMP-100376,Global Works LLC,Energy,FR,9372,219261.9176235675,INV-378100,2025/11/10,2025/12/31,25990.46,overdue,M. Patel,ops0376@example.org,9232 Main St,check signature ???
+378,CMP-100377,Delta Foods LLLC,FinTech,IN,N/A,2730364.4145575166,INV-257021,2026/01/26,2026/03/09,85343.0,PAID,L. Garcia,ops0377@example.org,4404 Main St,invoice scan low quality
+379,CMP-100378,Delta Dynamics LLC,Telecom,CA,814,3545446.5143238273,INV-824236,09/05/2025,09/30/2025,91177.75,void,M. Patel / M. Patel,ops0378@example.org,3895 Pine St,check signature ???
+380,CMP-100379,Prime Energy LLC,Manufacturing,CA,3096,1180207.0128876367,INV-362892,15-Dec-2025,29-Jan-2026,84884.37,paid,K. Nguyen,ops0379@example.org,2047 Sunset St,urgent follow-up
+381,CMP-100380,Union Dynamics LLC,FinTech,CA,6807,1047155.6159250417,INV-447714,29-Jul-2025,2025-09-01,99716.82,overdue,J. Patel,ops0380@example.org,6412 Maple St,PO attached
+381-dup,CMP-100380,Union Dynamics LLC,FinTech,CA,6807,1047155.6159250417,INV-447714,29-Jul-2025,2025-09-01,99716.82,overdue,J. Patel,ops0380@example.org,6412 Maple St,PO attached
+382,CMP-100381,Delta Energy LLC,Healthcare,DE,3225,4519743.419856323,INV-553174,27-Jul-2025,21-Sep-2025,117334.25,refunded,K. Kim,ops0381@example.org,1539 Main St,received via fax
+383,CMP-100382,Prime Dynamics LLC,Manufacturing,MX,11637,242590.49413786147,INV-753497,2025-09-25,2025-11-21,17829.31,pending,J. Patel,ops0382@example.org,5517 Main St,manual override (unclear)
+384,CMP-100383,North Works LLC,Manufacturing,JP,141,3844489.9590904573,INV-404971,15-Dec-2025,2026/01/03,"USD 118,281.46",refunded,J. Patel,ops0383@example.org,1487 Pine St,received via fax
+385,CMP-100384,Union Systems LLC,Telecom,JP,6407,1.26e+06,INV-868247,2026-01-11,2026-02-19,71847.28,paid,M. Garcia,ops0384@example.org,5324 Sunset St,check signature ??? (unclear)
+386,CMP-100385,Union Foods LLC,Healthcare,KR,1169,3018377.1747202985,INV-237063,2025-12-16,01/30/2026,111397.71,pending ,M. Nguyen,ops0385@example.org,7277 Pine St,invoice scan low quality (unclear)
+387,CMP-100386,Union Systems LLC,Retail,CA,1016,"USD 3,851,345.29",INV-340076,2025/07/15,07/31/2025,99013.15,pending ,M. Brown,ops0386@example.org,8326 Maple St,received via fax
+388,CMP-100387,North Systems LCL,N/A,JP,5620,67735.60749803005,INV-991596,2025-10-23,2025/11/14,7798.72,overdue,K. Brown,ops0387@example.org,7888 Maple St,acct moved to new owner (unclear)
+389,CMP-100388,Global Works LLC,unknown,CA,2142,765753.8363923441,INV-373793,2025-08-21,2025-10-11, 111197.56 ,pending,K. Patel,ops0388@example.org,2213 Main St,acct moved to new owner
+390,CMP-100389,Global Foods LLC,Energy,BR,571,1213355.1318176752,INV-853734,2026-01-20,2026/03/20,86094.99,pending ,K. Kim / K. Kim,ops0389@example.org,9127 Pine St,check signature ???
+391,CMP-100390,Union Foods LLC,Manufacturing,IN,9055,1204144.2670240004,INV-211563,10/15/2025,15-Nov-2025,78734.0,paid,L. Brown / L. Brown,ops0390@example.org,9825 Main St,urgent follow-up
+392,CMP-100391,North Energy LLC,Telecom,JP,290,800186.4835419457,INV-420739,09-Sep-2025,2025/10/10,99856.56,pending,J. Garcia,ops0391@example.org,6358 Main St,see thread #A12
+393,CMP-100392,Union Systems LLC,Construction,CA,942,389364.61816547834,INV-919913,2025/07/18,2025-09-14,49517.67,paid,L. Brown,ops0392@example.org,3432 Sunset St,invoice scan low quality ...
+394,CMP-100393,Global Works LLC,Logistics,BR,3915,1998958.657828724,INV-968973,2025/09/22,17-Oct-2025,54141.26,refunded,L. Nguyen,ops0393@example.org,4940 Sunset St,see thread #A12 !!!
+394-dup,CMP-100393,Global Works LLC,Logistics,BR,3915,1998958.657828724,INV-968973,2025/09/22,17-Oct-2025,54141.26,refunded,L. Nguyen,ops0393@example.org,4940 Sunset St,see thread #A12 !!! / duplicate from email chain
+395,CMP-100394,North Foods LLC,Healthcare,BR,,1033928.9707835776,INV-994610,2026-01-28,2026-03-05,109754.58,void,L. Kim / L. Kim,ops0394@example.org,1405 Maple St,check signature ???
+396,CMP-100395,Global Works LLC,Retail,KR,4208,1624082.766909813,INV-754059,2026-01-19,03-Mar-2026,71679.45,refunded,M. Brown,ops0395@example.org,8668 Sunset St,manual override
+397,CMP-100396,Global Works LLC,Manufacturing,CA,2906,1194941.9463666053,INV-259437,07/11/2025,2025/09/07,88368.6,pending,M. Brown,ops0396@example.org,5899 Main St,received via fax
+398,CMP-100397,Delta Energy LLC,FinTech,FR,10661,5.21e+05,INV-701038,2025/10/22,11/23/2025,46416.1,Paid,K. Garcia,ops0397@example.org,1916 Sunset St,invoice scan low quality
+399,CMP-100398,Golbal Systems LLC,Healthcare,KR,unknown,1986046.5956862797,INV-564004,17-Nov-2025,2025-12-21,117554.95,overdue,K. Kim,ops0398@example.org,2007 Main St,see thread #A12
+400,CMP-100399,Global Dynamics LLC,Construction,MX,9896,939746.4560527896,INV-365709,07/27/2025,08/19/2025,24875.92,void,J. Garcia,ops0399@example.org,2451 Pine St,received via fax
+401,CMP-100400,North Energy LLC,Manufacturing,JP,7777,1841393.4291848587,INV-395749,2025-08-23,2025-09-22,46146.71,void?,K. Patel / K. Patel,ops0400@example.org,3087 Maple St,check signature ???
+402,CMP-100401,Prime Works LLC,Construction,JP,10782,"3,808,549.59",INV-655660,2025-07-08,2025-09-06,108812.99,void?,M. Brown,ops0401@example.org,2699 Sunset St,urgent follow-up
+403,CMP-100402,Union Foods LLC,Healthcare,BR,6785,1049386.6483720425,INV-464156,31-Jan-2026,04-Mar-2026,80586.36,void?,K. Nguyen,ops0402@example.org,5722 Main St,received via fax ...
+404,CMP-100403,Delta Foods LLC,Retail,IN,4293,871667.0336869361,INV-894702,06-Sep-2025,2025-10-07,25915.78,pending ,L. Kim,ops0403@example.org,3391 Maple St,acct moved to new owner
+405,CMP-100404,Global Dynamics LLC,Healthcare,CA,9258,3554833.5223394777,INV-499598,12-Sep-2025,10/24/2025,"103,778.72",overdue,M. Nguyen / M. Nguyen,ops0404@example.org,5051 Sunset St,invoice scan low quality
+406,CMP-100405,Global Works LLC,FinTech,JP,5297,97401.51216453599,INV-447040,2025/08/09,30-Sep-2025,7700.76,paid,L. Nguyen,unknown,6956 Pine St,received via fax
+407,CMP-100406,Union Energy LLC,Logistics,IN,8785,150686.96545277187,INV-532882,2025/09/01,2025-10-27,7087.01,pending,J. Nguyen,ops0406@example.org,unknown,check signature ???
+408,CMP-100407,North Energy LLC,FinTech,IN,8546,3063834.565396077,INV-907420,2025-10-20,2025-12-10,88624.9,pending ,L. Garcia,ops0407@example.org,2811 Maple St,received via fax
+409,CMP-100408,Delta Works LLC,Construction,MX,432,189521.71484752264,INV-490785,2025/09/27,21-Nov-2025,"8,016.71",pending,M. Patel,ops0408@example.org,4699 Sunset St,received via fax ...
+410,CMP-100409,Union Foods LLC,,DE,7577,784763.0859799774,INV-475386,10/17/2025,2025-11-22,72464.57,void,J. Garcia,ops0409@example.org,1386 Sunset St,PO attached
+411,CMP-100410,Delta Systems LLC,Retail,CA,9265,260170.3326185877,INV-744620,2025-11-07,2025-12-06,7556.62,refunded,M. Garcia,ops0410@example.org,4379 Main St,invoice scan low quality
+412,CMP-100411,Delta Systems LLC,Manufacturing,US,8081,493814.0165362192,INV-323106,2026-01-23,2026/03/20,14350.07,pending,L. Nguyen,ops0411@example.org,6823 Sunset St,urgent follow-up
+413,CMP-100412,North Works LLC,FinTech,DE,unknown,1574347.4294095663,INV-296699,2025/09/16,21-Oct-2025,"43,931.98",paid,L. Nguyen,ops0412@example.org,6256 Main St,check signature ???
+414,CMP-100413,North Energy LLC,,US,10798,1444358.6350359633,INV-286670,12/15/2025,01/24/2026,63841.31,pending ,J. Garcia,ops0413@example.org,4056 Main St,see thread #A12
+415,CMP-100414,Prime Dynamics LLC,Healthcare,IN,1143,501781.634149088,INV-648483,09/08/2025,10/03/2025,62422.35,overdue,L. Patel,ops0414@example.org,5688 Pine St,manual override
+416,CMP-100415,Global Systems LLC,Energy,DE,1057,149933.07292269357,INV-948983,2026/01/11,2026/02/06,10036.56,paid,M. Nguyen,ops0415@example.org,7943 Pine St,acct moved to new owner ...
+417,CMP-100416,Union Works LLC,Healthcare,CA,unknown,370388.6953233098,INV-543301,2025-08-27,09/20/2025,44516.86,pending,J. Nguyen / J. Nguyen,ops0416@example.org,1937 Sunset St,urgent follow-up
+417-dup,CMP-100416,Union Works LLC,Healthcare,CA,unknown,370388.6953233098,INV-543301,2025-08-27,09/20/2025,44516.86,pending,J. Nguyen / J. Nguyen,ops0416@example.org,1937 Sunset St,urgent follow-up / duplicate from email chain
+418,CMP-100417,North Foods LLC,Logistics,DE,,1815234.7353713503,INV-702162,2025-08-22,2025-10-01,56312.69,PAID,L. Patel,ops0417@example.org,9791 Pine St,see thread #A12 ...
+419,CMP-100418,North Works LLC,Software,MX,7659,962029.7099960995,INV-292506,26-Nov-2025,14-Dec-2025,81840.93,refunded,L. Nguyen / L. Nguyen,ops0418@example.org,,urgent follow-up
+420,CMP-100419,Union Dynamics LLC,Healthcare,US,3830,833061.1037276523,INV-713736,2026-01-09,2026/02/28,36023.75,void,J. Nguyen,ops0419@example.org,1008 Maple St,see thread #A12
+421,CMP-100420,Prime Works LLC,Retail,MX,4414,142514.74891399706,INV-369751,2025-09-30,29-Nov-2025,4.81e+03,pending,M. Patel / M. Patel,ops0420@example.org,7273 Sunset St,urgent follow-up
+422,CMP-100421,Prime Dynamics LLC,Software,BR,8788,2256631.8353940235,INV-864366,07/09/2025,09/01/2025,101738.72,void,L. Patel,ops0421@example.org,4041 Pine St,urgent follow-up
+423,CMP-100422,Global Works LLC,Energy,FR,9760,1556869,INV-549742,2026-01-08,2026/02/25,"47,380.03",refunded,K. Patel,ops0422@example.org,4210 Sunset St,urgent follow-up
+424,CMP-100423,Delta Works LLC,Manufacturing,DE,9570,324004.7534765315,INV-964078,29-Jul-2025,2025-09-27,9697.15,pending,K. Patel,ops0423@example.org,7817 Maple St,manual override
+425,CMP-100424,Delta Dynamics LLC,Retail,DE,521,2286423.6207745792,INV-458320,2025/07/07,2025-09-03,103719.46,void,L. Patel,ops0424@example.org,9775 Main St,invoice scan low quality
+426,CMP-100425,Delta Energy LLC,Telecom,MX,787,2472398.1722780736,INV-697175,2026-02-02,2026/02/20,67148.28,refunded,J. Kim,ops0425@example.org,600 Pine St,manual override
+427,CMP-100426,North Works LLC,FinTech,KR,41,3028691.2206490943,INV-562183,09/28/2025,25-Nov-2025,110442.51,pending ,M. Brown,ops0426@example.org,6082 Sunset St,check signature ???
+428,CMP-100427,Prime Works LLC,Retail,JP,5000,932371.6788257168,INV-982012,08/03/2025,18-Aug-2025,86900.21,overdue,M. Nguyen,ops0427@example.org,7720 Main St,see thread #A12
+429,CMP-100428,Delta Works LLC,Software,DE,,272078.8839496142,INV-980087,2025-09-18,2025-11-04,7834.55,paid,K. Nguyen,ops0428@example.org,1706 Main St,manual override
+430,CMP-100429,North Systems LLC,FinTech,FR,9319,1041629.2471443762,INV-876836,09/23/2025,13-Oct-2025,30194.01,pending,M. Kim,ops0429@example.org,326 Main St,urgent follow-up
+430-dup,CMP-100429,North Systems LLC,FinTech,FR,9319,1041629.2471443762,INV-876836,09/23/2025,13-Oct-2025,30194.01,pending,M. Kim,ops0429@example.org,326 Main St,urgent follow-up / duplicate from email chain
+431,CMP-100430,North Foods LLC,FinTech,IN,4617,388093.6507196566,INV-804598,2025/10/31,07-Dec-2025,23135.05,void,M. Patel,ops0430@example.org,2565 Pine St,urgent follow-up
+432,CMP-100431,Delta Dynamics LLC,Construction,US,2526,"USD 2,527,330.14",INV-281755,13-Aug-2025,10/03/2025,83368.21,pending,M. Patel,,2395 Main St,manual override
+433,CMP-100432,North Dynamics LLC,Manufacturing,BR,9101,885727.192101748,INV-349315,2025/09/29,22-Nov-2025,29707.1,void,K. Brown,ops0432@example.org,1564 Maple St,manual override
+434,CMP-100433,Prime Foods LLC,Construction,US,4149,251918.58709037068,INV-340078,2025-11-07,2025-12-17,10542.06,void,L. Garcia,ops0433@example.org,N/A,urgent follow-up
+435,CMP-100434,Delta Foods LLC,Retail,DE,3761,943817.7970140442,INV-262948,2025/09/22,2025/10/13,29012.09,PAID,L. Nguyen,ops0434@example.org,6646 Sunset St,received via fax (unclear)
+436,CMP-100435,Global Foods LLC,Healthcare,US,8511,3887544.3351970864,INV-204359,2025-07-13,26-Aug-2025,109843.18,PAID,L. Brown,ops0435@example.org,6213 Main St,received via fax
+437,CMP-100436,Global Foods LLC,Software,KR,unknown,471512.9854809039,INV-963093,2025/07/10,2025-08-16,26902.78,refunded,M. Brown / M. Brown,ops0436@example.org,6790 Sunset St,invoice scan low quality
+438,CMP-100437,Global Works LLC,Healthcare,JP,10282,141451.25,INV-578941,2025-12-13,2026/02/04,7551.36,Paid,J. Brown,ops0437@example.org,8754 Pine St,received via fax (unclear)
+439,CMP-100438,Prime Systems LLC,Healthcare,IN,5879,1108726.6420763596,INV-921210,2025-10-20,11/29/2025,38951.1,paid,M. Patel,ops0438@example.org,8029 Maple St,manual override
+440,CMP-100439,North Energy LLC,Retail,IN,145,9.36e+05,INV-843438,08/21/2025,2025-10-11,1.00e+05,PAID,K. Kim,ops0439@example.org,6041 Sunset St,urgent follow-up
+441,CMP-100440,Delta Systems LLC,Logistics,BR,6936,2315000.774669531,INV-766126,2025-07-14,2025-08-23,"65,086.16",overdue,K. Garcia,ops0440@example.org,8447 Pine St,received via fax ...
+442,CMP-100441,Prime Systems LLC,Software,US,7875,596850.8934087957,INV-361325,09-Jul-2025,2025/08/20,48098.89,paid,K. Garcia,ops0441@example.org,605 Maple St,check signature ???
+443,CMP-100442,Global Dynamics LLC,Retail,US,3646,319373.4888883721,INV-586784,2025-12-04,2026/01/20,"51,341.85",paid,J. Brown,ops0442@example.org,5839 Pine St,received via fax
+444,CMP-100443,Union Foods LLC,Telecom,MX,11863,749502.293454121,INV-234593,09/24/2025,19-Oct-2025,101346.85,void,M. Patel,ops0443@example.org,7328 Main St,check signature ???
+445,CMP-100444,Prime Works LLC,N/A,FR,635,692091.9478092695,INV-230932,10-Jul-2025,08/11/2025,111845.57,refunded,L. Kim / L. Kim,ops0444@example.org,1099 Sunset St,received via fax !!!
+446,CMP-100445,Union Works LLC,FinTech,US,554,288945.8993946414,INV-804120,2025-09-10,2025/10/02,13062.9,paid,K. Brown,ops0445@example.org,5101 Maple St,manual override
+447,CMP-100446,Delta Foods LLC,Construction,CA,8097,"USD 973,562.17",INV-854626,2025-11-12,2025-12-26,119515.41,Paid,M. Nguyen,N/A,1480 Maple St,manual override ...
+448,CMP-100447,Delta Works LLC,Energy,DE,N/A,2613705.8473477545,INV-641402,12/01/2025,28-Dec-2025,118563,paid,J. Garcia,ops0447@example.org,3993 Sunset St,PO attached ...
+449,CMP-100448,Prime Foods LLC,FinTech,FR,1872,377013.59970564424,INV-632066,2026-01-05,2026-02-01,15083.52,refunded,L. Brown,ops0448@example.org,5965 Sunset St,invoice scan low quality !!!
+449-dup,CMP-100448,Prime Foods LLC,FinTech,FR,1872,377013.59970564424,INV-632066,2026-01-05,2026-02-01,15083.52,refunded,L. Brown,ops0448@example.org,5965 Sunset St,invoice scan low quality !!! / duplicate from email chain
+450,CMP-100449,Prime Energy LLC,FinTech,MX,443,3311947.7532563303,INV-817774,17-Aug-2025,2025/09/13,114668.68,pending,L. Brown,ops0449@example.org,2127 Sunset St,PO attached
+451,CMP-100450,Unon Dynamics LLC,Healthcare,JP,1100,1622660.7208951823,INV-465039,2026/01/18,2026/03/13,61591.86,void,J. Nguyen / J. Nguyen,ops0450@example.org,6355 Maple St,see thread #A12
+452,CMP-100451,Global Foods LLC,Telecom,BR,9182, 1279105.67 ,INV-399329,31-Jan-2026,03/12/2026,63562.93,overdue,M. Garcia / M. Garcia,ops0451@example.org,8196 Pine St,PO attached
+453,CMP-100452,North Dynamics LLC,Telecom,BR,11949,754091,INV-759311,2026-01-27,,73460.6,void,J. Brown / J. Brown,ops0452@example.org,3557 Pine St,manual override !!!
+454,CMP-100453,Prime Works LLC,Software,MX,9992,1767907.39,INV-480021,2025/11/02,2025-11-17,115066.56,void,L. Patel,ops0453@example.org,9111 Maple St,invoice scan low quality
+455,CMP-100454,Union Energy LLC,FinTech,DE,1325,278791.6785238299,INV-903219,03-Oct-2025,2025-11-04,7921.26,void,K. Garcia,ops0454@example.org,8365 Maple St,see thread #A12 ...
+456,CMP-100455,Global Energy LLC,FinTech,JP,9052,794521.3714431045,INV-889013,2025/08/28,10/17/2025,76295.82,paid,J. Nguyen,ops0455@example.org,4239 Pine St,see thread #A12
+457,CMP-100456,Delta Dynamics LLC,FinTech,US,518, 2028740.09 ,INV-580173,01/27/2026,02/22/2026,52734.13,refunded,L. Kim / L. Kim,ops0456@example.org,3925 Maple St,received via fax
+458,CMP-100457,Delta Energy LLC,Retail,BR,7388, 595678.40 ,INV-206851,2025/09/24,11/13/2025,61687,void,J. Brown,ops0457@example.org,5679 Pine St,invoice scan low quality
+459,CMP-100458,Prime Works LLC,Energy,DE,1294, 3195754.48 ,INV-226097,2026-01-25,02-Mar-2026,116242.92,void,K. Garcia,ops0458@example.org,6513 Pine St,urgent follow-up
+460,CMP-100459,Global Dynmics LLC,Energy,US,11555,"$2,268,475.00",INV-369457,11/24/2025,2025/12/13,72083.62,paid,L. Brown,ops0459@example.org,1035 Maple St,see thread #A12
+461,CMP-100460,Prime Works LLC,Manufacturing,KR,6556,1742127.1332393633,INV-515209,2025-11-12,2025-12-06,78309.0,overdue,K. Kim,ops0460@example.org,2573 Maple St,PO attached !!!
+462,CMP-100461,Uniion Systems LLC,Construction,IN,11189, 248034.13 ,INV-241840,2025-08-11,2025/09/03,20379.89,overdue,L. Nguyen,ops0461@example.org,7617 Sunset St,check signature ???
+463,CMP-100462,North Systems LLC,Construction,DE,11162,4230409.8610996995,INV-519893,07/18/2025,2025-08-08,110918.68,refunded,M. Patel,ops0462@example.org,2167 Pine St,check signature ???
+464,CMP-100463,Union Works LLC,Telecom,IN,9029,515700.7031310576,INV-441742,01/18/2026,2026/02/20,"USD 28,528.93",pending,K. Patel,ops0463@example.org,1388 Maple St,check signature ???
+465,CMP-100464,Delta Energy LLC,Manufacturing,DE,8084,1596694.6849958603,INV-758296,2025/08/22,19-Sep-2025,42079.82,refunded,M. Nguyen,ops0464@example.org,1043 Main St,PO attached ...
+465-dup,CMP-100464,Delta Energy LLC,Manufacturing,DE,8084,1596694.6849958603,INV-758296,2025/08/22,19-Sep-2025,42079.82,refunded,M. Nguyen,ops0464@example.org,1043 Main St,PO attached ...
+466,CMP-100465,Delta Foods LLC,Logistics,KR,7141, 1350359.30 ,INV-495148,09/04/2025,2025/11/03,"34,347.21",overdue,J. Nguyen,ops0465@example.org,9956 Maple St,received via fax
+467,CMP-100466,Prime Workks LLC,Logistics,FR,9041,1181770.6332683568,INV-715522,2026/02/09,2026-03-27,111959.29,void?,L. Kim,ops0466@example.org,9144 Maple St,see thread #A12
+468,CMP-100467,Union Foods LLC,Manufacturing,US,9651,2833913.369618896,INV-383423,2026/01/29,2026-03-16,78734.84,PAID,L. Patel,ops0467@example.org,261 Maple St,invoice scan low quality
+469,CMP-100468,Delta Works LLC,Manufacturing,IN,9423,3118570.934554684,INV-460098,2026/01/19,17-Feb-2026,106826.69,void,J. Brown,ops0468@example.org,9491 Maple St,acct moved to new owner
+470,CMP-100469,Prime Works LLC,Software,US,8283,1714312.1161004624,INV-398537,2026-02-02,03/15/2026,111173.34,pending,J. Patel,ops0469@example.org,9386 Sunset St,invoice scan low quality
+471,CMP-100470,Global Dynamics LLC,FinTech,IN,1262,7.89e+05,INV-868526,21-Aug-2025,2025-10-16,98561.9,refunded,K. Kim,ops0470@example.org,3230 Main St,unknown
+472,CMP-100471,Delta Works LLC,Retail,MX,10481,2235444,INV-579797,2025/12/18,2026-02-12,107818.76,paid,M. Garcia,ops0471@example.org,8555 Main St,urgent follow-up (unclear)
+473,CMP-100472,Union Energy LLC,Telecom,CA,2516,695698.6009062696,INV-793543,12-Jan-2026,2026-03-06,31480.95,pending,K. Garcia,ops0472@example.org,3934 Sunset St,check signature ???
+474,CMP-100473,Delta Foods LLC,FinTech,KR,2187,1171123.764434686,INV-361343,2025-10-27,12/07/2025,33835.34,PAID,K. Nguyen,ops0473@example.org,2511 Pine St,received via fax
+475,CMP-100474,Union Dynamics LLC,Manufacturing,DE,104,2130575.953032186,INV-333431,10-Feb-2026,04/02/2026,"$57,891.45",overdue,J. Brown,ops0474@example.org,6777 Maple St,PO attached
+476,CMP-100475,Delta Works LLC,Retail,FR,11471,1067630.7411311327,INV-748283,27-Aug-2025,2025/10/01, 61443.39 ,void,L. Garcia,ops0475@example.org,2573 Sunset St,check signature ??? !!!
+477,CMP-100476,Global Systems LLC,Telecom,DE,11789,"1,967,821.39",INV-871507,2025/08/04,09/01/2025,92043.6,refunded,M. Garcia / M. Garcia,ops0476@example.org,7175 Maple St,N/A
+478,CMP-100477,Global Works LLC,Software,FR,6419,307310.5140336197,INV-283709,09/29/2025,11/13/2025,24483.1,overdue,L. Kim,ops0477@example.org,5412 Maple St,check signature ???
+479,CMP-100478,Union Systems LLC,Telecom,IN,7587,1365233.8911908192,INV-295049,2025/10/16,2025/10/31,99779.26,overdue,L. Nguyen,ops0478@example.org,1515 Main St,invoice scan low quality
+480,CMP-100479,Union Systems LLC,FinTech,IN,1164,3651269.1444833847,INV-901243,2026-01-24,08-Feb-2026,105859.44,Paid,M. Patel,N/A,7168 Main St,urgent follow-up
+481,CMP-100480,Global Works LLC,Construction,MX,6533,2236627.416985282,INV-763452,2025/11/05,20-Nov-2025,114876.22,PAID,K. Nguyen,ops0480@example.org,8372 Sunset St,check signature ???
+482,CMP-100481,North Energy LLC,Manufacturing,US,2150,529516.3137857463,INV-419667,17-Oct-2025,12-Nov-2025,38155.26,paid,L. Brown,ops0481@example.org,2500 Main St,manual override
+483,CMP-100482,Delta Energy LLC,Construction,FR,10869,1467561.9751721534,INV-202119,2025-08-04,2025-08-25,"$95,597.73",void,K. Patel,N/A,128 Sunset St,invoice scan low quality
+484,CMP-100483,Delta Syystems LLC,FinTech,CA,208,294704.3239433289,INV-716111,2025/10/25,10-Dec-2025,14828.44,void,M. Patel,ops0483@example.org,9802 Maple St,invoice scan low quality
+485,CMP-100484,North Systems LLC,Energy,DE,11537,753416.3903386041,INV-303453,2026-01-22,2026/02/06,5.91e+04,Paid,J. Nguyen,ops0484@example.org,7252 Main St,acct moved to new owner
+486,CMP-100485,Delta Foods LLC,Telecom,MX,4391,205796.72117062853,INV-809832,11/08/2025,11/27/2025, 13575.85 ,refunded,K. Patel,ops0485@example.org,8462 Pine St,invoice scan low quality
+487,CMP-100486,Delta Works LLC,Logistics,JP,8680,922522.8838088841,INV-352358,12/19/2025,07-Jan-2026,34380.11,void,J. Patel,ops0486@example.org,6462 Pine St,manual override
+488,CMP-100487,Delta Foods LLC,FinTech,DE,5214,2955926.0277331406,INV-508381,2025/08/21,09/06/2025,106708.29,paid,L. Nguyen,ops0487@example.org,2796 Pine St,acct moved to new owner
+489,CMP-100488,Union Dynamics LLC,Construction,US,9951,2546217.132153516,INV-254504,2025/11/03,2025/12/14,105032.62,refunded,J. Nguyen,ops0488@example.org,,check signature ???
+490,CMP-100489,Union Works LLC,Energy,KR,10307,1225270.9552023008,INV-753213,05-Nov-2025,12/20/2025,33653.21,paid,J. Kim,ops0489@example.org,5987 Sunset St,received via fax
+491,CMP-100490,Global Foods LLC,Software,BR,9925,317262.6422484727,INV-331417,10/28/2025,2025-11-28,20081.41,paid,K. Nguyen,ops0490@example.org,1019 Main St,acct moved to new owner
+492,CMP-100491,North Foods LLC,Manufacturing,CA,9817, 733342.67 ,INV-547273,11/15/2025,12/02/2025,23895.61,overdue,M. Patel,ops0491@example.org,3884 Maple St,PO attached
+493,CMP-100492,Global Works LLC,Construction,KR,4591,3077820.535552998,INV-748365,02/10/2026,2026-04-11,91870.5,void,K. Garcia,ops0492@example.org,431 Maple St,urgent follow-up
+494,CMP-100493,North Systems LLC,Construction,CA,1805,500394.9473798049,INV-426777,24-Sep-2025,14-Nov-2025,49132.45,overdue,J. Garcia,unknown,3689 Sunset St,PO attached !!!
+495,CMP-100494,North Energy LLC,Retail,US,4859,704147.4875421075,INV-447576,01/25/2026,2026/03/19,35061.3,pending,L. Patel,N/A,3971 Sunset St,check signature ???
+496,CMP-100495,North Works LLC,Healthcare,US,462,3306686.637181001,INV-679306,2025-08-09,16-Sep-2025,93345.4,refunded,L. Patel,ops0495@example.org,9984 Main St,invoice scan low quality
+497,CMP-100496,Delta Foods LLC,Healthcare,MX,946,2453317.0018079616,INV-594650,12/28/2025,02/11/2026,110563.48,overdue,J. Nguyen,ops0496@example.org,9801 Pine St,invoice scan low quality
+498,CMP-100497,Delta Systems LLC,Retail,US,3276,1540942.8725692132,INV-465616,2025-10-14,08-Dec-2025,50781.65,refunded,K. Patel,ops0497@example.org,6499 Maple St,urgent follow-up
+499,CMP-100498,Delta Foods LLC,Construction,IN,5013,278401.79754560196,INV-465783,03-Aug-2025,07-Sep-2025,7622.13,refunded,L. Kim,ops0498@example.org,9530 Pine St,received via fax
+500,CMP-100499,North Dynamics LLC,Software,BR,4698,269378.1603506741,INV-758058,08/15/2025,2025/09/19, 43319.23 ,paid,L. Nguyen,ops0499@example.org,9113 Sunset St,manual override
+500-dup,CMP-100499,North Dynamics LLC,Software,BR,4698,269378.1603506741,INV-758058,08/15/2025,2025/09/19, 43319.23 ,paid,L. Nguyen,ops0499@example.org,9113 Sunset St,manual override
+501,CMP-100500,North Works LLC,FinTech,BR,8172,1355927.7306373513,INV-309165,2025-12-01,2026/01/20, 80431.48 ,paid,J. Kim,ops0500@example.org,3693 Maple St,PO attached !!!
+502,CMP-100501,Prime Dynamics LLC,FinTech,FR,105,1179642.1087022105,INV-719984,2026-01-25,03/06/2026,35556.66,void,M. Garcia,ops0501@example.org,,PO attached
+503,CMP-100502,Union Works LLC,Healthcare,KR,2213,2422451.4297126005,INV-887971,08/29/2025,10/11/2025,"USD 86,373.24",overdue,M. Patel / M. Patel,unknown,8364 Maple St,see thread #A12
+504,CMP-100503,North Energy LLC,Manufacturing,IN,6961,261551.256964435,INV-299020,2025/09/09,2025-09-30,38518,paid,M. Patel,ops0503@example.org,8367 Sunset St,urgent follow-up
+505,CMP-100504,North Dynamics LLC,Healthcare,JP,6495,3224937.140069222,INV-879892,2025/12/13,02/01/2026,112495.74,paid,J. Brown,ops0504@example.org,4679 Main St,acct moved to new owner
+506,CMP-100505,Union Energy LLC,Retail,CA,6319,4082319.773578216,INV-369200,2025/08/16,04-Sep-2025,105983.44,refunded,K. Garcia,N/A,5955 Maple St,invoice scan low quality
+507,CMP-100506,Delta Works LLC,Logistics,JP,7088,2026854.7454279244,INV-865944,2025/07/25,08/12/2025,98277.14,paid,J. Patel,,5316 Pine St,acct moved to new owner !!!
+508,CMP-100507,Global Systems LLC,Software,BR,4726,2149524.8911428484,INV-971209,08/18/2025,06-Oct-2025,7.58e+04,pending ,L. Nguyen,ops0507@example.org,7838 Sunset St,see thread #A12
+509,CMP-100508,Union Works LLC,Retail,CA,7950,763117.0343592538,INV-373019,2025-08-18,,70268.87,void,K. Kim,ops0508@example.org,5688 Main St,received via fax
+510,CMP-100509,Prime Dynamics LLC,Healthcare,US,4574,3059577.6673266124,INV-881672,12/06/2025,2026-01-18,99274.04,pending ,M. Kim,ops0509@example.org,9199 Pine St,received via fax
+511,CMP-100510,Prime Foods LLC,Telecom,JP,8640,1950498.5044685646,INV-427444,04-Nov-2025,2025-11-30,52468.99,paid,J. Patel,ops0510@example.org,9073 Pine St,invoice scan low quality
+512,CMP-100511,Global Dynamics LLC,Logistics,IN,3300,657504.8600759624,INV-401128,12/12/2025,2026/01/05,92544.05,paid,L. Kim,ops0511@example.org,1456 Maple St,invoice scan low quality
+513,CMP-100512,Global Works LLC,Software,US,9727,53465,INV-768948,13-Dec-2025,2026-02-02,2416.67,void,K. Kim,ops0512@example.org,5829 Maple St,manual override
+514,CMP-100513,Union Foods LLC,Manufacturing,IN,2664,1627156.729250098,INV-483591,2025-08-20,09/18/2025, 43223.49 ,paid,J. Nguyen,ops0513@example.org,4583 Main St,invoice scan low quality
+515,CMP-100514,Prime Dynamics LLC,Software,BR,154,1453572.9415364608,INV-544834,08/25/2025,2025-10-17,81444.39,pending,L. Brown,ops0514@example.org,172 Pine St,check signature ???
+516,CMP-100515,Union Dynamics LLC,Retail,US,6781,1073997.9651614227,INV-595578,2025-12-11,2026-01-03,59580.22,pending,M. Patel,ops0515@example.org,5264 Main St,see thread #A12
+517,CMP-100516,Delta Systems LLC,Healthcare,IN,7242,"616,781.73",INV-356238,2026-01-07,N/A,101161.06,pending,J. Kim,ops0516@example.org,1936 Pine St,received via fax ...
+518,CMP-100517,Delta Energy LLC,Manufacturing,BR,2819,2175119.9090477037,INV-852959,2025/08/23,N/A,65036.87,refunded,K. Kim,ops0517@example.org,323 Maple St,urgent follow-up ...
+519,CMP-100518,Global Works LLC,FinTech,IN,11359,207230.05348223244,INV-614655,14-Nov-2025,2026/01/07,14881.39,pending,J. Brown,ops0518@example.org,5210 Pine St,see thread #A12
+520,CMP-100519,Delta Foods LLC,FinTech,DE,unknown,1708191,INV-412935,2025/12/23,2026/02/06,104156.18,overdue,K. Garcia,ops0519@example.org,5087 Pine St,received via fax
+521,CMP-100520,Union Energy LLC,Software,US,11171,764781.8991974206,INV-675142,2025/08/18,09/25/2025,44958.7,refunded,J. Garcia,ops0520@example.org,6691 Pine St,PO attached
+522,CMP-100521,Delta Systems LLC,Manufacturing,KR,4504,2855527.928127516,INV-824525,11-Aug-2025,,73613.74,PAID,K. Garcia,ops0521@example.org,7372 Sunset St,acct moved to new owner
+523,CMP-100522,North Dynamics LLC,Construction,US,7384,2533855.742387949,INV-851313,2025/08/11,2025/09/22,90184.89,refunded,K. Garcia,ops0522@example.org,1663 Sunset St,invoice scan low quality (unclear)
+524,CMP-100523,North Systems LLC,Telecom,US,6909,684080.7164802245,INV-322484,2025/07/19,2025/09/15,55555.14,PAID,M. Garcia,ops0523@example.org,4113 Sunset St,check signature ???
+525,CMP-100524,Prime Systems LLC,Logistics,US,10914,763242.9351945256,INV-398386,10-Dec-2025,2026-01-28,44560.05,void,M. Kim,unknown,4352 Main St,check signature ???
+526,CMP-100525,Global Energy LLC,Retail,BR,8946,700367.867674683,INV-546081,10/06/2025,2025/11/15,27401.71,refunded,J. Kim,ops0525@example.org,7891 Sunset St,check signature ??? (unclear)
+527,CMP-100526,Prime Foods LLC,Retail,FR,5534,3729132.673864157,INV-270741,12/04/2025,01/28/2026,113690.45,void,M. Garcia,ops0526@example.org,4293 Sunset St,urgent follow-up !!!
+528,CMP-100527,Prime Works LLC,Healthcare,JP,,1386110.3636092679,INV-439798,10/03/2025,2025/10/19,74013.62,pending,L. Kim,ops0527@example.org,6286 Maple St,manual override
+529,CMP-100528,Global Energy LLC,unknown,MX,6555,239609.49521448126,INV-416800,27-Sep-2025,10/17/2025,14980,pending,L. Garcia,ops0528@example.org,6393 Sunset St,check signature ???
+530,CMP-100529,Global Energy LLC,Retail,FR,6000,304761.31571045885,INV-290259,28-Nov-2025,09-Jan-2026,9058.81,void,M. Brown,ops0529@example.org,5560 Main St,invoice scan low quality
+530-dup,CMP-100529,Global Energy LLC,Retail,FR,6000,304761.31571045885,INV-290259,28-Nov-2025,09-Jan-2026,9058.81,void,M. Brown,ops0529@example.org,5560 Main St,invoice scan low quality / duplicate from email chain
+531,CMP-100530,Global Works LLC,Software,KR,3705,1251707.682065479,INV-766907,08/19/2025,2025-09-21,36291.11,paid,K. Kim,ops0530@example.org,5999 Main St,see thread #A12
+532,CMP-100531,Global Foods LLC,Healthcare,US,7489,"USD 1,366,934.29",INV-717476,01/27/2026,02/14/2026,47380.76,Paid,J. Nguyen,ops0531@example.org,8742 Main St,check signature ???
+533,CMP-100532,Global Works LLC,Telecom,US,7605,3016731.2045188183,INV-625889,2025/07/16,02-Sep-2025,101108.58,void,K. Nguyen,ops0532@example.org,9171 Pine St,manual override (unclear)
+533-dup,CMP-100532,Global Works LLC,Telecom,US,7605,3016731.2045188183,INV-625889,2025/07/16,02-Sep-2025,101108.58,void,K. Nguyen,ops0532@example.org,9171 Pine St,manual override (unclear) / duplicate from email chain
+534,CMP-100533,Union Energy LLC,Energy,DE,3265,7340.7164427957805,INV-271737,2026/02/06,N/A,900.95,void,L. Nguyen,ops0533@example.org,8242 Main St,received via fax
+535,CMP-100534,Union Systems LLC,Retail,KR,10570,467725.0859078767,INV-810388,11/18/2025,2025/12/11,"USD 37,381.94",pending,J. Nguyen,ops0534@example.org,9235 Maple St,received via fax
+536,CMP-100535,Prime Energy LLC,Logistics,MX,1854,1687973.867680775,INV-239740,2026-01-19,13-Feb-2026,62797.6,refunded,J. Nguyen,ops0535@example.org,2631 Maple St,see thread #A12
+537,CMP-100536,North Systems LLC,FinTech,JP,814,371483.51,INV-564198,24-Sep-2025,10/22/2025,17332.28,refunded,K. Garcia,ops0536@example.org,unknown,PO attached
+538,CMP-100537,Global Systems LLC,Logistics,KR,8083,3109563.894843525,INV-618668,02/06/2026,21-Mar-2026,115601.39,pending,J. Brown,ops0537@example.org,3957 Main St,manual override
+539,CMP-100538,Global Dynamics LLC,Retail,BR,1561,1.86e+06,INV-944479,08/14/2025,2025/09/06,113184.63,overdue,J. Nguyen,ops0538@example.org,5591 Maple St,PO attached
+540,CMP-100539,Union Systems LLC,Logistics,BR,2781,3691663.69,INV-952010,02/07/2026,2026-03-10,"104,942.52",pending,M. Garcia,ops0539@example.org,3394 Sunset St,received via fax ...
+541,CMP-100540,Delta Dynamics LLC,Energy,DE,10960,622938.8449231721,INV-494226,23-Jan-2026,2026/02/07,73516.37,over-due,L. Nguyen / L. Nguyen,ops0540@example.org,5987 Pine St,received via fax ...
+542,CMP-100541,Prime Dynamics LLC,Telecom,MX,2368,142870.516998368,INV-916462,2025/11/01,09-Dec-2025,4314.72,pending,J. Kim,ops0541@example.org,907 Main St,urgent follow-up
+542-dup,CMP-100541,Prime Dynamics LLC,Telecom,MX,2368,142870.516998368,INV-916462,2025/11/01,09-Dec-2025,4314.72,pending,J. Kim,ops0541@example.org,907 Main St,urgent follow-up
+543,CMP-100542,Prime Foods LLC,Retail,FR,5694,884719.0952249948,INV-948151,01-Dec-2025,2025-12-30,"USD 89,916.99",void,K. Patel,ops0542@example.org,7966 Maple St,invoice scan low quality
+544,CMP-100543,North Dynamics LLC,Logistics,JP,546,203844.06110358372,INV-374453,2025/12/01,09-Jan-2026,7867.91,pending,K. Garcia,ops0543@example.org,1749 Main St,acct moved to new owner ...
+545,CMP-100544,Global Foods LLC,Manufacturing,JP,1850,632087.1582388941,INV-939408,22-Jul-2025,10-Aug-2025,3.64e+04,over-due,M. Brown,unknown,1999 Maple St,PO attached
+546,CMP-100545,Global Systems LLC,Logistics,FR,11600,349116,INV-698007,24-Sep-2025,2025-11-19,16833.36,paid,M. Nguyen,ops0545@example.org,2759 Main St,PO attached
+547,CMP-100546,Union Systems LLC,Retail,BR,437,150160.25196918767,INV-723889,2025/07/26,2025-08-23,6783.6,refunded,K. Brown,ops0546@example.org,900 Maple St,acct moved to new owner
+548,CMP-100547,Global Foods LLC,Logistics,DE,652,2210004.857146738,INV-589815,2026-02-05,2026/02/26, 66744.62 ,paid,M. Garcia / M. Garcia,ops0547@example.org,4838 Pine St,PO attached (unclear)
+549,CMP-100548,Union Dynamics LLC,Healthcare,DE,11121,2355817.6638655346,INV-609992,2025/12/14,01/06/2026,73334.58,refunded,K. Garcia,ops0548@example.org,6357 Sunset St,see thread #A12
+550,CMP-100549,Prime Works LLC,Telecom,FR,2925,581459.2266067968,INV-440414,2025/11/07,2025/11/27,23336.13,pending,L. Patel,ops0549@example.org,6919 Pine St,invoice scan low quality
+551,CMP-100550,Global Systems LLC,Telecom,CA,3287,314982.0696447759,INV-414261,2025/12/11,01/03/2026,29041.36,pending ,J. Brown,ops0550@example.org,1022 Maple St,check signature ???
+552,CMP-100551,Union Energy LLC,Manufacturing,FR,1666,2251715.204898371,INV-276000,12/27/2025,28-Jan-2026,100759.65,Paid,K. Nguyen,ops0551@example.org,2867 Maple St,check signature ???
+553,CMP-100552,Prime Dynamics LLC,Healthcare,BR,10398,"514,625.97",INV-684447,07/29/2025,25-Sep-2025,"71,205.44",void,J. Brown,ops0552@example.org,405 Sunset St,PO attached
+554,CMP-100553,North Energy LLC,Manufacturing,BR,2132,1640620.3543999938,INV-711030,07-Oct-2025,14-Nov-2025,59281.61,void,M. Kim,ops0553@example.org,7338 Pine St,see thread #A12
+555,CMP-100554,Global Energy LLC,Construction,JP,6735,624230.0365861865,INV-521443,2025-11-08,2025-12-05,94841.39,overdue,J. Patel,ops0554@example.org,7164 Sunset St,manual override
+556,CMP-100555,Global Foods LLC,Manufacturing,DE,7503,2151060.7017421606,INV-250390,2025-08-17,2025/09/01,67805.53,overdue,J. Nguyen,ops0555@example.org,3256 Maple St,acct moved to new owner
+557,CMP-100556,Global FoOds LLC,Manufacturing,BR,4261,2686536.992232032,INV-763657,09/03/2025,10/31/2025,68185.7,void,J. Garcia / J. Garcia,ops0556@example.org,1985 Maple St,urgent follow-up
+558,CMP-100557,Prime Foods LLC,Logistics,US,5765,552100.4844419361,INV-921718,2026/02/03,2026/03/02,23772.69,refunded,K. Brown,ops0557@example.org,465 Sunset St,see thread #A12
+559,CMP-100558,Union Dynamics LLC,FinTech,FR,11670,2.42e+06,INV-880547,31-Jul-2025,11-Sep-2025,82580.66,paid,K. Garcia,ops0558@example.org,2674 Main St,received via fax
+560,CMP-100559,Global EEnergy LLC,Software,BR,,1422350.1725407464,INV-962841,2025/09/02,10/16/2025,44158,overdue,M. Kim,ops0559@example.org,6735 Pine St,urgent follow-up !!!
+561,CMP-100560,Prime Works LLC,Manufacturing,DE,9780,148968.16265121358,INV-756497,2026/01/16,15-Mar-2026,7.15e+03,void,J. Patel,ops0560@example.org,2262 Main St,manual override (unclear)
+562,CMP-100561,Union Works LLC,Energy,JP,7163,2196730.6472123866,INV-443311,2025-08-24,14-Sep-2025,"95,053.10",Paid,J. Kim,ops0561@example.org,9088 Sunset St,check signature ??? ...
+563,CMP-100562,Union Systems LLC,FinTech,IN,645,1355581.1331564235,INV-286522,07/12/2025,08/30/2025,107870.24,refunded,M. Kim,ops0562@example.org,7661 Pine St,N/A
+563-dup,CMP-100562,Union Systems LLC,FinTech,IN,645,1355581.1331564235,INV-286522,07/12/2025,08/30/2025,107870.24,refunded,M. Kim,ops0562@example.org,7661 Pine St,N/A
+564,CMP-100563,Union Systems LLC,Logistics,IN,2578,3714971.685523093,INV-205945,2025/12/25,02/01/2026,95297.77,overdue,M. Kim,ops0563@example.org,3166 Maple St,invoice scan low quality
+565,CMP-100564,Delta Dyamics LLC,Telecom,IN,6248,1094800.3916232456,INV-341249,2025-09-27,2025/11/07, 62389.06 ,refunded,L. Patel,ops0564@example.org,540 Main St,check signature ??? !!!
+566,CMP-100565,Prime Systems LLC,Manufacturing,BR,3489,1271598.4278327846,INV-507880,2025-12-15,,111136.88,paid,M. Nguyen,ops0565@example.org,4451 Main St,see thread #A12 ...
+567,CMP-100566,Union Foods LLC,Energy,US,5258,1517591.440876777,INV-593059,2025-08-18,04-Sep-2025,38700.92,refunded,M. Patel,ops0566@example.org,2644 Main St,invoice scan low quality
+568,CMP-100567,North Dynamics LLC,Construction,BR,5356,1869375.9491216138,INV-706828,05-Dec-2025,02-Feb-2026,86320.4,overdue,J. Brown,ops0567@example.org,7418 Sunset St,acct moved to new owner
+569,CMP-100568,Delta Systems LLC,Manufacturing,JP,9432,2962771.567677013,INV-868132,13-Nov-2025,2025/12/07,96103.67,Paid,L. Nguyen,ops0568@example.org,,PO attached !!!
+570,CMP-100569,Prime Works LLC,Logistics,CA,9114,1048433.5665831921,INV-830689,2025-10-01,11/18/2025, 56418.43 ,pending,J. Nguyen,ops0569@example.org,1952 Sunset St,acct moved to new owner ...
+571,CMP-100570,Prime Energy LLC,Healthcare,MX,10044,1188578.2264735068,INV-676132,2025-07-23,2025-08-19,79416.5,overdue,M. Kim,ops0570@example.org,7276 Sunset St,invoice scan low quality
+572,CMP-100571,Union Works LLC,,JP,8469,1990418.8914083622,INV-698120,2025/12/21,11-Feb-2026,76265.06,pending ,K. Patel,ops0571@example.org,2290 Sunset St,acct moved to new owner
+573,CMP-100572,Delta Systems LLC,Logistics,US,8694,2429234.5968431905,INV-747711,2025-09-02,2025-09-28,65454.2,paid,L. Patel,ops0572@example.org,5631 Main St,PO attached
+574,CMP-100573,Global Systems LLC,Software,DE,5632,3606753.316116382,INV-236295,08-Oct-2025,11/22/2025,91745.63,pending,J. Nguyen,ops0573@example.org,1286 Pine St,received via fax ...
+574-dup,CMP-100573,Global Systems LLC,Software,DE,5632,3606753.316116382,INV-236295,08-Oct-2025,11/22/2025,91745.63,pending,J. Nguyen,ops0573@example.org,1286 Pine St,received via fax ... / duplicate from email chain
+575,CMP-100574,Delta Works LLC,Construction,IN,4268,1289890.51408877,INV-431118,08/14/2025,09/25/2025,3.49e+04,PAID,J. Nguyen,ops0574@example.org,7411 Maple St,PO attached
+576,CMP-100575,Global Works LLC,Retail,FR,,1896751.7437791717,INV-250518,2025/10/26,2025/11/16,70225.97,void,L. Kim,ops0575@example.org,624 Pine St,received via fax
+577,CMP-100576,North Foods LLC,Retail,KR,10165,1492454.3141187448,INV-889743,07-Jan-2026,05-Mar-2026,88499.49,refunded,K. Garcia / K. Garcia,ops0576@example.org,4265 Pine St,invoice scan low quality
+578,CMP-100577,Prime Systems LLC,Healthcare,IN,3920,3070320.2460575765,INV-785170,2025-12-19,2026/02/17,"USD 116,963.29",pending,K. Patel,ops0577@example.org,7088 Sunset St,invoice scan low quality (unclear)
+578-dup,CMP-100577,Prime Systems LLC,Healthcare,IN,3920,3070320.2460575765,INV-785170,2025-12-19,2026/02/17,"USD 116,963.29",pending,K. Patel,ops0577@example.org,7088 Sunset St,invoice scan low quality (unclear)
+579,CMP-100578,North Foods LLC,N/A,MX,2739,1657916.5718756688,INV-703545,08-Jul-2025,2025-08-27,54322.41,refunded,M. Brown,ops0578@example.org,7099 Pine St,received via fax
+580,CMP-100579,Global Dynamics LLC,Retail,BR,29,3.27e+05,INV-757358,09-Feb-2026,2026/03/11,29423.79,paid,J. Garcia,ops0579@example.org,6574 Pine St,urgent follow-up
+581,CMP-100580,Union Foods LLC,Retail,IN,6507,105705.04187380074,INV-253220,01/16/2026,04-Mar-2026,13726,refunded,L. Nguyen,ops0580@example.org,3102 Sunset St,check signature ??? !!!
+582,CMP-100581,Prime Foods LLC,Construction,IN,8788,1376470.46,INV-469387,09/05/2025,10/21/2025,116639.82,void,M. Nguyen,ops0581@example.org,2981 Main St,PO attached
+583,CMP-100582,North Energy LLC,Software,IN,5228,692341.1502117376,INV-482438,24-Jul-2025,09/15/2025,2.33e+04,pending,K. Patel / K. Patel,ops0582@example.org,1879 Sunset St,check signature ???
+584,CMP-100583,Delta Foods LLC,Retail,MX,11814,2995679.0368469064,INV-569519,19-Jan-2026,2026-02-22,104644.95,refunded,M. Brown,ops0583@example.org,3808 Pine St,N/A
+585,CMP-100584,Prime Works LLC,Retail,CA,8421,127049,INV-690622,2026-01-31,2026/03/28,3754.54,Paid,K. Brown,ops0584@example.org,8990 Pine St,manual override
+586,CMP-100585,Delta Works LLC,Energy,BR,5873,"704,725.61",INV-992454,08/04/2025,2025/10/03,36954.8,pending,L. Brown,ops0585@example.org,1720 Maple St,unknown
+587,CMP-100586,Delta Works LLC,Retail,FR,4051,1901404.1725262231,INV-895691,11/08/2025,2025-12-10,76005.57,overdue,L. Kim,ops0586@example.org,9001 Sunset St,acct moved to new owner
+588,CMP-100587,Delta Systems LLC,FinTech,KR,9468,"USD 512,401.84",INV-338252,2025-07-14,,14559,Paid,K. Patel,ops0587@example.org,6772 Maple St,manual override
+589,CMP-100588,Global Sysetms LLC,Energy,KR,202,4098272.1522350283,INV-616688,11-Dec-2025,02/07/2026,116484.7,pending,J. Brown,ops0588@example.org,4403 Sunset St,manual override
+590,CMP-100589,Prime Energy LLC,Software,CA,4780,1272932.9457336406,INV-412737,02-Aug-2025,2025-08-26,48629.19,refunded,M. Garcia,ops0589@example.org,6944 Pine St,manual override ...
+591,CMP-100590,Prime Systems LLC,Software,BR,7824,472060.9315674227,INV-408896,2025/11/18,2025-12-04,15794.71,paid,M. Patel,ops0590@example.org,6494 Sunset St,manual override
+592,CMP-100591,Prime Works LC,Telecom,KR,2909,2.88e+06,INV-332159,2026/01/04,02/05/2026,88336.98,paid,L. Patel,ops0591@example.org,542 Sunset St,see thread #A12
+593,CMP-100592,Delta Energy LLC,Software,DE,11692,835008.4430052933,INV-716230,2025-08-15,2025/09/26,106823.68,refunded,K. Kim,ops0592@example.org,821 Main St,urgent follow-up
+594,CMP-100593,Prime Foods LLC,Healthcare,IN,5138,94190.62312919529,INV-232667,2025-10-29,2025-12-21,7166.42,void?,L. Patel,ops0593@example.org,2795 Pine St,PO attached (unclear)
+595,CMP-100594,Prime Foods LLC,Healthcare,US,6361,1004114.52,INV-579658,10/15/2025,2025/11/17,72103.51,paid,J. Garcia,ops0594@example.org,2737 Pine St,acct moved to new owner
+596,CMP-100595,Union Systems LLC,Software,CA,7922,72942.896828612,INV-803496,2025-12-14,02/05/2026,4356.56,paid,M. Nguyen,ops0595@example.org,9074 Pine St,manual override
+597,CMP-100596,Delta Foods LLC,Energy,KR,4095,5.90e+04,INV-391070,08/02/2025,20-Aug-2025,9660.01,pending,J. Kim,ops0596@example.org,7031 Pine St,check signature ???
+598,CMP-100597,Delta Energy LLC,Logistics,IN,4937,1852972.6685421688,INV-328080,22-Aug-2025,21-Oct-2025,50353.59,refunded,M. Nguyen,ops0597@example.org,3942 Pine St,PO attached
+599,CMP-100598,North Systems LLC,Energy,KR,480,1451851.6543002757,INV-582792,08/02/2025,20-Sep-2025,77491.51,over-due,M. Garcia,ops0598@example.org,5861 Sunset St,check signature ???
+600,CMP-100599,Delta Foods LLC,Energy,KR,,636733.5084933412,INV-515710,2025-10-28,2025-11-17,28366.95,void,K. Brown,ops0599@example.org,6664 Pine St,PO attached
+601,CMP-100600,North Energy LLC,Energy,US,6045,926933.8299307466,INV-748331,2026-01-13,03/05/2026,24989.93,paid,J. Kim,ops0600@example.org,5733 Sunset St,acct moved to new owner ...
+602,CMP-100601,North Works LLC,Software,KR,3467,1203086.04,INV-843420,15-Aug-2025,N/A,"USD 54,868.09",refunded,M. Brown,ops0601@example.org,3006 Main St,acct moved to new owner
+603,CMP-100602,Union Systems LLC,Retail,CA,430,852158.0120040182,INV-774876,2025-12-01,26-Dec-2025,31124.78,void,M. Garcia,ops0602@example.org,7598 Maple St,invoice scan low quality
+604,CMP-100603,Prime Dynamics LLC,Logistics,FR,11643,3.02e+06,INV-552265,11/01/2025,01-Dec-2025,77679.81,paid,L. Patel,,5699 Maple St,manual override
+605,CMP-100604,Delta Works LLC,Telecom,DE,4645,520683.8378233324,INV-748929,2025/12/28,2026-02-11,58959.11,pending,M. Brown,ops0604@example.org,1328 Main St,see thread #A12
+606,CMP-100605,North Dynamics LLC,Healthcare,KR,N/A,794056.3464669979,INV-806513,01/05/2026,01-Mar-2026,34942.11,void,K. Kim,ops0605@example.org,341 Main St,PO attached
+607,CMP-100606,Delta Energy LLC,Software,JP,10274,39841.416048719395,INV-211065,2026-02-06,28-Feb-2026,2986.93,refunded,M. Patel,ops0606@example.org,9474 Pine St,see thread #A12
+608,CMP-100607,Prime Dynamics LLC,Construction,CA,4466,570428.0470673838,INV-376376,07/30/2025,08/29/2025,81885.74,overdue,K. Patel,ops0607@example.org,4733 Sunset St,received via fax
+609,CMP-100608,Prime Energy LLC,FinTech,IN,10610,2424578.935209848,INV-628713,2025/11/18,2025-12-25,"84,038.03",pending,L. Brown,ops0608@example.org,8140 Pine St,acct moved to new owner
+610,CMP-100609,Union Energy LLC,FinTech,BR,4907,430198.8681058341,INV-516260,12/02/2025,2026/01/29,"$27,725.74",Paid,J. Patel,ops0609@example.org,1583 Main St,N/A
+611,CMP-100610,Prime Systems LLC,Telecom,CA,1892,272371.94398226653,INV-793087,10-Feb-2026,13-Mar-2026,9954.55,void?,L. Garcia,ops0610@example.org,9115 Sunset St,urgent follow-up
+612,CMP-100611,North Works LLC,Retail,FR,11989,1191828.2634773136,INV-240196,2026-01-25,2026/03/08,44858.13,pending,M. Garcia,ops0611@example.org,4661 Pine St,acct moved to new owner
+613,CMP-100612,North Systems LLC,Healthcare,MX,3091,1021150.8632949404,INV-770143,09-Dec-2025,01/28/2026,110315.31,void,J. Patel,ops0612@example.org,3663 Main St,check signature ???
+614,CMP-100613,Delta Energy LLC,Construction,JP,10196,2742471.867989412,INV-495780,2025/12/24,2026-02-02,94079.52,pending,M. Nguyen,ops0613@example.org,812 Main St,
+615,CMP-100614,Prime Dynamics LLC,Logistics,KR,8057,947904.9278921521,INV-420037,10-Nov-2025,2026-01-07,84725.55,over-due,J. Brown,ops0614@example.org,7633 Maple St,invoice scan low quality
+615-dup,CMP-100614,Prime Dynamics LLC,Logistics,KR,8057,947904.9278921521,INV-420037,10-Nov-2025,2026-01-07,84725.55,over-due,J. Brown,ops0614@example.org,7633 Maple St,invoice scan low quality / duplicate from email chain
+616,CMP-100615,North Works LLC,Software,FR,1069,471779.11,INV-691364,2026-01-10,2026/01/27,16439.58,Paid,J. Garcia,ops0615@example.org,4435 Sunset St,see thread #A12
+617,CMP-100616,Global Systems LLC,unknown,BR,2179,141873.48286060677,INV-278125,29-Nov-2025,01/19/2026, 4815.96 ,void,L. Patel,ops0616@example.org,6761 Pine St,PO attached
+617-dup,CMP-100616,Global Systems LLC,unknown,BR,2179,141873.48286060677,INV-278125,29-Nov-2025,01/19/2026, 4815.96 ,void,L. Patel,ops0616@example.org,6761 Pine St,PO attached / duplicate from email chain
+618,CMP-100617,Delta Systems LLC,Retail,DE,9863,1571594.2744138683,INV-735391,2025/10/04,2025-11-14,102928.43,refunded,K. Brown,ops0617@example.org,9488 Sunset St,PO attached
+619,CMP-100618,Union Foods LLC,Healthcare,FR,1691,2224232.93670753,INV-241606,15-Aug-2025,2025-10-11,66575.68,void?,K. Kim,ops0618@example.org,9879 Maple St,N/A
+620,CMP-100619,Delta Works LLC,Software,FR,8288,815178.9153336715,INV-321722,2025/10/20,2025/11/17,1.19e+05,paid,L. Nguyen,ops0619@example.org,9572 Pine St,see thread #A12
+621,CMP-100620,Delta Energy LLC,Telecom,KR,6831,964973.58,INV-422529,30-Sep-2025,2025/11/25,94890.34,pending,L. Patel,ops0620@example.org,8627 Main St,received via fax
+622,CMP-100621,Global Energy LLC,Manufacturing,FR,5489,797822.4434511228,INV-682740,2025-10-21,11/18/2025,"38,639.74",paid,K. Kim,ops0621@example.org,7062 Maple St,received via fax
+623,CMP-100622,Union Foods LLC,Software,IN,8139, 481174.28 ,INV-824008,2025-10-11,2025/11/08,49236,paid,M. Brown,ops0622@example.org,3082 Pine St,urgent follow-up ...
+624,CMP-100623,Union Foods LLC,Healthcare,DE,9122,3568543.0531194494,INV-745604,2025-07-22,08/11/2025,"90,228.36",void,L. Brown,ops0623@example.org,910 Sunset St,manual override ...
+625,CMP-100624,Prime Energy LLC,Healthcare,MX,9352,1589712.9132024057,INV-621496,26-Nov-2025,2026/01/25,51676.46,overdue,M. Nguyen,ops0624@example.org,6048 Sunset St,check signature ???
+626,CMP-100625,Prime Dynamics LLC,Energy,DE,4940, 2966781.25 ,INV-910187,2025-10-25,11/30/2025,"107,445.08",refunded,K. Patel,ops0625@example.org,5488 Pine St,see thread #A12
+627,CMP-100626,North Energy LLC,Healthcare,FR,9347,1252549,INV-859338,2025/12/29,2026/02/19,85548.36,void?,J. Nguyen,ops0626@example.org,136 Main St,received via fax ...
+628,CMP-100627,Delta Energy LLC,Energy,DE,10371,2639775.797820799,INV-517034,2025-10-13,2025-12-07,7.55e+04,overdue,L. Kim,ops0627@example.org,3829 Pine St,PO attached !!!
+629,CMP-100628,Global Systems LLC,Telecom,IN,10135,1284347.4097155354,INV-703134,19-Jan-2026,2026/03/19,75299.41,overdue,M. Brown,ops0628@example.org,9826 Pine St,PO attached ...
+630,CMP-100629,Prime Dynamics LLC,Manufacturing,FR,9655,2329657.5230594445,INV-698864,2026-01-14,2026/02/08,88118.48,overdue,K. Nguyen,ops0629@example.org,422 Pine St,acct moved to new owner
+631,CMP-100630,Prime Energy LLC,Healthcare,MX,9223,1101298.8220218504,INV-361094,2025-09-17,2025/11/07, 37085.26 ,Paid,K. Patel,ops0630@example.org,3618 Sunset St,PO attached
+631-dup,CMP-100630,Prime Energy LLC,Healthcare,MX,9223,1101298.8220218504,INV-361094,2025-09-17,2025/11/07, 37085.26 ,Paid,K. Patel,ops0630@example.org,3618 Sunset St,PO attached / duplicate from email chain
+632,CMP-100631,Union Dynamics LLC,Construction,MX,11246, 957226.96 ,INV-328129,01-Nov-2025,28-Nov-2025,66038.72,paid,J. Patel,ops0631@example.org,7615 Main St,manual override
+633,CMP-100632,Delta Energy LLC,Retail,BR,8249,1036738.1978253563,INV-331076,07/11/2025,06-Aug-2025,87607.65,overdue,M. Kim,ops0632@example.org,1325 Main St,PO attached !!!
+634,CMP-100633,Union Foods LLC,Software,US,9620,"$664,531.25",INV-579528,2025/11/12,28-Dec-2025,26669.81,refunded,J. Garcia,ops0633@example.org,5482 Main St,urgent follow-up
+635,CMP-100634,Union Energy LLC,Manufacturing,JP,7194,3719580.2574693174,INV-343308,2025-07-22,2025/08/16,117846.62,void,K. Kim,ops0634@example.org,8095 Sunset St,received via fax ...
+636,CMP-100635,Delta Systems LLC,Telecom,KR,3116,2929373.1633664747,INV-279973,2025/07/09,2025/09/04,80799.74,PAID,L. Kim,ops0635@example.org,3206 Pine St,manual override
+637,CMP-100636,Prime Foods LLC,Retail,US,11920,"USD 753,589.00",INV-982089,10/15/2025,01-Dec-2025,90476.11,PAID,J. Patel,ops0636@example.org,3371 Main St,acct moved to new owner
+638,CMP-100637,Global Works LLC,FinTech,DE,3297,1585035.0910356774,INV-264291,10/25/2025,27-Nov-2025,77817.74,refunded,K. Nguyen,ops0637@example.org,4985 Pine St,see thread #A12 ...
+639,CMP-100638,Delta Dynamics LLC,Telecom,KR,8182,38078.199187361475,INV-666391,2025-07-17,09/12/2025,1995.09,pending,L. Patel,ops0638@example.org,2024 Main St,acct moved to new owner
+640,CMP-100639,North Foods LLC,Retail,JP,5943,691175.9265743779,INV-858525,2025-09-15,2025-10-04, 49777.92 ,paid,M. Kim,ops0639@example.org,8557 Maple St,received via fax
+641,CMP-100640,Global Works LLC,Construction,JP,3688,643808.6797841184,INV-453492,2025/09/09,2025/11/03,79447.96,paid,K. Brown,ops0640@example.org,386 Pine St,invoice scan low quality
+642,CMP-100641,Union Systems LLC,Manufacturing,US,5398,223116.38152089808,INV-988386,2026-02-08,31-Mar-2026,13466.48,pending,K. Garcia,ops0641@example.org,1537 Sunset St,PO attached
+643,CMP-100642,Prime Dynamics LLC,FinTech,IN,9875,1042218.693679003,INV-597640,16-Dec-2025,01/19/2026,26850.05,void,J. Patel,ops0642@example.org,6772 Sunset St,see thread #A12
+644,CMP-100643,Delta Foods LLC,Energy,JP,6464,3.47e+06,INV-731193,2026-02-02,03/28/2026,98597.24,void,K. Brown,ops0643@example.org,2297 Main St,check signature ???
+645,CMP-100644,North Dynamics LLC,Telecom,MX,11072,1914137.546490627,INV-965173,24-Jul-2025,09/20/2025,78833.95,overdue,K. Nguyen,ops0644@example.org,8985 Sunset St,invoice scan low quality
+646,CMP-100645,North Energy LLC,Logistics,FR,6332,2667104.7490694043,INV-233414,2025/10/19,04-Dec-2025,88122.79,overdue,J. Brown,ops0645@example.org,unknown,check signature ???
+647,CMP-100646,Union Energy LLC,FinTech,JP,9213,2324298.5161515446,INV-239101,08/22/2025,N/A,88197.1,paid,L. Garcia / L. Garcia,ops0646@example.org,6433 Pine St,manual override
+648,CMP-100647,Global Works LLC,Telecom,JP,3402,97980.98015263412,INV-752345,07/26/2025,2025-09-02,3751.97,overdue,M. Brown,ops0647@example.org,5499 Main St,PO attached
+649,CMP-100648,Global Works LLC,Construction,CA,4626,618267.1832981991,INV-388802,2025/08/06,2025/09/14, 47043.76 ,void,L. Kim,ops0648@example.org,7622 Maple St,received via fax !!!
+650,CMP-100649,North Dynamics LLC,Logistics,BR,6907,2874548.457572054,INV-734798,10/18/2025,12/15/2025,102372.45,Paid,M. Patel,ops0649@example.org,8636 Main St,acct moved to new owner (unclear)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Banking AML Transactions"
+  short_description: "Generate messy synthetic AML transaction data."
+  default_prompt: "Use $banking-aml-transactions-synthetic-data to generate realistic noisy AML monitoring datasets."

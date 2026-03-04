@@ -1,0 +1,4 @@
+interface:
+  display_name: "Healthcare Provider Roster"
+  short_description: "Generate messy synthetic provider roster data."
+  default_prompt: "Use $healthcare-provider-roster-synthetic-data to generate noisy provider directory datasets."

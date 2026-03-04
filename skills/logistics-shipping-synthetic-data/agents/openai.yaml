@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logistics Shipping Data"
+  short_description: "Generate messy synthetic shipping operations data."
+  default_prompt: "Use $logistics-shipping-synthetic-data to generate realistic shipment datasets with operational mess."

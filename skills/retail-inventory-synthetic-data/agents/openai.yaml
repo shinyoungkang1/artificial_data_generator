@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retail Inventory Data"
+  short_description: "Generate messy synthetic retail inventory data."
+  default_prompt: "Use $retail-inventory-synthetic-data to generate noisy inventory and stock records."

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-synthetic-data-mcp"
+version = "0.1.0"
+description = "Agentic MCP server for realistic messy synthetic enterprise data generation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.20.0",
+]
+
+[project.optional-dependencies]
+data = [
+  "faker>=37.12.0",
+  "openpyxl>=3.1.5",
+  "pillow>=11.3.0",
+  "reportlab>=4.4.0",
+  "python-pptx>=1.0.2",
+  "pdf2image>=1.17.0",
+  "pypdf>=6.1.1",
+]
+
+[project.scripts]
+agentic-data-mcp = "agentic_data_mcp.mcp_server:main"
+agentic-data-cli = "agentic_data_mcp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
