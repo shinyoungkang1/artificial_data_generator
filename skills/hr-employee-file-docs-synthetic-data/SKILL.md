@@ -1,25 +1,290 @@
 ---
 name: hr-employee-file-docs-synthetic-data
-description: Generate synthetic HR employee file document artifacts with OCR-style scanning degradation. Use when creating fake HR PDF/image forms and personnel summaries for OCR extraction, field recognition, and document intelligence testing.
+description: >-
+  Generate synthetic HR employee file document artifacts with configurable OCR
+  scan degradation. Produces PDF, clean PNG, and noisy PNG outputs with a
+  manifest.json index. Use when you need realistic scanned personnel documents
+  to stress-test OCR extraction pipelines, field recognition accuracy, and HR
+  document intelligence. Do NOT use when you need structured tabular payroll
+  data — use hr-payroll-synthetic-data instead. Do NOT use when you need
+  candidate pipeline records — use hr-recruiting-synthetic-data instead.
 ---
 
 # HR Employee File Docs Synthetic Data
 
-Generate HR employee file document artifacts (`.pdf`, clean `.png`, noisy `.png`) for OCR and extraction testing.
+## Overview
 
-## Workflow
+This skill generates synthetic HR employee file document artifacts designed
+for OCR pipeline testing. Each generated document contains realistic personnel
+fields — employee IDs, names, departments, job titles, hire dates, employment
+status, pay grades, manager references, compliance training status, background
+check results, and free-text notes.
 
-1. Run `scripts/generate_employee_docs.py`.
-2. Increase `--messiness` to inject scan-like defects.
-3. Use `manifest.json` to map employee docs and noisy variants.
+The generator produces three artifact types per document: a vector PDF, a clean
+rasterized PNG, and a degraded ("noisy") PNG that simulates scanner artifacts
+such as rotation, blur, contrast loss, and speckle noise. A `manifest.json`
+file indexes all generated artifacts for deterministic pipeline consumption.
 
-## Scripts
+Use `--docs` to control document count and `--messiness` to dial degradation
+intensity from pristine (0.0) to severely corrupted (0.95).
 
-- `scripts/generate_employee_docs.py`
+## Quick Reference
+
+| Property | Value |
+|----------|-------|
+| Generator script | `skills/hr-employee-file-docs-synthetic-data/scripts/generate_employee_docs.py` |
+| Output formats | PDF, PNG (clean), PNG (noisy), `manifest.json` |
+| CLI flags | `--docs`, `--seed`, `--messiness`, `--outdir` |
+| Default docs | 70 |
+| Default seed | 151 |
+| Default messiness | 0.5 |
+| Dependencies | `reportlab` (PDF, optional), `Pillow` (PNG, optional) |
+| Validation script | `skills/hr-employee-file-docs-synthetic-data/scripts/validate_docs.py` |
+
+## Generating Documents
+
+### Basic usage
+
+```bash
+python skills/hr-employee-file-docs-synthetic-data/scripts/generate_employee_docs.py \
+  --docs 70 \
+  --seed 151 \
+  --messiness 0.5 \
+  --outdir ./skills/hr-employee-file-docs-synthetic-data/outputs
+```
+
+### CLI flags
+
+| Flag | Type | Default | Description |
+|------|------|---------|-------------|
+| `--docs` | int | 70 | Number of documents to generate |
+| `--seed` | int | 151 | Random seed for reproducibility |
+| `--messiness` | float | 0.5 | Degradation intensity, clamped to [0.0, 1.0] |
+| `--outdir` | str | `./skills/hr-employee-file-docs-synthetic-data/outputs` | Output directory path |
+
+### Messiness presets
+
+| Preset | `--messiness` | Description |
+|--------|--------------|-------------|
+| Clean | 0.0 | No degradation |
+| Light | 0.2 | Minimal scan artifacts |
+| Moderate | 0.5 | Default, realistic scanner |
+| Heavy | 0.75 | Poor quality scan |
+| Chaos | 0.95 | Maximum degradation |
+
+### Output directory structure
+
+```
+outputs/
+├── pdf/
+│   └── employee_file_{00001..N}.pdf
+├── png_clean/
+│   └── employee_file_{00001..N}.png
+├── png_noisy/
+│   └── employee_file_{00001..N}_noisy.png
+└── manifest.json
+```
+
+### Reproducibility
+
+Passing the same `--seed` and `--docs` values produces identical output. The
+per-document degradation seed is computed as `seed + doc_index`, so each
+document has unique but reproducible noise.
+
+## Understanding the Output Structure
+
+### Document content fields
+
+Each document is rendered from the `make_lines()` function with these fields:
+
+| Field | Format | Example |
+|-------|--------|---------|
+| EMPLOYEE_FILE_ID | `EFILE-{06d}` | `EFILE-000001` |
+| Employee ID | `EMP-{5 digits}` | `EMP-48291` |
+| Employee Name | Random name | `Alex Kim` |
+| Department | Engineering, Sales, Finance, HR, or Operations | `Engineering` |
+| Job Title | Analyst, Manager, Specialist, Coordinator, or Lead | `Manager` |
+| Hire Date | `20{10..25}-MM-DD` | `2019-07-14` |
+| Employment Status | active, leave, or pending-change | `active` |
+| Pay Grade | P2, P3, P4, M1, or M2 | `P3` |
+| Manager ID | `MGR-{4 digits}` | `MGR-3847` |
+| Compliance Training | complete, incomplete, or expired | `complete` |
+| Background Check | clear, pending, or review | `clear` |
+| Notes | Free text from 4 options | `clean file` |
+
+### Available name choices
+
+Alex Kim, Jordan Patel, Casey Brown, Taylor Nguyen.
+
+### Notes field values
+
+`clean file`, `updated address`, `manual correction`, `signature unclear`.
+
+### Manifest format
+
+```json
+{
+  "docs": [
+    {
+      "doc_id": "EFILE-000001",
+      "pdf": "skills/.../outputs/pdf/employee_file_00001.pdf",
+      "png_clean": "skills/.../outputs/png_clean/employee_file_00001.png",
+      "png_noisy": "skills/.../outputs/png_noisy/employee_file_00001_noisy.png"
+    }
+  ],
+  "count": 70
+}
+```
+
+When an optional dependency (reportlab or Pillow) is not installed, the
+corresponding field is `null` in the manifest.
+
+## OCR Degradation Patterns
+
+The `degrade_image()` function applies four sequential transformations to each
+clean PNG to simulate realistic scanner artifacts. All parameters scale
+linearly with the `--messiness` value.
+
+### Degradation pipeline
+
+1. **Rotation** — The image is rotated by a random angle in the range
+   `[-5.0, 5.0] * messiness` degrees. White fill is used for exposed corners.
+   At messiness=0.5, maximum rotation is approximately 2.5 degrees.
+
+2. **Gaussian Blur** — A blur filter is applied with radius
+   `max(0.2, uniform(0.2, 1.5) * messiness)`. This simulates focus softness
+   from office flatbed scanners processing personnel folders.
+
+3. **Contrast Reduction** — Contrast is reduced by a factor of
+   `max(0.5, 1.0 - uniform(0.15, 0.5) * messiness)`. This simulates faded
+   toner or multi-generation photocopies common in HR file rooms.
+
+4. **Speckle Noise** — Random dark pixels are scattered across the image.
+   The speckle count is `int(width * height * 0.0008 * messiness) + 70`.
+   Each speckle has a grayscale tone in [0, 120].
+
+### Parameter table
+
+| Degradation | Parameter | At messiness=0.5 | At messiness=0.95 |
+|-------------|-----------|-------------------|-------------------|
+| Rotation | [-5, 5] * mess degrees | up to ~2.5 deg | up to ~4.75 deg |
+| Blur radius | max(0.2, [0.2, 1.5] * mess) | 0.2 - 0.75 | 0.2 - 1.43 |
+| Contrast | max(0.5, 1 - [0.15, 0.5] * mess) | 0.75 - 0.93 | 0.53 - 0.86 |
+| Speckles | w*h*0.0008*mess + 70 | ~1522 (1650x2200) | ~2823 |
+
+### OCR degradation recipes
+
+- **Unit testing OCR accuracy**: Use `--messiness 0.0` for ground-truth
+  images, then `0.5` for typical production quality.
+- **Stress testing**: Use `--messiness 0.75` to `0.95` to find OCR failure
+  thresholds on employee IDs and hire dates.
+- **A/B comparison**: Generate the same `--seed` at two messiness levels to
+  measure extraction accuracy delta on personnel fields.
+- **Regression testing**: Pin `--seed 151 --messiness 0.5` in CI to detect
+  OCR engine regressions against a fixed document set.
+- **Compliance field extraction**: Focus on Compliance Training and
+  Background Check fields — misreading "complete" as "incomplete" or "clear"
+  as "review" has real regulatory consequences.
+
+### Degradation visual summary
+
+| Messiness | Rotation | Blur | Contrast | Speckles | Typical use |
+|-----------|----------|------|----------|----------|-------------|
+| 0.0 | None | None | None | 70 only | Ground truth |
+| 0.2 | ~1.0 deg | ~0.3 | ~0.95 | ~651 | Light scan |
+| 0.5 | ~2.5 deg | ~0.75 | ~0.84 | ~1522 | Default |
+| 0.75 | ~3.75 deg | ~1.1 | ~0.74 | ~2232 | Heavy scan |
+| 0.95 | ~4.75 deg | ~1.4 | ~0.63 | ~2823 | Stress test |
+
+## Validation
+
+Run the validation script to verify output structural integrity:
+
+```bash
+python skills/hr-employee-file-docs-synthetic-data/scripts/validate_docs.py \
+  --dir ./skills/hr-employee-file-docs-synthetic-data/outputs
+```
+
+### What it checks
+
+- `manifest.json` exists and is valid JSON
+- `count` field matches the docs array length
+- All referenced PDF, PNG clean, and PNG noisy files exist on disk
+- All referenced files are non-empty (size > 0)
+- Clean and noisy PNG paths are not identical for any document
+
+### Interpreting results
+
+- **PASS**: All structural checks passed. Output is safe to consume.
+- **FAIL**: One or more checks failed. Each failure is printed to stderr
+  with a description. Exit code is 1.
+
+### Example validation output
+
+```
+$ python scripts/validate_docs.py --dir ./outputs
+PASS: All checks passed
+
+$ python scripts/validate_docs.py --dir ./empty_dir
+FAIL: manifest.json not found
+```
+
+### Using validation in CI
+
+```bash
+python scripts/generate_employee_docs.py --docs 10 --seed 151 --outdir /tmp/emp_test
+python scripts/validate_docs.py --dir /tmp/emp_test
+```
+
+## Common Mistakes
+
+### 1. Iterating files directly instead of reading manifest.json
+
+```python
+# WRONG — fragile glob, misses the clean/noisy/pdf mapping
+import glob
+for f in glob.glob("outputs/png_noisy/*.png"):
+    run_ocr(f)
+
+# CORRECT — use manifest.json as the source of truth
+import json
+manifest = json.loads(Path("outputs/manifest.json").read_text())
+for doc in manifest["docs"]:
+    if doc["png_noisy"]:
+        run_ocr(doc["png_noisy"])
+```
+
+### 2. Assuming PDF always exists
+
+```python
+# WRONG — crashes when reportlab is not installed
+pdf_path = Path(doc["pdf"])
+extract_text(pdf_path)
+
+# CORRECT — check for null (reportlab is optional)
+if doc["pdf"] is not None:
+    extract_text(Path(doc["pdf"]))
+```
+
+### 3. Running OCR on clean images instead of noisy for testing
+
+```python
+# WRONG — clean images have no degradation, giving unrealistic accuracy
+for doc in manifest["docs"]:
+    result = ocr_engine.process(doc["png_clean"])
+
+# CORRECT — use noisy images to simulate real scanner conditions
+for doc in manifest["docs"]:
+    if doc["png_noisy"]:
+        result = ocr_engine.process(doc["png_noisy"])
+```
 
 ## Domain Context: HR (3 skills)
 
-Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+Each domain uses multiple complementary skills to cover the full spectrum of
+data types real-world pipelines encounter. A single skill only generates one
+slice — you typically need all skills in a domain for realistic end-to-end
+testing.
 
 | Skill | Role | Output Type |
 |-------|------|-------------|
@@ -27,19 +292,41 @@ Each domain uses multiple complementary skills to cover the full spectrum of dat
 | `hr-recruiting-synthetic-data` | Candidate pipeline records | CSV, JSON tabular rows |
 | **hr-employee-file-docs-synthetic-data** (this) | Scanned personnel documents | PDF, PNG with OCR noise |
 
-**Why 3 skills?** HR pipelines process payroll, track recruiting, and digitize employee files. Scanned personnel docs (W-4s, I-9s, offer letters) are the hardest extraction target — OCR degradation on names, SSNs, and dates creates compliance risks that structured data alone can't simulate.
+**Why 3 skills?** HR pipelines process payroll, track recruiting, and digitize
+employee files. Scanned personnel docs (W-4s, I-9s, offer letters) are the
+hardest extraction target — OCR degradation on names, employee IDs, and dates
+creates compliance risks that structured data alone cannot simulate.
 
-**Recommended combo:** Generate payroll + recruiting for structured ground truth, then employee file docs for the same employees to test OCR extraction accuracy against known-good values.
+**Recommended combo:** Generate payroll + recruiting for structured ground
+truth, then employee file docs for the same employees to test OCR extraction
+accuracy against known-good values.
+
+## Gotchas
+
+- **Optional dependencies**: Both `reportlab` (PDF) and `Pillow` (PNG) are
+  optional. The generator gracefully returns `None` for any format whose
+  dependency is missing. Always check manifest entries for `null` values.
+- **manifest.json is the source of truth**: Do not glob output directories.
+  The manifest records exactly which files were generated and their paths.
+- **PNG dimensions**: Clean PNGs are 1650x2200 pixels. Noisy PNGs may be
+  slightly larger due to `expand=True` on rotation.
+- **Hire date range**: Hire dates span 2010-2025, not the current year.
+  This is intentional — employee files reflect historical onboarding dates.
+- **Free-text Notes field**: The Notes field contains short free-text strings
+  that OCR engines may struggle with at high messiness levels.
+- **Messiness clamping**: The `--messiness` value is clamped to [0.0, 1.0]
+  internally. Values outside this range are silently clamped, not rejected.
+- **Speckle tone range**: Speckles use grayscale [0, 120], not full [0, 255].
+  This produces dark-to-medium gray dots that mimic dust and toner artifacts
+  rather than bright noise.
+- **No OCR text layer**: The generated PDFs contain only vector graphics,
+  not a text layer. They cannot be searched or copy-pasted — use clean PNGs
+  with your own OCR engine to extract text.
+- **Status field sensitivity**: The Employment Status field values (active,
+  leave, pending-change) are operationally critical — misreading these in
+  an automated HR pipeline can trigger incorrect payroll actions.
 
 ## References
 
-- `references/domain-notes.md`
-
-## Example Command
-
-```bash
-python skills/hr-employee-file-docs-synthetic-data/scripts/generate_employee_docs.py \
-  --docs 100 \
-  --messiness 0.54 \
-  --outdir ./skills/hr-employee-file-docs-synthetic-data/outputs
-```
+- `references/domain-notes.md` — Detailed field layout, degradation
+  parameters, and real-world context for HR employee file documents.
