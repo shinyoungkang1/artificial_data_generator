@@ -17,6 +17,20 @@ Generate HR employee file document artifacts (`.pdf`, clean `.png`, noisy `.png`
 
 - `scripts/generate_employee_docs.py`
 
+## Domain Context: HR (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `hr-payroll-synthetic-data` | Compensation and pay events | CSV, JSON tabular rows |
+| `hr-recruiting-synthetic-data` | Candidate pipeline records | CSV, JSON tabular rows |
+| **hr-employee-file-docs-synthetic-data** (this) | Scanned personnel documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** HR pipelines process payroll, track recruiting, and digitize employee files. Scanned personnel docs (W-4s, I-9s, offer letters) are the hardest extraction target — OCR degradation on names, SSNs, and dates creates compliance risks that structured data alone can't simulate.
+
+**Recommended combo:** Generate payroll + recruiting for structured ground truth, then employee file docs for the same employees to test OCR extraction accuracy against known-good values.
+
 ## References
 
 - `references/domain-notes.md`

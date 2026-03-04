@@ -17,6 +17,20 @@ Generate inventory snapshots and stock movement records with reconciliation anom
 
 - `scripts/generate_retail_inventory.py`
 
+## Domain Context: Retail (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `retail-pos-synthetic-data` | Transaction-level sales data | CSV, JSON tabular rows |
+| **retail-inventory-synthetic-data** (this) | Stock and replenishment records | CSV, JSON tabular rows |
+| `retail-receipt-ocr-synthetic-data` | Scanned receipt documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Retail pipelines reconcile POS transactions against inventory and parse scanned receipts. Inventory data is the operational backbone — SKU mismatches, phantom stock, and reorder calculation errors are distinct failure modes that transaction data alone can't reproduce.
+
+**Recommended combo:** Generate inventory + POS with shared SKUs to test stock-to-sales reconciliation, then receipt docs for return/exchange scenarios that affect inventory counts.
+
 ## References
 
 - `references/domain-notes.md`

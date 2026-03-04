@@ -17,6 +17,20 @@ Generate synthetic receipt document artifacts (`.pdf`, clean `.png`, noisy `.png
 
 - `scripts/generate_receipt_docs.py`
 
+## Domain Context: Retail (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `retail-pos-synthetic-data` | Transaction-level sales data | CSV, JSON tabular rows |
+| `retail-inventory-synthetic-data` | Stock and replenishment records | CSV, JSON tabular rows |
+| **retail-receipt-ocr-synthetic-data** (this) | Scanned receipt documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Retail pipelines reconcile POS transactions against inventory and parse scanned receipts. Receipts are the document-layer challenge — OCR noise on prices, tax lines, and payment methods creates extraction errors that structured POS data alone can't simulate.
+
+**Recommended combo:** Generate POS + inventory for ground truth, then receipt docs for the same transactions to benchmark OCR line-item extraction accuracy against known-good structured values.
+
 ## References
 
 - `references/domain-notes.md`

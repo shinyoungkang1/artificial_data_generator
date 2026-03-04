@@ -57,6 +57,20 @@ Use this order for repeatable campaigns:
 4. Optionally call `expand_from_seed_samples`.
 5. Use manifest outputs to evaluate parser/OCR robustness.
 
+## Relationship to Domain Skills
+
+This is the **platform/orchestration skill**. The 15 domain-specific skills (3 per domain) use standalone scripts for focused generation. This MCP skill provides the higher-level campaign workflow that can coordinate across formats and domains.
+
+| Domain | Tabular Data Skill | Specialized Data Skill | OCR/Document Skill |
+|--------|-------------------|----------------------|-------------------|
+| Healthcare | `healthcare-claims-synthetic-data` | `healthcare-provider-roster-synthetic-data` | `healthcare-eob-docs-synthetic-data` |
+| Logistics | `logistics-shipping-synthetic-data` | `logistics-customs-docs-synthetic-data` | `logistics-bol-docs-synthetic-data` |
+| Retail | `retail-pos-synthetic-data` | `retail-inventory-synthetic-data` | `retail-receipt-ocr-synthetic-data` |
+| HR | `hr-payroll-synthetic-data` | `hr-recruiting-synthetic-data` | `hr-employee-file-docs-synthetic-data` |
+| Banking | `banking-kyc-synthetic-data` | `banking-aml-transactions-synthetic-data` | `banking-statement-ocr-synthetic-data` |
+
+**When to use this skill vs domain skills:** Use domain skills for quick, targeted generation of a specific data type. Use this MCP skill when you need campaign-level orchestration, multi-format output in a single run, or seed-based expansion across formats.
+
 ## References
 
 - Mess catalog and corruption heuristics:

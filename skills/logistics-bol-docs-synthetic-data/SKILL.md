@@ -17,6 +17,20 @@ Generate bill-of-lading document artifacts (`.pdf`, clean `.png`, noisy `.png`) 
 
 - `scripts/generate_bol_docs.py`
 
+## Domain Context: Logistics (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `logistics-shipping-synthetic-data` | Operational shipment tracking | CSV, JSON tabular rows |
+| `logistics-customs-docs-synthetic-data` | Cross-border compliance records | CSV, JSON tabular rows |
+| **logistics-bol-docs-synthetic-data** (this) | Scanned shipping documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Logistics pipelines track shipments, clear customs, and parse scanned BOLs. Bills of lading are the physical-document layer — OCR failures on weight, piece count, and consignee fields create reconciliation gaps that structured data alone can't simulate.
+
+**Recommended combo:** Generate shipments + customs for structured ground truth, then BOL docs referencing the same shipment IDs to test OCR extraction accuracy against known-good tabular values.
+
 ## References
 
 - `references/domain-notes.md`

@@ -17,6 +17,20 @@ Generate candidate pipeline records that mimic ATS exports and recruiter workflo
 
 - `scripts/generate_hr_recruiting.py`
 
+## Domain Context: HR (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `hr-payroll-synthetic-data` | Compensation and pay events | CSV, JSON tabular rows |
+| **hr-recruiting-synthetic-data** (this) | Candidate pipeline records | CSV, JSON tabular rows |
+| `hr-employee-file-docs-synthetic-data` | Scanned personnel documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** HR pipelines process payroll, track recruiting funnels, and digitize employee files. Recruiting data is the pipeline entry point — stage-transition drift, duplicate candidate handling, and ATS export inconsistencies are distinct failure modes that payroll data alone can't reproduce.
+
+**Recommended combo:** Generate recruiting records first (candidates flow into payroll as hires), then payroll for active employees, then employee file docs for onboarding paperwork extraction testing.
+
 ## References
 
 - `references/domain-notes.md`

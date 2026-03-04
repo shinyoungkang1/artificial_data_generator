@@ -17,6 +17,20 @@ Generate Explanation of Benefits style document artifacts (`.pdf`, clean `.png`,
 
 - `scripts/generate_eob_docs.py`
 
+## Domain Context: Healthcare (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `healthcare-claims-synthetic-data` | Transactional claims data | CSV, JSON tabular rows |
+| `healthcare-provider-roster-synthetic-data` | Reference/master data | CSV, JSON tabular rows |
+| **healthcare-eob-docs-synthetic-data** (this) | Scanned document artifacts | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Healthcare pipelines ingest claims tables, match them against provider directories, and parse scanned EOB documents. EOB docs are the hardest extraction target — OCR degradation on amounts, dates, and procedure codes creates failures that structured data alone can't simulate.
+
+**Recommended combo:** Generate claims + roster for structured data, then EOB docs referencing those claim numbers to test whether your OCR pipeline can reconcile scanned values against the ground-truth tables.
+
 ## References
 
 - `references/domain-notes.md`

@@ -17,6 +17,20 @@ Generate customs declaration tables that mimic international shipping paperwork 
 
 - `scripts/generate_customs_docs.py`
 
+## Domain Context: Logistics (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `logistics-shipping-synthetic-data` | Operational shipment tracking | CSV, JSON tabular rows |
+| **logistics-customs-docs-synthetic-data** (this) | Cross-border compliance records | CSV, JSON tabular rows |
+| `logistics-bol-docs-synthetic-data` | Scanned shipping documents | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Logistics pipelines track shipments, clear customs, and parse scanned BOLs. Customs records sit between operational tracking and physical documentation — HS code mismatches, duty calculation errors, and clearance status drift are distinct failure modes that shipment tables alone can't reproduce.
+
+**Recommended combo:** Generate shipments + customs with shared tracking numbers, then BOL docs for the same shipments, to test customs classification extraction and cross-referencing.
+
 ## References
 
 - `references/domain-notes.md`

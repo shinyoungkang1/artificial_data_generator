@@ -17,6 +17,20 @@ Generate provider roster datasets that simulate payer and credentialing feed iss
 
 - `scripts/generate_provider_roster.py`
 
+## Domain Context: Healthcare (3 skills)
+
+Each domain uses multiple complementary skills to cover the full spectrum of data types real-world pipelines encounter. A single skill only generates one slice — you typically need all skills in a domain for realistic end-to-end testing.
+
+| Skill | Role | Output Type |
+|-------|------|-------------|
+| `healthcare-claims-synthetic-data` | Transactional claims data | CSV, JSON tabular rows |
+| **healthcare-provider-roster-synthetic-data** (this) | Reference/master data | CSV, JSON tabular rows |
+| `healthcare-eob-docs-synthetic-data` | Scanned document artifacts | PDF, PNG with OCR noise |
+
+**Why 3 skills?** Healthcare pipelines ingest claims tables, match them against provider directories, and parse scanned EOB documents. Provider rosters are the master-data backbone — name/NPI/taxonomy mismatches here cascade into claims adjudication failures and network adequacy errors.
+
+**Recommended combo:** Generate roster first to establish provider IDs, then claims referencing those IDs, then EOB docs citing the same claim numbers.
+
 ## References
 
 - `references/domain-notes.md`
