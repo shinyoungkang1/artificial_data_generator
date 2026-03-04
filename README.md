@@ -1,155 +1,246 @@
 # Agentic Synthetic Data MCP
 
-Synthetic data platform for generating large, realistic, intentionally messy datasets across documents, tables, and OCR artifacts.
+**Generate realistic, intentionally messy fake data for testing AI pipelines.**
 
-It includes:
+Real-world business data is never clean. Scanned documents come out blurry and crooked. Spreadsheets have typos, missing values, and inconsistent formatting. Status fields say "paid", "PAID", "pended", and "denied?" all in the same column. This project generates that kind of mess — on purpose — so you can test whether your AI, OCR, or data pipeline can handle it.
 
-- An MCP server with planning + generation + seed expansion tools
-- A local CLI for batch generation
-- Anthropic-style self-contained skill packs under `skills/`
-- Domain-specific generators with realistic noise and schema drift
+---
 
-## Why this repository exists
+## What Does This Project Do?
 
-Real production data is messy. This project helps you test extraction and AI pipelines against realistic failure modes:
+```
+                        Agentic Synthetic Data MCP
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- OCR degradation: skew, blur, dark edges, compression artifacts
-- Spreadsheet drift: merged headers, blanks, duplicates, shifted structures
-- Semantic drift: inconsistent statuses, typos, null variants, formatting mismatch
-- Cross-format packaging: CSV, JSON, XLSX, PDF, PPTX, PNG
+    You choose:                      You get:
+    +-----------+                    +---------------------------+
+    | Domain    |  Healthcare        | Fake CSV/JSON tables      |
+    | Volume    |  5,000 rows        | Fake PDF documents        |
+    | Messiness |  0.45 (moderate)   | Fake scanned images (PNG) |
+    +-----------+                    | All with realistic mess   |
+                                     +---------------------------+
+```
 
-## Core capabilities
+**In plain language:** you tell the system what kind of data you want (healthcare claims, bank statements, shipping records, etc.), how much of it, and how messy it should be. It generates thousands of realistic-looking fake records — complete with the kinds of errors, typos, and formatting problems you'd find in real business data.
 
-1. Campaign planning
-- Build generation plans with objectives, formats, volume, and messiness.
+---
 
-2. Multi-format artifact generation
-- Produce coherent synthetic records and render to multiple output formats.
+## The Five Domains
 
-3. Seed-driven expansion
-- Start from a few seed files and scale to larger datasets with controlled perturbations.
+This project covers five industries. Each domain includes three complementary data types that mirror how real organizations handle information:
 
-4. Reproducible manifests
-- Every run writes a manifest with artifact paths, warnings, and run metadata.
+```
+ Domain        Structured Tables          Reference Data            Scanned Documents
+ ~~~~~~        ~~~~~~~~~~~~~~~~~          ~~~~~~~~~~~~~~            ~~~~~~~~~~~~~~~~~
 
-## MCP tools
+ Healthcare    Claims transactions        Provider directories      EOB (Explanation
+               (who billed what,          (doctor NPIs, addresses,  of Benefits) scans
+               how much, status)          specialties)              with OCR noise
 
-Exposed by `src/agentic_data_mcp/mcp_server.py`:
+ Banking       AML transaction            KYC onboarding            Bank statement
+               monitoring (alerts,        (risk scores, sanctions   scans with blurry
+               risk flags)               screening)                 balances
 
-- `plan_generation_campaign`
-- `generate_messy_batch`
-- `expand_from_seed_samples`
-- `list_noise_recipes_tool`
+ Logistics     Shipment tracking          Customs declarations      Bill of Lading
+               (carriers, ETAs,           (HS codes, duties,        scans with skewed
+               delivery status)           inspections)              text and stamps
 
-## Quick start
+ Retail        POS transactions           Inventory snapshots       Receipt scans
+               (items, totals,            (stock levels, SKUs,      with faded thermal
+               payment types)             suppliers)                print
+
+ HR            Payroll records            Recruiting pipeline       Employee file
+               (hours, pay,               (candidates, stages,      scans with
+               deductions)                interview scores)         handwriting noise
+```
+
+**Why three types per domain?** Because real pipelines don't just process one kind of data. A healthcare system ingests claims tables, cross-references them against provider directories, and parses scanned EOB documents. Testing with only one format misses the failures that happen when formats interact.
+
+---
+
+## What Kind of Mess Gets Generated?
+
+The "messiness" parameter (0.0 to 1.0) controls how much real-world noise is injected:
+
+| Level | Messiness | What It Looks Like |
+|-------|-----------|-------------------|
+| **Clean** | 0.0 | Perfect data, no errors |
+| **Light** | 0.15 | Occasional typo or formatting quirk |
+| **Moderate** | 0.35 | Realistic day-to-day data quality (default) |
+| **Heavy** | 0.65 | Stress test — frequent errors and inconsistencies |
+| **Chaos** | 0.95 | Worst-case scenario — almost everything is messy |
+
+### Examples of injected mess
+
+**In tables (CSV/JSON):**
+- Status fields drift: `"paid"` vs `"PAID"` vs `"pended"` vs `"denied?"`
+- Dollar amounts appear as `1200.50`, `"$1,200.50"`, or `"1.2e3"`
+- Dates switch between `2026-03-04` and `03/04/2026` in the same column
+- Required fields go blank, or contain `"N/A"`, `"unknown"`, or `"none"`
+- Duplicate rows appear (simulating system retries)
+
+**In scanned documents (PDF/PNG):**
+- Pages are slightly rotated (like a crooked scanner)
+- Text gets blurry from simulated low-quality copies
+- Dark shadows appear along edges
+- Random speckles and dots (like a dirty scanner bed)
+- Contrast drops, making text harder to read
+
+---
+
+## Domain Overview at a Glance
+
+```
+ +---------------------------------------------------------------------+
+ |                    16 Skills Across 5 Domains                       |
+ +---------------------------------------------------------------------+
+ |                                                                     |
+ |   Healthcare (3)     Banking (3)       Logistics (3)                |
+ |   +--------------+   +--------------+  +--------------+             |
+ |   | Claims       |   | AML Txns     |  | Shipping     |             |
+ |   | Provider     |   | KYC          |  | Customs      |             |
+ |   | EOB Docs     |   | Statements   |  | BOL Docs     |             |
+ |   +--------------+   +--------------+  +--------------+             |
+ |                                                                     |
+ |   Retail (3)          HR (3)           Platform (1)                 |
+ |   +--------------+   +--------------+  +--------------+             |
+ |   | POS Txns     |   | Payroll      |  | MCP Campaign |             |
+ |   | Inventory    |   | Recruiting   |  | Orchestrator |             |
+ |   | Receipts     |   | Employee Docs|  |              |             |
+ |   +--------------+   +--------------+  +--------------+             |
+ |                                                                     |
+ +---------------------------------------------------------------------+
+```
+
+---
+
+## How to Use It
+
+### Option 1: Generate data for a single domain
+
+Each domain skill has a standalone Python script. Just pick the domain and run it:
 
 ```bash
-cd /home/shin/aritificial_data
+# Generate 2,500 healthcare claims with moderate messiness
+python skills/healthcare-claims-synthetic-data/scripts/generate_healthcare_claims.py \
+  --rows 2500 --messiness 0.45
+
+# Generate 120 scanned EOB documents with realistic blur and rotation
+python skills/healthcare-eob-docs-synthetic-data/scripts/generate_eob_docs.py \
+  --docs 120 --messiness 0.55
+```
+
+**What you get:**
+- **Table skills** produce a `.csv` file and a `.json` file
+- **Document skills** produce a folder of `.pdf` files, clean `.png` images, noisy `.png` images, and a `manifest.json` listing everything
+
+### Option 2: Run a full campaign (advanced)
+
+The MCP platform skill orchestrates larger generation runs across multiple formats (CSV, JSON, XLSX, PDF, PPTX, PNG) in a single campaign:
+
+```bash
+# Install dependencies
 python -m pip install -e .[data]
-```
 
-Run MCP server (stdio):
-
-```bash
-agentic-data-mcp
-```
-
-Run local CLI:
-
-```bash
+# Plan a campaign
 agentic-data-cli plan --domain company-ops --volume 400 --messiness 0.5 --output plan.json
+
+# Generate the data
 agentic-data-cli generate --plan plan.json --output-dir ./runs
-agentic-data-cli expand --seed ./runs/<campaign-id>/artifacts/company_data.csv --multiplier 6
 ```
 
-## Repository layout
+---
 
-```text
-src/agentic_data_mcp/      # MCP server + generation pipeline
-skills/                    # Self-contained Anthropic-style skills
-tests/                     # Unit tests
-PLAN.md                    # End-to-end implementation plan
-DOMAINS_ROADMAP.md         # Domain growth and prioritization
-```
+## Key Parameters
 
-## Skill packs (3 skills per domain)
+Every generator script accepts the same three knobs:
 
-### Healthcare
+| Parameter | What It Controls | Example |
+|-----------|-----------------|---------|
+| `--rows` or `--docs` | How many records or documents to create | `--rows 5000` |
+| `--messiness` | How much noise to inject (0.0 = clean, 1.0 = chaos) | `--messiness 0.45` |
+| `--seed` | Random seed for reproducibility (same seed = same output) | `--seed 42` |
 
-- `skills/healthcare-claims-synthetic-data/`
-- `skills/healthcare-provider-roster-synthetic-data/`
-- `skills/healthcare-eob-docs-synthetic-data/`
+---
 
-### Logistics
+## Output Formats
 
-- `skills/logistics-shipping-synthetic-data/`
-- `skills/logistics-customs-docs-synthetic-data/`
-- `skills/logistics-bol-docs-synthetic-data/`
+| Skill Type | Outputs | Description |
+|-----------|---------|-------------|
+| **Tabular** (10 skills) | `.csv` + `.json` | Structured rows with field-level mess |
+| **Document** (5 skills) | `.pdf` + `.png` (clean) + `.png` (noisy) | Rendered pages with scan degradation |
+| **Campaign** (1 skill) | All of the above + `.xlsx` + `.pptx` | Multi-format batch from a single plan |
 
-### Retail
+---
 
-- `skills/retail-pos-synthetic-data/`
-- `skills/retail-inventory-synthetic-data/`
-- `skills/retail-receipt-ocr-synthetic-data/`
+## Validating Generated Data
 
-### HR
-
-- `skills/hr-payroll-synthetic-data/`
-- `skills/hr-recruiting-synthetic-data/`
-- `skills/hr-employee-file-docs-synthetic-data/`
-
-### Banking
-
-- `skills/banking-kyc-synthetic-data/`
-- `skills/banking-aml-transactions-synthetic-data/`
-- `skills/banking-statement-ocr-synthetic-data/`
-
-### Platform/MCP
-
-- `skills/agentic-synthetic-data-mcp/`
-
-## Example domain script usage
+Each skill includes a validation script that checks whether generated output is structurally correct:
 
 ```bash
-python skills/healthcare-claims-synthetic-data/scripts/generate_healthcare_claims.py --rows 2500 --messiness 0.45
-python skills/healthcare-eob-docs-synthetic-data/scripts/generate_eob_docs.py --docs 120 --messiness 0.55
-python skills/logistics-customs-docs-synthetic-data/scripts/generate_customs_docs.py --rows 2500 --messiness 0.45
-python skills/logistics-bol-docs-synthetic-data/scripts/generate_bol_docs.py --docs 140 --messiness 0.6
-python skills/retail-inventory-synthetic-data/scripts/generate_retail_inventory.py --rows 3000 --messiness 0.42
-python skills/retail-receipt-ocr-synthetic-data/scripts/generate_receipt_docs.py --docs 160 --messiness 0.58
-python skills/hr-recruiting-synthetic-data/scripts/generate_hr_recruiting.py --rows 3000 --messiness 0.43
-python skills/hr-employee-file-docs-synthetic-data/scripts/generate_employee_docs.py --docs 100 --messiness 0.54
-python skills/banking-aml-transactions-synthetic-data/scripts/generate_aml_transactions.py --rows 5000 --messiness 0.46
-python skills/banking-statement-ocr-synthetic-data/scripts/generate_statement_docs.py --docs 130 --messiness 0.57
+# Validate a tabular output
+python skills/healthcare-claims-synthetic-data/scripts/validate_output.py \
+  --file skills/healthcare-claims-synthetic-data/outputs/healthcare_claims.csv
+
+# Validate document outputs
+python skills/healthcare-eob-docs-synthetic-data/scripts/validate_docs.py \
+  --dir skills/healthcare-eob-docs-synthetic-data/outputs
+
+# Validate a campaign run
+python skills/agentic-synthetic-data-mcp/scripts/validate_campaign.py \
+  --dir runs/campaign-20260304-abc123
 ```
 
-## Validation
+---
 
-Validate all skills:
+## OCR Noise Recipes
 
-```bash
-for d in skills/*; do
-  [ -d "$d" ] || continue
-  python /home/shin/.codex/skills/.system/skill-creator/scripts/quick_validate.py "$d"
-done
+For scanned documents, five degradation recipes simulate different real-world scanning conditions:
+
+| Recipe | What It Simulates |
+|--------|------------------|
+| `scanner_skew_light` | Slightly crooked page on a flatbed scanner |
+| `scanner_dark_edges` | Heavy shadows along the sides of the scan |
+| `compression_heavy` | Blurry text from repeated JPEG re-saving |
+| `photocopy_fade` | Low-ink, washed-out photocopy look |
+| `ocr_nightmare_mix` | Everything at once — the worst-case scenario |
+
+---
+
+## Repository Layout
+
+```
+aritificial_data/
+  src/agentic_data_mcp/       Core library (MCP server, generators, writers)
+  skills/                     16 self-contained skill packs
+    healthcare-claims-.../      Each skill contains:
+      SKILL.md                    Detailed usage guide (280-480 lines)
+      LICENSE.txt                 MIT license
+      scripts/
+        generate_*.py             Generator script
+        validate_*.py             Validation script
+      references/
+        domain-notes.md           Domain reference (80-120 lines)
+  contrib/openai-agents/      OpenAI Agents SDK configs (optional)
+  tests/                      Unit tests
+  runs/                       Campaign output directory
 ```
 
-Run unit tests:
+---
 
-```bash
-PYTHONPATH=src python -m unittest discover -s tests -q
-```
+## Requirements
 
-## Current OCR noise recipes
+- **Python 3.10+** (all generators use only the standard library)
+- **Optional:** `reportlab` (for PDF generation), `Pillow` (for PNG generation), `openpyxl` (for XLSX), `python-pptx` (for PPTX)
 
-- `scanner_skew_light`
-- `scanner_dark_edges`
-- `compression_heavy`
-- `photocopy_fade`
-- `ocr_nightmare_mix`
+If optional packages aren't installed, the generators gracefully skip those formats and produce what they can.
 
-See `src/agentic_data_mcp/noise.py` for implementation.
+---
 
-## Next steps
+## Next Steps
 
 Planned expansion domains are listed in `DOMAINS_ROADMAP.md`.
+
+## License
+
+MIT — see `LICENSE.txt` in each skill directory.
